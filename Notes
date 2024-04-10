@@ -10,3 +10,7 @@ Exercise Database has search filter and view functionality
 Logs our exercise sets while working out in da gym (react native=any platform, can use in browser because apples walled garden doesn't allow sideloading)
 I like that we don't save data locally, have a database that we can access from any device and see progress
 we can add features after tut, custom exercises, cardio log, step counter, plans, calorie/macros tracker, etc - need MVP to git a job and escape canada
+
+npx create-expo-app@latest Workouts -t blank #will create an app in our current directory with latest expo
+npm start #will run 'expo start', MetroBundler will give us a QR code, and Metro waiting on exp://192.168.2.16:8081
+we can scan the code on Android or iOS to see our app, will need to download 'Expo Go' on iOS
