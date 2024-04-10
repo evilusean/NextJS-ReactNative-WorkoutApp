@@ -14,3 +14,6 @@ we can add features after tut, custom exercises, cardio log, step counter, plans
 npx create-expo-app@latest Workouts -t blank #will create an app in our current directory with latest expo
 npm start #will run 'expo start', MetroBundler will give us a QR code, and Metro waiting on exp://192.168.2.16:8081
 we can scan the code on Android or iOS to see our app, will need to download 'Expo Go' on iOS
+Had troubles creating an account / signing into Expo Go,
+npx expo install react-native-web react-dom @expo/metro-runtime #installs expos web dependancies, can run expo code in browser
+Web is waiting on http://localhost:8081 #we can now write our code and debug in the browser, instead of using mobile device
