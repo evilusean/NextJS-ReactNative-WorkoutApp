@@ -7,4 +7,6 @@ MongoDB Atlas, GraphQL, IBM Stepzen(scalable GraphQL), GraphQL API, API Ninjas(e
 Uses MongoDB to store hundreds of built in exercises with instructions
 also stores our workouts and charts our progressSean with progress graphs
 Exercise Database has search filter and view functionality
-Logs our exercise sets while working out in da gym (react native=any platform)
+Logs our exercise sets while working out in da gym (react native=any platform, can use in browser because apples walled garden doesn't allow sideloading)
+I like that we don't save data locally, have a database that we can access from any device and see progress
+we can add features after tut, custom exercises, cardio log, step counter, plans, calorie/macros tracker, etc - need MVP to git a job and escape canada
