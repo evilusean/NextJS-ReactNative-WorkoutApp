@@ -1,1 +1,10 @@
-
+Features:
+Full stack:
+FrontEnd:
+React Native, Expo, Expo Router, Expo SDK 50,
+Backend:
+MongoDB Atlas, GraphQL, IBM Stepzen(scalable GraphQL), GraphQL API, API Ninjas(exercises), Custom MongoDB Database
+Uses MongoDB to store hundreds of built in exercises with instructions
+also stores our workouts and charts our progressSean with progress graphs
+Exercise Database has search filter and view functionality
+Logs our exercise sets while working out in da gym (react native=any platform)
