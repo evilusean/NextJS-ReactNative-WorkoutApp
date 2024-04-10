@@ -17,3 +17,8 @@ we can scan the code on Android or iOS to see our app, will need to download 'Ex
 Had troubles creating an account / signing into Expo Go,
 npx expo install react-native-web react-dom @expo/metro-runtime #installs expos web dependancies, can run expo code in browser
 Web is waiting on http://localhost:8081 #we can now write our code and debug in the browser, instead of using mobile device
+We can also use simulators, iOS can only be used with XCode(iOS)
+downloaded anbox, so we can test our mobile features on a simulator,
+sudo add-apt-repository multiverse
+sudo apt update
+sudo apt install anbox #running these 3 commands will install anbox, a sim for ubuntu
