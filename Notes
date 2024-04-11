@@ -38,3 +38,5 @@ Error: Can't find the device we installed pixel(something)
 https://docs.expo.dev/workflow/android-studio-emulator/
 https://developer.android.com/studio/run/device.html#developer-device-options
 Fix: You need to first open the device in Android Studio, Then load it through expo/npm start, finally we can get to work.
+Will need to download the expo go app on your virtual device before you can start debugging
+Finally, we got our app to open on the simphone, only took 3?ish hours, better than flutter(3 days), time to work.
