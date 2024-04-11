@@ -25,3 +25,12 @@ sudo apt install anbox #running these 3 commands will install anbox, a sim for u
 Apparently, above doesn't work, need more:
 https://reactnative.dev/docs/next/environment-setup?guide=native&platform=android#android-sdk
 https://developer.android.com/studio
+tar -xvf android-studio-2023.2.1.25-linux.tar.gz #installs executable downloaded from official site
+cd android-studio/bin
+./studio.sh #will open android studio installer, will need to add PATH, to fix below error
+Failed to resolve the Android SDK path. Default install location not found: /home/sean/Android/sdk. Use ANDROID_HOME to set the Android SDK location.
+Add the following lines to your $HOME/.bash_profile or $HOME/.bashrc (if you are using zsh then ~/.zprofile or ~/.zshrc) config file:
+export ANDROID_HOME=$HOME/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+Go to HOME Press 'Ctrl+H' shows hidden files, add above change 'Sdk' to 'sdk' and it works, now need to set up a virtual phone to sim
