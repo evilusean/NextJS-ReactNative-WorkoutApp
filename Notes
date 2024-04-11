@@ -34,3 +34,7 @@ export ANDROID_HOME=$HOME/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 Go to HOME Press 'Ctrl+H' shows hidden files, add above change 'Sdk' to 'sdk' and it works, now need to set up a virtual phone to sim
+Error: Can't find the device we installed pixel(something)
+https://docs.expo.dev/workflow/android-studio-emulator/
+https://developer.android.com/studio/run/device.html#developer-device-options
+Fix: You need to first open the device in Android Studio, Then load it through expo/npm start, finally we can get to work.
