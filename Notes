@@ -47,3 +47,39 @@ It should also refresh on save
 First we need to add some dummy data for exercises, 'exercises.json' it's an array, every item in it is an object with multiple { key: value } pairs
 {} called portals to access JS variables use curly braces {exercise.name} #to get the exercise name and display it as an expression
 <Text style={{ fontSize: 24, fontWeight: 'bold'}}>{exercises.name}</Text> #how to style in ReactNative, style= camelCase
+const styles = StyleSheet.create({container: {backgroundColor: '#fff', alignItems: 'center' }) #or you can style in stylesheets, notice how the values are in curly brackets 'quotes' and have camelCase different than CSS
+const styles = StyleSheet.create({
+  exerciseName: {
+    fontSize: 24,
+    fontWeight: "500",
+  },
+});
+<Text style={styles.exerciseName}>{exercises.name}</Text> #will get our declared styles from the 'styles' variable and use it for the <Text>
+<View> #you can use views similar to a <div> element in JS and make it a container element
+
+30:00=================================================================================================================================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
