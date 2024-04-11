@@ -58,8 +58,13 @@ const styles = StyleSheet.create({
 <View> #you can use views similar to a <div> element in JS and make it a container element
 
 30:00=================================================================================================================================================================================================================================
-
-
+FlatList #allows us to render multiple items, used to manage and render properties, like a for loop
+<FlatList 
+      data={exercises} #tells flatlist where to get data
+        renderItem={() => {
+          return (
+            <View style={styles.exerciseContainer}> #tells flatlist what data to render, used as a function, will render our execises container
+      );}}/>
 
 
 
