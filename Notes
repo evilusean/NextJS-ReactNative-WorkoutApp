@@ -42,3 +42,8 @@ Will need to download the expo go app on your virtual device before you can star
 Finally, we got our app to open on the simphone, only took 3?ish hours, better than flutter(3 days), time to work.
 'r' press R to reload the app
 'c' press C to clear the console
+It should also refresh on save
+
+First we need to add some dummy data for exercises, 'exercises.json' it's an array, every item in it is an object with multiple { key: value } pairs
+{} called portals to access JS variables use curly braces {exercise.name} #to get the exercise name and display it as an expression
+<Text style={{ fontSize: 24, fontWeight: 'bold'}}>{exercises.name}</Text> #how to style in ReactNative, style= camelCase
