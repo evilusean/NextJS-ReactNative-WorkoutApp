@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, FlatList } from "react-native";
 import exercises from "./assets/data/exercises.json";
 
 export default function App() {
@@ -7,12 +7,20 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.exerciseContainer}>
-        <Text style={styles.exerciseName}>{exercises.name}</Text>
-        <Text style={styles.exerciseSubtitle}>
-          {exercises.muscle.toUpperCase()} | {exercises.equipment.toUpperCase()}
-        </Text>
-      </View>
+      <FlatList
+        data={exercises}
+        renderItem={() => {
+          return (
+            <View style={styles.exerciseContainer}>
+              <Text style={styles.exerciseName}>{exercises.name}</Text>
+              <Text style={styles.exerciseSubtitle}>
+                {exercises.muscle.toUpperCase()} |{" "}
+                {exercises.equipment.toUpperCase()}
+              </Text>
+            </View>
+          );
+        }}
+      />
 
       <StatusBar style="auto" />
     </View>
