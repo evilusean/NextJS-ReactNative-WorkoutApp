@@ -103,9 +103,12 @@ https://docs.expo.dev/router/introduction/
 https://docs.expo.dev/router/installation/#manual-installation
 Expo Router is built on top of React Navigation is the first file based navigation system for React Native Apps, it works by using a specific file structure similar to NextJS
 npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar #will install expo router and all dependancies from terminal
+npx expo install react-native-web react-dom #will install web dependancies
+'app.json' added '"scheme": "workouts",' '"bundler": "metro"'
+'package.json' changed "main": '"expo-router/entry"'
+modified 'babel.config.js', nvm already added.
 
-
-
+60:00===============================================================================================================================================================================================================================
 
 
 
