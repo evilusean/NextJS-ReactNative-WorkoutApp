@@ -88,10 +88,14 @@ function ExerciseListItem({ item }) {
         data={exercises}
         renderItem={({ item }) => <ExerciseListItem item={item} />}
       /> #will now render our custom component with all items declared and destructured in the props
-
-
-
-
+moved our component to 'src / component / ExerciseListItem.jsx', fixed CSS, only need it in one place, component CSS goes with the compoonent, container with container
+contentContainerStyle={{ gap: 10 }} #new property, creates boxes that look wayyyy better than padding or margin
+every time you render through a flatlist, or an array with a list of items, you should always give them a key/id property, in order to cache and rerender properly
+keyExtractor={(item) => item.id} #keyExtractor is an inbuilt function you can use to map keys/ids, will not work if you have duplicate Id values, must be unique
+keyExtractor={(item, index) => item.name + index} #it can also take index position, and even if a name is duplicated, it will take the index as well
+subValue: {
+    textTransform: "capitalize",
+  }, #allows us to capitalize any text with the <Text style={styles.subValue}>{item.muscle}</Text>
 
 
 
