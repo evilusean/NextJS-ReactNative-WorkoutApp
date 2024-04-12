@@ -43,6 +43,7 @@ Finally, we got our app to open on the simphone, only took 3?ish hours, better t
 'r' press R to reload the app
 'c' press C to clear the console
 It should also refresh on save
+To run simphone go into 'android-studio'/bin and open a terminal run './studio.sh' to open again
 
 First we need to add some dummy data for exercises, 'exercises.json' it's an array, every item in it is an object with multiple { key: value } pairs
 {} called portals to access JS variables use curly braces {exercise.name} #to get the exercise name and display it as an expression
@@ -65,15 +66,28 @@ FlatList #allows us to render multiple items, used to manage and render properti
           return (
             <View style={styles.exerciseContainer}> #tells flatlist what data to render, used as a function, will render our execises container
       );}}/>
-
-
-
-
-
-
-
-
-
+after fixing android studio and simphone, now we are rendering all the same items, every exercise(plural) is a bicep exercise. fixed this below by adding 'props' to render item and our {} display tags
+renderItem={(props) => {
+<Text style={styles.exerciseName}>{props.item.name}</Text>
+you can destructure by adding {}, like below, will simplify 'props.item.name'  to 'item.name'
+renderItem={({ item })
+<Text style={styles.exerciseName}>{item.name}</Text>
+we now need to create a custom component to render each item, same as react, what we have works - but is not best practice
+you can declare a custom component with 'function' or '=>' start with a Capital letter, be descriptive, 
+function ExerciseListItem({ item }) {
+  return (
+    <View style={styles.exerciseContainer}>
+      <Text style={styles.exerciseName}>{item.name}</Text>
+      <Text style={styles.exerciseSubtitle}>
+        {item.muscle.toUpperCase()} | {item.equipment.toUpperCase()}
+      </Text>
+    </View>
+  );
+}
+<FlatList
+        data={exercises}
+        renderItem={({ item }) => <ExerciseListItem item={item} />}
+      /> #will now render our custom component with all items declared and destructured in the props
 
 
 
