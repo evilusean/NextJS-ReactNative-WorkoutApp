@@ -1,6 +1,6 @@
-import exercises from "../../assets/data/exercises.json";
+import { StyleSheet, Text, View } from "react-native";
 
-function ExerciseListItem({ item }) {
+export default function ExerciseListItem({ item }) {
   return (
     <View style={styles.exerciseContainer}>
       <Text style={styles.exerciseName}>{item.name}</Text>
@@ -10,3 +10,12 @@ function ExerciseListItem({ item }) {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "gainsboro",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});
