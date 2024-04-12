@@ -8,6 +8,7 @@ export default function App() {
     <View style={styles.container}>
       <FlatList
         data={exercises}
+        contentContainerStyle={{ gap: 10 }}
         renderItem={({ item }) => <ExerciseListItem item={item} />}
       />
       <StatusBar style="auto" />
@@ -21,5 +22,6 @@ const styles = StyleSheet.create({
     backgroundColor: "gainsboro",
     alignItems: "center",
     justifyContent: "center",
+    paddingTop: 70,
   },
 });
