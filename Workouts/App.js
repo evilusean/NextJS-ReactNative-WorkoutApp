@@ -22,17 +22,4 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  exerciseContainer: {
-    backgroundColor: "#fff",
-    padding: 10,
-    borderRadius: 10,
-    gap: 5,
-  },
-  exerciseName: {
-    fontSize: 24,
-    fontWeight: "500",
-  },
-  exerciseSubtitle: {
-    color: "dimgray",
-  },
 });

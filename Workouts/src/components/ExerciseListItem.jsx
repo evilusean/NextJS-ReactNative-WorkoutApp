@@ -12,10 +12,17 @@ export default function ExerciseListItem({ item }) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "gainsboro",
-    alignItems: "center",
-    justifyContent: "center",
+  exerciseContainer: {
+    backgroundColor: "#fff",
+    padding: 10,
+    borderRadius: 10,
+    gap: 5,
+  },
+  exerciseName: {
+    fontSize: 24,
+    fontWeight: "500",
+  },
+  exerciseSubtitle: {
+    color: "dimgray",
   },
 });
