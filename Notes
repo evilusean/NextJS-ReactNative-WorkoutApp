@@ -137,7 +137,7 @@ React Navigation Docs:
 https://reactnavigation.org/docs/getting-started
 <Stack.Screen options={{ title: exercise.name }} /> # will also display dynamic name
 
-
+1:30:00=============================================================================================================================================================================================================================
 
 
 
