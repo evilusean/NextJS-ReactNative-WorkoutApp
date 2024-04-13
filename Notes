@@ -123,8 +123,19 @@ import { Link } from "expo-router"; #allows us to link to other pages in our app
 <Pressable style={styles.exerciseContainer}> #Pressable is similar to view, but can use the onPress event, and will allow us to use our wrapped <Link>
 import { useLocalSearchParams } from "expo-router"; #will allow us to get details for our page
 <Link href={`/${item.name}`} asChild> #will now link dynamically to our exercise.name, and will be URL encoded
-
-
+created new src / app / '_layout.jsx' #will be applied to every file/screen/page - for headers and footers, and global providers
+import { Slot } from "expo-router"; #will simply render the screen(of other pages)
+import { Stack } from "expo-router"; #will render the page(slot) but also allow a header / with navigation
+export default function RootLayout() {
+  return (
+    <Stack>
+      <Stack.Screen name="Index" options={{ title: 'Exercises '}} />
+    </Stack>
+  );
+} #will allow us to add titles, to our main page it will display 'Index', when we click an option it will display 'Exercises'
+React Navigation Docs:
+https://reactnavigation.org/docs/getting-started
+<Stack.Screen options={{ title: exercise.name }} /> # will also display dynamic name
 
 
 
