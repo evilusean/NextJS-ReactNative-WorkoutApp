@@ -109,6 +109,32 @@ npx expo install react-native-web react-dom #will install web dependancies
 modified 'babel.config.js', nvm already added.
 
 60:00===============================================================================================================================================================================================================================
+First things first, now that we have routing, we need a homescreen, moved all of our work from starting 'App.js' to 'index.js'
+created new folder src / app / 'index.js'
+React Native Colors:
+https://reactnative.dev/docs/colors
+React Native Shadow Generator:
+https://ethercreative.github.io/react-native-shadow-generator/
+Created new page, src / app / 'exercise.js' to hold all the exercise details, can get to it easier through browser, 'localhost:8081/exercise' to navigate to it
+import { Link } from "expo-router"; #allows us to link to other pages in our app
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
