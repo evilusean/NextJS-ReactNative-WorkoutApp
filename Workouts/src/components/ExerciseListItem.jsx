@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 10,
     gap: 5,
+    marginHorizontal: 2,
 
     //Shadow
 
