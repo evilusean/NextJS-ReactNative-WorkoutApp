@@ -117,12 +117,12 @@ React Native Shadow Generator:
 https://ethercreative.github.io/react-native-shadow-generator/
 Created new page, src / app / 'exercise.js' to hold all the exercise details, can get to it easier through browser, 'localhost:8081/exercise' to navigate to it
 import { Link } from "expo-router"; #allows us to link to other pages in our app
-
-
-
-
-
-
+<Link href={'/exercise'} style={styles.exerciseName}>{item.name}</Link> #A link is similar to a text component, or <a>, requires an href={}, this will link to our newly built exercise page
+<Link href={"/exercise"} asChild> #will allow us to wrap our entire container, so we can click anywhere and still go to the page
+  when you wrap a container in a <Link>, ensure that the child has an onPress event
+<Pressable style={styles.exerciseContainer}> #Pressable is similar to view, but can use the onPress event, and will allow us to use our wrapped <Link>
+import { useLocalSearchParams } from "expo-router"; #will allow us to get details for our page
+<Link href={`/${item.name}`} asChild> #will now link dynamically to our exercise.name, and will be URL encoded
 
 
 
