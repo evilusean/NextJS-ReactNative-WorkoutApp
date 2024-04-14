@@ -10,7 +10,7 @@ export default function ExerciseDetailsScreen() {
     return <Text>Exercise not found</Text>;
   }
   return (
-    <ScrollView styles={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}>
       <Stack.Screen options={{ title: exercise.name }} />
 
       <View style={styles.panel}>
@@ -21,9 +21,11 @@ export default function ExerciseDetailsScreen() {
         </Text>
       </View>
       <View style={styles.panel}>
-        <Text style={styles.instructions}>{exercise.instructions}</Text>
+        <Text style={styles.instructions} numberofLines={3}>
+          {exercise.instructions}
+        </Text>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
