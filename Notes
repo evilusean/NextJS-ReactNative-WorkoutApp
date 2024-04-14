@@ -148,6 +148,9 @@ const [isInstructionExpanded, setIsInstructionExpanded] = useState(false); # 2 v
 to update a variable, you should always use a setter, never use the variable directly
 Now we need to change the 'See More' to 'See Less' if it is expanded, you remove the static text and add a {Javascript Expression} to accomplish this based on the value of our variable, like below
 {isInstructionExpanded ? 'See Less' : 'See More'} #ternary operator, if the value is true 'See Less', if false 'See More'
+When we put styles in the root layout, they will be on every page and overwrite each individual pages CSS, they take priority
+Tabs(displays our pages as tabs) Vs Stack(Displays our pages with navigation features - back button, swipe to navigate, etc) Vs Slot (slot displays our pages with no navigation features)
+If you want shared behaviour between screens like listen for notifications, custom view, popups, etc you would do it in the root layout
 
 Next we need to create an account on API-Ninjas:
 https://api-ninjas.com/
@@ -155,9 +158,11 @@ And get the exercises from their api using stepzen GraphQL API:
 https://api-ninjas.com/api/exercises
 IBM Stepzen:
 https://stepzen.com/
-When we put styles in the root layout, they will be on every page and overwrite each individual pages CSS, they take priority
-Tabs(displays our pages as tabs) Vs Stack(Displays our pages with navigation features - back button, swipe to navigate, etc) Vs Slot (slot displays our pages with no navigation features)
-If you want shared behaviour between screens like listen for notifications, custom view, popups, etc you would do it in the root layout
+https://www.ibm.com/docs/en/stepzen
+npm install -g stepzen #will install stepzen globally on our machine
+Account created, we will need an admin key and API key
+stepzen login #will ask us for our credentials
+We are going to build a GraphQL API, combine different resources, connect it to a custom database using IBM Stepzen, 
 
 
 
