@@ -138,15 +138,21 @@ https://reactnavigation.org/docs/getting-started
 <Stack.Screen options={{ title: exercise.name }} /> # will also display dynamic name
 
 1:30:00=============================================================================================================================================================================================================================
+Currently if the exercise has a lot of instructions, it is not scrollable, because we have not specified it, 'import { ScrollView } from 'react-native';' will allow us to scroll... through our view >.>
+<ScrollView styles={styles.container}> #will allow us to scroll, but we will lose our gap
+<ScrollView contentContainerStyle={styles.container}> #will give us our gap back by using the 'contentContainerStyle'
+Next we will need to create a 'See More' button, which will require a state variable to track if the button is pressed: 'import { useState } from 'react;'
+const [isInstructionExpanded, setIsInstructionExpanded] = useState(false); # 2 values, first is the actual value of the state, the second is a function, a setter which can update the value
+<Text style={styles.instructions} numberofLines={isInstructionExpanded ? 0 : 3}> #if expanded will show '0' or all lines, if not expanded will show 3
+<Text onPress={()=> setIsInstructionExpanded(!isInstructionExpanded)} style={styles.seeMore}>See More</Text> # onPress Event, will use our setter to change the expanded variable '!' = not 
+to update a variable, you should always use a setter, never use the variable directly
+Now we need to change the 'See More' to 'See Less' if it is expanded, you remove the static text and add a {Javascript Expression} to accomplish this based on the value of our variable, like below
+{isInstructionExpanded ? 'See Less' : 'See More'} #ternary operator, if the value is true 'See Less', if false 'See More'
 
-
-
-
-
-
-
-
-
+Next we need to create an account on API-Ninjas:
+https://api-ninjas.com/
+And get the exercises from their api using stepzen GraphQL API:
+https://api-ninjas.com/api/exercises
 
 
 
