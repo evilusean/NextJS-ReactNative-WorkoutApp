@@ -30,6 +30,11 @@ const styles = StyleSheet.create({
   container: {
     padding: 10,
   },
+  panel: {
+    backgroundColor: "white",
+    padding: 10,
+    borderRadius: 5,
+  },
   exerciseName: {
     fontSize: 24,
     fontWeight: "500",
