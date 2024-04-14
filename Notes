@@ -153,6 +153,15 @@ Next we need to create an account on API-Ninjas:
 https://api-ninjas.com/
 And get the exercises from their api using stepzen GraphQL API:
 https://api-ninjas.com/api/exercises
+IBM Stepzen:
+https://stepzen.com/
+When we put styles in the root layout, they will be on every page and overwrite each individual pages CSS, they take priority
+Tabs(displays our pages as tabs) Vs Stack(Displays our pages with navigation features - back button, swipe to navigate, etc) Vs Slot (slot displays our pages with no navigation features)
+If you want shared behaviour between screens like listen for notifications, custom view, popups, etc you would do it in the root layout
+
+
+
+
 
 
 
