@@ -12,11 +12,15 @@ export default function ExerciseDetailsScreen() {
   return (
     <View styles={styles.container}>
       <Stack.Screen options={{ title: exercise.name }} />
-      <Text style={styles.exerciseName}>{exercise.name}</Text>
-      <Text style={styles.exerciseSubtitle}>
-        <Text style={styles.subValue}>{exercise.muscle}</Text>
-        <Text style={styles.subValue}> {exercise.equipment}</Text>
-      </Text>
+
+      <View style={styles.panel}>
+        <Text style={styles.exerciseName}>{exercise.name}</Text>
+        <Text style={styles.exerciseSubtitle}>
+          <Text style={styles.subValue}>{exercise.muscle}</Text>
+          <Text style={styles.subValue}> {exercise.equipment}</Text>
+        </Text>
+      </View>
+
       <Text style={styles.instructions}>{exercise.instructions}</Text>
     </View>
   );
