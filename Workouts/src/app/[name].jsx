@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 import exercises from "../../assets/data/exercises.json";
 import { Stack } from "expo-router";
@@ -10,7 +10,7 @@ export default function ExerciseDetailsScreen() {
     return <Text>Exercise not found</Text>;
   }
   return (
-    <View styles={styles.container}>
+    <ScrollView styles={styles.container}>
       <Stack.Screen options={{ title: exercise.name }} />
 
       <View style={styles.panel}>
@@ -20,8 +20,9 @@ export default function ExerciseDetailsScreen() {
           <Text style={styles.subValue}> {exercise.equipment}</Text>
         </Text>
       </View>
-
-      <Text style={styles.instructions}>{exercise.instructions}</Text>
+      <View style={styles.panel}>
+        <Text style={styles.instructions}>{exercise.instructions}</Text>
+      </View>
     </View>
   );
 }
@@ -29,6 +30,7 @@ export default function ExerciseDetailsScreen() {
 const styles = StyleSheet.create({
   container: {
     padding: 10,
+    gap: 10,
   },
   panel: {
     backgroundColor: "white",
