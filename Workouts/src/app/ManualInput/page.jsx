@@ -1,5 +1,5 @@
-import React from "react";
-import { View, TextInput, Button } from "react-native";
+import React, { useState } from "react";
+import { View, TextInput, Button, Picker } from "react-native";
 import { Formik } from "formik";
 import axios from "axios";
 
@@ -43,21 +43,6 @@ const ExerciseForm = () => {
             value={values.equipment}
             placeholder="Equipment"
           />
-          {/* Add more TextInput fields for type, muscle, equipment, difficulty, and instructions 
-          FIX selectedValue={selectedType} for TYPE / DIFFICULTY / MUSCLE USING SAME VARIABLE NAME
-          FIX USE STATE AT TOP, SOME MISSING, ("")
-          CHECK INITIAL VALUES
-          CHECK FORMIK - FIRST TIME ENCOUNTERED - READ DOCS
-          READ DOCS ON USESTATE - WE AREN'T USED TO USING IT YET
-          CHECK onValueChange={(itemValue, itemIndex) =>
-                setSelectedMuscle(itemValue) FOR EACH, REPEATED VARIABLE USE MIGHT CLASH
-          CONNECT API TO MONGODB, 
-          IMPORT TO LAYOUT, CREATE A WAY TO ADD IN NEW EXERCISES AND GET TO THIS SCREEN/URL
-          TEST DB
-          SEE IF WE CAN USE AXIOS OR NEED MONGOOSE
-          FUTURE SEAN PROBLEMS, HALF WAY THERE
-          AFTER IT WORKS, ADD EXERCISES
-          */}
           <Text>Select exercise type:</Text>
           <Picker
             selectedValue={selectedType}
@@ -117,5 +102,24 @@ const ExerciseForm = () => {
     </Formik>
   );
 };
+{
+  /* Add more TextInput fields for type, muscle, equipment, difficulty, and instructions 
+          FIX selectedValue={selectedType} for TYPE / DIFFICULTY / MUSCLE USING SAME VARIABLE NAME
+          FIX USE STATE AT TOP, SOME MISSING, ("")
+          ADD CSS / styles={}
+          CHECK INITIAL VALUES, HOW DOES "" WORK WITH DROPDOWNS, MAYBE CHANGE DEFAULT
+          CHECK FORMIK - FIRST TIME ENCOUNTERED - READ DOCS
+          READ DOCS ON USESTATE - WE AREN'T USED TO USING IT YET
+          CHECK onValueChange={(itemValue, itemIndex) =>
+                setSelectedMuscle(itemValue) FOR EACH, REPEATED VARIABLE USE MIGHT CLASH
+          CONNECT API TO MONGODB, 
+          IMPORT TO LAYOUT, CREATE A WAY TO ADD IN NEW EXERCISES AND GET TO THIS SCREEN/URL
+          EDIT / DELETE FUNCTIONALITY
+          TEST DB, FIGURE OUT HOW TO RAISE AN ERROR IF VALUES ARE NULL
+          SEE IF WE CAN USE AXIOS OR NEED MONGOOSE/PRISMA
+          FUTURE SEAN PROBLEMS, HALF WAY THERE
+          AFTER IT WORKS, ADD EXERCISES
+          */
+}
 
 export default ExerciseForm;
