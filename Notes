@@ -163,7 +163,7 @@ npm install -g stepzen #will install stepzen globally on our machine
 Account created, we will need an admin key and API key
 stepzen login #will ask us for our credentials
 We are going to build a GraphQL API, combine different resources, connect it to a custom database using IBM Stepzen, 
-
+stepzen/ibm is garbage trash -multi bilolion dollar company - 
 
 
 
