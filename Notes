@@ -168,10 +168,16 @@ I created 2 accounts, can't log in with either, connected github, rajesh must've
 going to need to build my own API endpoint, or create my own API call, or import exercises manually(taking multiple hours/days longer than what should be the case) - at least I didn't pay for this trash
 no saaaaarrrrrrr I did not redeem, I can't log in with credentials, when I try to log in - it keeps circling me back and forth between 2 websites stepzen and ibm - I will have to build my own, non-sh!t covered code - 
 will need to build an input page, with an ORM, using MongoDB+Mongoose, and figure out a way to fetch data with the API or just manually input a bunch of exercises until we can move forward(hours wasted because of above)
+
+Instead of just following along, I now need to build an input page, read docs, connect that input page to mongoDB, set up an ORM, make an API, create a fetch, test that, input dozens of exercises, create a way to create/edit/delete
+  then hook CRUD up to DB, then add new page(s) to my main app, then test that, fix CSS, post fetched data to main page, and more... at least I can reuse the create exercise functionality when I actually get back in da gym(escape)
 MongoDB for React Native:
 https://www.mongodb.com/docs/atlas/app-services/tutorial/react-native/
-
-
-
+https://www.mongodb.com/docs/atlas/
+https://benestudio.co/mongodb-app-services-react-native/
+React Native Docs:
+https://reactnative.dev/docs/getting-started
+NextJS Docs:
+https://nextjs.org/docs
 
 
