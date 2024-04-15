@@ -48,6 +48,7 @@ const ExerciseForm = () => {
           FIX USE STATE AT TOP, SOME MISSING, ("")
           CHECK INITIAL VALUES
           CHECK FORMIK - FIRST TIME ENCOUNTERED - READ DOCS
+          READ DOCS ON USESTATE - WE AREN'T USED TO USING IT YET
           CHECK onValueChange={(itemValue, itemIndex) =>
                 setSelectedMuscle(itemValue) FOR EACH, REPEATED VARIABLE USE MIGHT CLASH
           CONNECT API TO MONGODB, 
@@ -86,6 +87,7 @@ const ExerciseForm = () => {
               <Picker.Item label="Delts" value="delts" />
               <Picker.Item label="Traps" value="traps" />
               <Picker.Item label="Lats" value="lats" />
+              <Picker.Item label="Full-Body" value="full-body" />
             </Picker>
           </View>
           <View>
