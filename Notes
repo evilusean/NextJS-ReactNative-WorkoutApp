@@ -197,3 +197,4 @@ MongoDB docs recomend using SDK with React Native, mongoose is for react I guess
     - since we will be working out in Japan we should have internet at all times, and we can use googlesheets to get a MVP out - I'll be the only one using it - don't need authentication(nice to have) or scalability
     Maybe save locally on a 'workout sesh page' and then have an 'upload workout' that stores the workout to google sheets all at once, what about when I want to just do 30 situps/pushups real quick? keep page open?
   need to do alot of reading to figure out the easiest way to get this done, I like saving it as a google sheet, that I would have access to on any device, without querying a DB
+  save exercises locally, using 'exercises.json', it should update everytime we open the app, can still use our create exercise page, save each new exercise as a json object
