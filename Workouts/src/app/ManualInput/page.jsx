@@ -5,7 +5,9 @@ import axios from "axios";
 
 const ExerciseForm = () => {
   const [selectedMuscle, setSelectedMuscle] = useState("");
-  const [selectedType, setSelectedType] = useState(""); // Add state for selected exercise type
+  const [selectedType, setSelectedType] = useState("");
+  const [selectedDifficulty, setSelectedDifficulty] = useState(""); // Add state for selected exercise type
+  const [selectedEquipment, setSelectedEquipment] = useState("");
   return (
     <Formik
       initialValues={{
@@ -35,7 +37,23 @@ const ExerciseForm = () => {
             value={values.name}
             placeholder="Name"
           />
-          {/* Add more TextInput fields for type, muscle, equipment, difficulty, and instructions */}
+          <TextInput
+            onChangeText={handleChange("equipment")}
+            onBlur={handleBlur("equipment")}
+            value={values.equipment}
+            placeholder="Equipment"
+          />
+          {/* Add more TextInput fields for type, muscle, equipment, difficulty, and instructions 
+          FIX selectedValue={selectedType} for TYPE / DIFFICULTY / MUSCLE USING SAME VARIABLE NAME
+          FIX USE STATE AT TOP, SOME MISSING, ("")
+          CHECK INITIAL VALUES
+          CHECK onValueChange={(itemValue, itemIndex) =>
+                setSelectedMuscle(itemValue) FOR EACH, REPEATED VARIABLE USE MIGHT CLASH
+          CONNECT API TO MONGODB, 
+          IMPORT TO LAYOUT, CREATE A WAY TO ADD IN NEW EXERCISES AND GET TO THIS SCREEN/URL
+          TEST DB
+          FUTURE SEAN PROBLEMS, HALF WAY THERE, SEE IF WE CAN USE MONGOOSE OR AXIOS
+          */}
           <Text>Select exercise type:</Text>
           <Picker
             selectedValue={selectedType}
@@ -69,8 +87,10 @@ const ExerciseForm = () => {
           <View>
             <Text>Select difficulty:</Text>
             <Picker
-              selectedValue={values.difficulty}
-              onValueChange={handleChange("difficulty")}
+              selectedValue={selectedDifficulty}
+              onValueChange={(itemValue, itemIndex) =>
+                setSelectedDifficulty(itemValue)
+              }
             >
               <Picker.Item label="Beginner" value="beginner" />
               <Picker.Item label="Intermediate" value="intermediate" />
