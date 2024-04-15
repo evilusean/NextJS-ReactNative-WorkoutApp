@@ -56,6 +56,17 @@ const ExerciseForm = () => {
               <Picker.Item label="Lats" value="lats" />
             </Picker>
           </View>
+          <View>
+            <Text>Select difficulty:</Text>
+            <Picker
+              selectedValue={values.difficulty}
+              onValueChange={handleChange("difficulty")}
+            >
+              <Picker.Item label="Beginner" value="beginner" />
+              <Picker.Item label="Intermediate" value="intermediate" />
+              <Picker.Item label="Expert" value="expert" />
+            </Picker>
+          </View>
           <TextInput
             multiline={true}
             numberOfLines={3} // Set the number of lines to 3 for a 3-line high box
