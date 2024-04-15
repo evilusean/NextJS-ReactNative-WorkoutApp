@@ -168,10 +168,33 @@ I created 2 accounts, can't log in with either, connected github, rajesh must've
 going to need to build my own API endpoint, or create my own API call, or import exercises manually(taking multiple hours/days longer than what should be the case) - at least I didn't pay for this trash
 no saaaaarrrrrrr I did not redeem, I can't log in with credentials, when I try to log in - it keeps circling me back and forth between 2 websites stepzen and ibm - I will have to build my own, non-sh!t covered code - 
 will need to build an input page, with an ORM, using MongoDB+Mongoose, and figure out a way to fetch data with the API or just manually input a bunch of exercises until we can move forward(hours wasted because of above)
+
+Instead of just following along, I now need to build an input page, read docs, connect that input page to mongoDB, set up an ORM, make an API, create a fetch, test that, input dozens of exercises, create a way to create/edit/delete
+  then hook CRUD up to DB, then add new page(s) to my main app, then test that, fix CSS, post fetched data to main page, and more... at least I can reuse the create exercise functionality when I actually get back in da gym(escape)
 MongoDB for React Native:
 https://www.mongodb.com/docs/atlas/app-services/tutorial/react-native/
-
-
-
-
-
+https://www.mongodb.com/docs/atlas/
+https://benestudio.co/mongodb-app-services-react-native/
+MongoDB React Native SDK:
+https://www.mongodb.com/docs/atlas/device-sdks/sdk/react-native/
+https://www.mongodb.com/docs/atlas/device-sdks/sdk/react-native/app-services/query-mongodb/
+https://github.com/realm/realm-js/tree/main/examples/rn-todo-list
+React Native Docs:
+https://reactnative.dev/docs/getting-started
+NextJS Docs:
+https://nextjs.org/docs
+Use GoogleSheets for saving workouts (MVP):
+https://medium.com/ibjects/simplest-approach-to-build-a-react-native-app-with-google-sheets-api-3f3f89a20079
+https://www.reddit.com/r/reactnative/comments/qld6bu/using_google_sheets_as_a_db_on_react_native/
+https://www.npmjs.com/package/google-spreadsheet
+https://www.freecodecamp.org/news/react-and-googlesheets/
+https://sheet.best/
+MongoDB docs recomend using SDK with React Native, mongoose is for react I guess? I want it to store data when offline and upload when it has a connection to MongoDB, backing up my workouts, 
+  Maybe we can store exercises/workouts locally and create an upload API to the DB? how would that work from browser to iOs to android? How would that work if we host it on vercel for free? does vercel store data?
+  I'm going to be primarily using it from my phone at the gym, maybe we don't need to store locally and can just depend on a connection? I've never used SDK, need to do alot of reading,
+  It would be so much easier if we could just get the functionality of an excell spreadsheet where each row is a day, and each column is a workout exercise + reps , can we connect google sheets somehow? that would work on all devices?
+  Or maybe make the exercises use MongoDB, because we already created the Create page on the app, just need to connect API to download the exercise list to use anywhere from any device
+    - since we will be working out in Japan we should have internet at all times, and we can use googlesheets to get a MVP out - I'll be the only one using it - don't need authentication(nice to have) or scalability
+    Maybe save locally on a 'workout sesh page' and then have an 'upload workout' that stores the workout to google sheets all at once, what about when I want to just do 30 situps/pushups real quick? keep page open?
+  need to do alot of reading to figure out the easiest way to get this done, I like saving it as a google sheet, that I would have access to on any device, without querying a DB
+  save exercises locally, using 'exercises.json', it should update everytime we open the app, can still use our create exercise page, save each new exercise as a json object
