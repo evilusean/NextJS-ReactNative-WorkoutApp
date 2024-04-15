@@ -47,11 +47,13 @@ const ExerciseForm = () => {
           FIX selectedValue={selectedType} for TYPE / DIFFICULTY / MUSCLE USING SAME VARIABLE NAME
           FIX USE STATE AT TOP, SOME MISSING, ("")
           CHECK INITIAL VALUES
+          CHECK FORMIK - FIRST TIME ENCOUNTERED - READ DOCS
           CHECK onValueChange={(itemValue, itemIndex) =>
                 setSelectedMuscle(itemValue) FOR EACH, REPEATED VARIABLE USE MIGHT CLASH
           CONNECT API TO MONGODB, 
           IMPORT TO LAYOUT, CREATE A WAY TO ADD IN NEW EXERCISES AND GET TO THIS SCREEN/URL
           TEST DB
+          SEE IF WE CAN USE AXIOS OR NEED MONGOOSE
           FUTURE SEAN PROBLEMS, HALF WAY THERE, SEE IF WE CAN USE MONGOOSE OR AXIOS
           */}
           <Text>Select exercise type:</Text>
