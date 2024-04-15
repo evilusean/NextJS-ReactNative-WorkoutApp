@@ -200,3 +200,19 @@ MongoDB docs recomend using SDK with React Native, mongoose is for react I guess
   save exercises locally, using 'exercises.json', it should update everytime we open the app, can still use our create exercise page, save each new exercise as a json object
 ERROR: We can not write a JSON file if we we are hosting on Vercel(serverless), we NEED to save our exercises on MongoDB
 https://github.com/orgs/vercel/discussions/456
+Maybe cache data locally until we are done workout, and upload as one line in google sheets 'Date / #-Exercise1 / #-Exercise2 / ...' that way cache can save any calisthenics we do during the day even if we close app
+
+Installing Realm/MongoDB Atlas SDK for React Native:
+https://www.mongodb.com/docs/atlas/device-sdks/sdk/react-native/
+https://www.mongodb.com/docs/atlas/device-sdks/sdk/react-native/install/#std-label-react-native-install
+npm install realm #from root directory in terminal, will install realm
+Install Hermes:
+https://reactnative.dev/docs/hermes
+Convert to Typescript(Optional):
+https://reactnative.dev/docs/typescript#adding-typescript-to-an-existing-project
+npm install @realm/react #installs the @realm/react Library @realm/react is an npm package that streamlines common SDK operations like querying, writing to a database, and listening for object change notifications. 
+  This reduces boilerplate code, like creating your own listeners and state management.
+npm start #Runs app
+import Realm from "realm"; #import realm
+
+
