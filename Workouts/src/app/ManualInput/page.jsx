@@ -5,6 +5,7 @@ import axios from "axios";
 
 const ExerciseForm = () => {
   const [selectedMuscle, setSelectedMuscle] = useState("");
+  const [selectedType, setSelectedType] = useState(""); // Add state for selected exercise type
   return (
     <Formik
       initialValues={{
@@ -35,6 +36,15 @@ const ExerciseForm = () => {
             placeholder="Name"
           />
           {/* Add more TextInput fields for type, muscle, equipment, difficulty, and instructions */}
+          <Text>Select exercise type:</Text>
+          <Picker
+            selectedValue={selectedType}
+            onValueChange={(itemValue, itemIndex) => setSelectedType(itemValue)}
+          >
+            <Picker.Item label="Cardio" value="cardio" />
+            <Picker.Item label="Strength" value="strength" />
+            <Picker.Item label="Stretch" value="stretch" />
+          </Picker>
           <View>
             <Text>Select a muscle group:</Text>
             <Picker
