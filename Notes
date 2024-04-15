@@ -175,9 +175,16 @@ MongoDB for React Native:
 https://www.mongodb.com/docs/atlas/app-services/tutorial/react-native/
 https://www.mongodb.com/docs/atlas/
 https://benestudio.co/mongodb-app-services-react-native/
+MongoDB React Native SDK:
+https://www.mongodb.com/docs/atlas/device-sdks/sdk/react-native/
+https://www.mongodb.com/docs/atlas/device-sdks/sdk/react-native/app-services/query-mongodb/
+https://github.com/realm/realm-js/tree/main/examples/rn-todo-list
 React Native Docs:
 https://reactnative.dev/docs/getting-started
 NextJS Docs:
 https://nextjs.org/docs
-
+MongoDB docs recomend using SDK with React Native, mongoose is for react I guess? I want it to store data when offline and upload when it has a connection to MongoDB, backing up my workouts, 
+  Maybe we can store exercises/workouts locally and create an upload API to the DB? how would that work from browser to iOs to android? How would that work if we host it on vercel for free? does vercel store data?
+  I'm going to be primarily using it from my phone at the gym, maybe we don't need to store locally and can just depend on a connection? I've never used SDK, need to do alot of reading,
+  It would be so much easier if we could just get the functionality of an excell spreadsheet where each row is a day, and each column is a workout exercise + reps , can we connect google sheets somehow? that would work on all devices?
 
