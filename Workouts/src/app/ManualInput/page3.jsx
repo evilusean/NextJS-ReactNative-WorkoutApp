@@ -1,13 +1,41 @@
 import React, { useState } from "react";
-import { View, TextInput, Button, Picker } from "react-native";
+import { View, TextInput, Button, Picker, Text } from "react-native";
 import { Formik } from "formik";
-import axios from "axios";
+import * as FileSystem from "expo-file-system";
 
 const ExerciseForm = () => {
   const [selectedMuscle, setSelectedMuscle] = useState("");
   const [selectedType, setSelectedType] = useState("");
-  const [selectedDifficulty, setSelectedDifficulty] = useState(""); // Add state for selected exercise type
+  const [selectedDifficulty, setSelectedDifficulty] = useState("");
   const [selectedEquipment, setSelectedEquipment] = useState("");
+
+  const { documentDirectory, readAsStringAsync, writeAsStringAsync } =
+    FileSystem;
+
+  const appendExerciseDataToFile = async (newValues) => {
+    try {
+      // Read existing exercise data
+      const fileUri = documentDirectory + "exercises.json";
+      let existingData = await readAsStringAsync(fileUri);
+
+      // Parse existing exercise data into a JavaScript object
+      let exerciseData = existingData ? JSON.parse(existingData) : [];
+
+      // Append new data to the existing JavaScript object
+      exerciseData = [...exerciseData, ...newValues];
+
+      // Convert the updated data back to a JSON string
+      const updatedData = JSON.stringify(exerciseData);
+
+      // Write the updated content back to the file
+      await writeAsStringAsync(fileUri, updatedData);
+
+      console.log("Exercise data appended and saved successfully.");
+    } catch (error) {
+      console.error("Error appending exercise data:", error);
+    }
+  };
+
   return (
     <Formik
       initialValues={{
@@ -19,14 +47,7 @@ const ExerciseForm = () => {
         instructions: "",
       }}
       onSubmit={(values) => {
-        axios
-          .post("Your_API_Endpoint", values)
-          .then((response) => {
-            console.log("Form data sent successfully:", response.data);
-          })
-          .catch((error) => {
-            console.error("Error sending form data:", error);
-          });
+        appendExerciseDataToFile(values);
       }}
     >
       {({ handleChange, handleBlur, handleSubmit, values }) => (
@@ -46,7 +67,7 @@ const ExerciseForm = () => {
           <Text>Select exercise type:</Text>
           <Picker
             selectedValue={selectedType}
-            onValueChange={(itemValue, itemIndex) => setSelectedType(itemValue)}
+            onValueChange={(itemValue) => setSelectedType(itemValue)}
           >
             <Picker.Item label="Cardio" value="cardio" />
             <Picker.Item label="Strength" value="strength" />
@@ -57,9 +78,7 @@ const ExerciseForm = () => {
             <Text>Select a muscle group:</Text>
             <Picker
               selectedValue={selectedMuscle}
-              onValueChange={(itemValue, itemIndex) =>
-                setSelectedMuscle(itemValue)
-              }
+              onValueChange={(itemValue) => setSelectedMuscle(itemValue)}
             >
               <Picker.Item label="Core" value="core" />
               <Picker.Item label="Biceps" value="biceps" />
@@ -79,9 +98,7 @@ const ExerciseForm = () => {
             <Text>Select difficulty:</Text>
             <Picker
               selectedValue={selectedDifficulty}
-              onValueChange={(itemValue, itemIndex) =>
-                setSelectedDifficulty(itemValue)
-              }
+              onValueChange={(itemValue) => setSelectedDifficulty(itemValue)}
             >
               <Picker.Item label="Beginner" value="beginner" />
               <Picker.Item label="Intermediate" value="intermediate" />
@@ -90,7 +107,7 @@ const ExerciseForm = () => {
           </View>
           <TextInput
             multiline={true}
-            numberOfLines={3} // Set the number of lines to 3 for a 3-line high box
+            numberOfLines={3}
             onChangeText={handleChange("instructions")}
             onBlur={handleBlur("instructions")}
             value={values.instructions}
@@ -102,24 +119,5 @@ const ExerciseForm = () => {
     </Formik>
   );
 };
-{
-  /* Add more TextInput fields for type, muscle, equipment, difficulty, and instructions 
-          FIX selectedValue={selectedType} for TYPE / DIFFICULTY / MUSCLE USING SAME VARIABLE NAME
-          FIX USE STATE AT TOP, SOME MISSING, ("")
-          ADD CSS / styles={}
-          CHECK INITIAL VALUES, HOW DOES "" WORK WITH DROPDOWNS, MAYBE CHANGE DEFAULT
-          CHECK FORMIK - FIRST TIME ENCOUNTERED - READ DOCS
-          READ DOCS ON USESTATE - WE AREN'T USED TO USING IT YET
-          CHECK onValueChange={(itemValue, itemIndex) =>
-                setSelectedMuscle(itemValue) FOR EACH, REPEATED VARIABLE USE MIGHT CLASH
-          CONNECT API TO MONGODB, 
-          IMPORT TO LAYOUT, CREATE A WAY TO ADD IN NEW EXERCISES AND GET TO THIS SCREEN/URL
-          EDIT / DELETE FUNCTIONALITY
-          TEST DB, FIGURE OUT HOW TO RAISE AN ERROR IF VALUES ARE NULL
-          SEE IF WE CAN USE AXIOS OR NEED MONGOOSE/PRISMA
-          FUTURE SEAN PROBLEMS, HALF WAY THERE
-          AFTER IT WORKS, ADD EXERCISES
-          */
-}
 
 export default ExerciseForm;
