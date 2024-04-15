@@ -4,6 +4,7 @@ import { Formik } from "formik";
 import axios from "axios";
 
 const ExerciseForm = () => {
+  const [selectedMuscle, setSelectedMuscle] = useState("");
   return (
     <Formik
       initialValues={{
@@ -55,6 +56,14 @@ const ExerciseForm = () => {
               <Picker.Item label="Lats" value="lats" />
             </Picker>
           </View>
+          <TextInput
+            multiline={true}
+            numberOfLines={3} // Set the number of lines to 3 for a 3-line high box
+            onChangeText={handleChange("instructions")}
+            onBlur={handleBlur("instructions")}
+            value={values.instructions}
+            placeholder="Instructions"
+          />
           <Button title="Submit" onPress={handleSubmit} />
         </View>
       )}
