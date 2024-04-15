@@ -34,7 +34,27 @@ const ExerciseForm = () => {
             placeholder="Name"
           />
           {/* Add more TextInput fields for type, muscle, equipment, difficulty, and instructions */}
-
+          <View>
+            <Text>Select a muscle group:</Text>
+            <Picker
+              selectedValue={selectedMuscle}
+              onValueChange={(itemValue, itemIndex) =>
+                setSelectedMuscle(itemValue)
+              }
+            >
+              <Picker.Item label="Core" value="core" />
+              <Picker.Item label="Biceps" value="biceps" />
+              <Picker.Item label="Triceps" value="triceps" />
+              <Picker.Item label="Wrist" value="wrist" />
+              <Picker.Item label="Quads" value="quads" />
+              <Picker.Item label="Chest" value="chest" />
+              <Picker.Item label="Hamstring" value="hamstring" />
+              <Picker.Item label="Glutes" value="glutes" />
+              <Picker.Item label="Delts" value="delts" />
+              <Picker.Item label="Traps" value="traps" />
+              <Picker.Item label="Lats" value="lats" />
+            </Picker>
+          </View>
           <Button title="Submit" onPress={handleSubmit} />
         </View>
       )}
