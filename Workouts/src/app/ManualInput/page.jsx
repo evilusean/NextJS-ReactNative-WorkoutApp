@@ -54,7 +54,8 @@ const ExerciseForm = () => {
           IMPORT TO LAYOUT, CREATE A WAY TO ADD IN NEW EXERCISES AND GET TO THIS SCREEN/URL
           TEST DB
           SEE IF WE CAN USE AXIOS OR NEED MONGOOSE
-          FUTURE SEAN PROBLEMS, HALF WAY THERE, SEE IF WE CAN USE MONGOOSE OR AXIOS
+          FUTURE SEAN PROBLEMS, HALF WAY THERE
+          AFTER IT WORKS, ADD EXERCISES
           */}
           <Text>Select exercise type:</Text>
           <Picker
@@ -64,6 +65,7 @@ const ExerciseForm = () => {
             <Picker.Item label="Cardio" value="cardio" />
             <Picker.Item label="Strength" value="strength" />
             <Picker.Item label="Stretch" value="stretch" />
+            <Picker.Item label="Calisthenics" value="calisthenics" />
           </Picker>
           <View>
             <Text>Select a muscle group:</Text>
