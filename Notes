@@ -221,7 +221,7 @@ stepzen import curl <api URL> #if rapminjderp from stepzen/ibm didn't screw me t
   at least the guy in tut is struggling as much as I was, SeanDenFreud, it's not just me. Except he actually got to the API key stage, video was sponsored by stepzen - smells カレーfishy - no sane man would willingly subject themselves
 after succesful import, it creates a folder 'curl' with 2 files 'index.graphql' with schema and 'stepzen.config' with API endpoint,
   everything is considered a type RootEntry {key: string} and it created a query with API ninja key in an easily accessed public file, nice. 
-
+I could just get GraphQL to work without the stinky middleman of stepzen, or just set up my DB schema the right way, many opseans,  
 
 
 
