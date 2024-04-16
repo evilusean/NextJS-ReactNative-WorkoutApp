@@ -215,4 +215,43 @@ npm install @realm/react #installs the @realm/react Library @realm/react is an n
 npm start #Runs app
 import Realm from "realm"; #import realm
 
+2:00:00=================================================================================================================================================================================================================================
+Going back to tut, finish app, see all features, will add DB after, have all docs I need to fix, will just need to manually input for testing through MongoDB, sucks but works, will be fully functional because I actually want to use
+stepzen import curl <api URL> #if rapminjderp from stepzen/ibm didn't screw me through poo code/login authenticASean shite, this is what I would need to do to use stepzen/graphQL - one line of code
+  at least the guy in tut is struggling as much as I was, SeanDenFreud, it's not just me. Except he actually got to the API key stage, video was sponsored by stepzen - smells カレーfishy - no sane man would willingly subject themselves
+after succesful import, it creates a folder 'curl' with 2 files 'index.graphql' with schema and 'stepzen.config' with API endpoint,
+  everything is considered a type RootEntry {key: string} and it created a query with API ninja key in an easily accessed public file, nice. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
