@@ -200,7 +200,7 @@ MongoDB docs recomend using SDK with React Native, mongoose is for react I guess
   save exercises locally, using 'exercises.json', it should update everytime we open the app, can still use our create exercise page, save each new exercise as a json object
 ERROR: We can not write a JSON file if we we are hosting on Vercel(serverless), we NEED to save our exercises on MongoDB
 https://github.com/orgs/vercel/discussions/456
-Maybe cache data locally until we are done workout, and upload as one line in google sheets 'Date / #-Exercise1 / #-Exercise2 / ...' that way cache can save any calisthenics we do during the day even if we close app
+Maybe cache data locally until we are done workout, and upload as one line in google sheets 'Date / #-Exercise1-Weight / #-Exercise2-Weight / ...' that way cache can save any calisthenics we do during the day even if we close app
 
 Installing Realm/MongoDB Atlas SDK for React Native:
 https://www.mongodb.com/docs/atlas/device-sdks/sdk/react-native/
@@ -222,7 +222,9 @@ stepzen import curl <api URL> #if rapminjderp from stepzen/ibm didn't screw me t
 after succesful import, it creates a folder 'curl' with 2 files 'index.graphql' with schema and 'stepzen.config' with API endpoint,
   everything is considered a type RootEntry {key: string} and it created a query with API ninja key in an easily accessed public file, nice. 
 I could just get GraphQL to work without the stinky middleman of stepzen, or just set up my DB schema the right way, many opseans,  
-
+stepzen start #After defining the schema, the next step is to deploy and run the API, will deploy the schema to the stepzen cloud, you will get a link for the GraphQL endpoint
+the reason why GraphQL API's are nice, is that you can customize the information you pull - don't want difficulty? (everything is beginner to me) simply remove it from the schema/API endpoint to change the query
+If you want to add other parameters to a query, you just need to add them ', Key: Type'  dollarsign $name will allow dynamic queries
 
 
 
