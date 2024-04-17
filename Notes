@@ -255,7 +255,7 @@ The API from API Ninjas, does not contain an ID in the schema/model, probably be
 instead of GraphQL, just use props and take what we want, destructure and use - we are literally going to be rewriting everything, even our main page, this tut was for boilolerplate - at least it got me started using React Native
 queryKey: [] #used for cacheing results and invalidating results if something is wrong
 
-
+3:00:00===============================================================================================================================================================================================================================
 
 
 
