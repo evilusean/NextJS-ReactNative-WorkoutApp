@@ -200,7 +200,7 @@ MongoDB docs recomend using SDK with React Native, mongoose is for react I guess
   save exercises locally, using 'exercises.json', it should update everytime we open the app, can still use our create exercise page, save each new exercise as a json object
 ERROR: We can not write a JSON file if we we are hosting on Vercel(serverless), we NEED to save our exercises on MongoDB
 https://github.com/orgs/vercel/discussions/456
-Maybe cache data locally until we are done workout, and upload as one line in google sheets 'Date / #-Exercise1 / #-Exercise2 / ...' that way cache can save any calisthenics we do during the day even if we close app
+Maybe cache data locally until we are done workout, and upload as one line in google sheets 'Date / #-Exercise1-Weight / #-Exercise2-Weight / ...' that way cache can save any calisthenics we do during the day even if we close app
 
 Installing Realm/MongoDB Atlas SDK for React Native:
 https://www.mongodb.com/docs/atlas/device-sdks/sdk/react-native/
@@ -214,5 +214,66 @@ npm install @realm/react #installs the @realm/react Library @realm/react is an n
   This reduces boilerplate code, like creating your own listeners and state management.
 npm start #Runs app
 import Realm from "realm"; #import realm
+
+2:00:00=================================================================================================================================================================================================================================
+Going back to tut, finish app, see all features, will add DB after, have all docs I need to fix, will just need to manually input for testing through MongoDB, sucks but works, will be fully functional because I actually want to use
+stepzen import curl <api URL> #if rapminjderp from stepzen/ibm didn't screw me through poo code/login authenticASean shite, this is what I would need to do to use stepzen/graphQL - one line of code
+  at least the guy in tut is struggling as much as I was, SeanDenFreud, it's not just me. Except he actually got to the API key stage, video was sponsored by stepzen - smells カレーfishy - no sane man would willingly subject themselves
+after succesful import, it creates a folder 'curl' with 2 files 'index.graphql' with schema and 'stepzen.config' with API endpoint,
+  everything is considered a type RootEntry {key: string} and it created a query with API ninja key in an easily accessed public file, nice. 
+I could just get GraphQL to work without the stinky middleman of stepzen, or just set up my DB schema the right way, many opseans,  
+stepzen start #After defining the schema, the next step is to deploy and run the API, will deploy the schema to the stepzen cloud, you will get a link for the GraphQL endpoint
+the reason why GraphQL API's are nice, is that you can customize the information you pull - don't want difficulty? (everything is beginner to me) simply remove it from the schema/API endpoint to change the query
+If you want to add other parameters to a query, you just need to add them ', Key: Type'  dollarsign $name will allow dynamic queries
+2:20:00================================================================================================================================================================================================================================
+Next we are going to use React Query to query the API - we might be using something different, if we aren't using GraphQL/steppoop
+React Query Library:
+https://tanstack.com/query/latest/docs/framework/react/overview
+npm i @tanstack/react-query #will install react-query to our project, we installed even though we might not use, just remember to remove GraphQL/ReactQuery/steppoop from dependancies before uploading to Vercel
+First step is to create a 'const queryClient = new QueryClient' #check 2:20:00 if we need to use, not adding a bunch of superfluous code to follow along, if we are using a different API
+since we are using it in all screens, it should be used globally (Root layout), where we keep global providers, wrap stack navigator in a <QueryClientProvider client={client}> #everything wrapped will now be able to run queries
+
+2:30:00================================================================================================================================================================================================================================
+Next he adds query into 'index.jsx'
+if (isLoading) { return <ActivityIndicator /> }#built in component of react native, a simple spinner, that you can use to show when loading
+ReactQuery useQuery function can get data from axios, fetch API, crud QL / it handles loading logic, error states, cache and optimization
+npm i graphql-request #he installs graph-ql request
+npm i graphql #also installs graphql
+import { gql } from graphql-request #allows him to use graphQL to create a query, copied query from steppoop surrounded by `backticks`
+He's still struggling with steppoop, nice. Hope the sponsorship was worth it. 
+Headers are hard, 4 hour tut could of been reduced to 2 if he actually edited, at least he acknoledged you shouldn't put your API key in the actual code, regret wasting time on this guy, not worth it. 
+Going to try to finish this today, so I can build my own (better) app, have I reached a level of coding where I can watch a tut and criticize the so called 'expert', all I've gotten from this is the exercise <Stack />
+could of gotten all of this from the docs in a fractSean of the time, was almost a waste of time(days) doing this tut
+const { data, isLoading, error } = useQuery({
+queryKey: ['exercises'],
+queryFn: () => client.request(exercisesQuery),
+}) #will handle data fetching, loading states, and errors with React Query, might need this later ~2:50:00 ish
+if (isLoading) {} / if (error) {} #fill in the {} with whatever you want to return if one of these happens
+EXPO_PUBLIC_GRAPHQL_API_KEY = "finally added it"
+const apiKey = process.env.EXPO_PUBLIC_GRAPHQ_API_KEY
+The API from API Ninjas, does not contain an ID in the schema/model, probably better if we build our own anyways, don't need to do [name].jsx, [id].tsx
+instead of GraphQL, just use props and take what we want, destructure and use - we are literally going to be rewriting everything, even our main page, this tut was for boilolerplate - at least it got me started using React Native
+queryKey: [] #used for cacheing results and invalidating results if something is wrong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
