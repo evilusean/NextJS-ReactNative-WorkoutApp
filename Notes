@@ -243,8 +243,17 @@ import { gql } from graphql-request #allows him to use graphQL to create a query
 He's still struggling with steppoop, nice. Hope the sponsorship was worth it. 
 Headers are hard, 4 hour tut could of been reduced to 2 if he actually edited, at least he acknoledged you shouldn't put your API key in the actual code, regret wasting time on this guy, not worth it. 
 Going to try to finish this today, so I can build my own (better) app, have I reached a level of coding where I can watch a tut and criticize the so called 'expert', all I've gotten from this is the exercise <Stack />
-
-
+could of gotten all of this from the docs in a fractSean of the time, was almost a waste of time(days) doing this tut
+const { data, isLoading, error } = useQuery({
+queryKey: ['exercises'],
+queryFn: () => client.request(exercisesQuery),
+}) #will handle data fetching, loading states, and errors with React Query, might need this later ~2:50:00 ish
+if (isLoading) {} / if (error) {} #fill in the {} with whatever you want to return if one of these happens
+EXPO_PUBLIC_GRAPHQL_API_KEY = "finally added it"
+const apiKey = process.env.EXPO_PUBLIC_GRAPHQ_API_KEY
+The API from API Ninjas, does not contain an ID in the schema/model, probably better if we build our own anyways, don't need to do [name].jsx, [id].tsx
+instead of GraphQL, just use props and take what we want, destructure and use - we are literally going to be rewriting everything, even our main page, this tut was for boilolerplate - at least it got me started using React Native
+queryKey: [] #used for cacheing results and invalidating results if something is wrong
 
 
 
