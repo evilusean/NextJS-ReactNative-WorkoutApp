@@ -236,9 +236,11 @@ since we are using it in all screens, it should be used globally (Root layout), 
 2:30:00================================================================================================================================================================================================================================
 Next he adds query into 'index.jsx'
 if (isLoading) { return <ActivityIndicator /> }#built in component of react native, a simple spinner, that you can use to show when loading
-
-
-
+ReactQuery useQuery function can get data from axios, fetch API, crud QL / it handles loading logic, error states, cache and optimization
+npm i graphql-request #he installs graph-ql request
+npm i graphql #also installs graphql
+import { gql } from graphql-request #allows him to use graphQL to create a query, copied query from stepz surrounded by `backticks`
+He's still struggling with steppoop, nice. Hope the sponsorship was worth it. 
 
 
 
