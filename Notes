@@ -239,8 +239,11 @@ if (isLoading) { return <ActivityIndicator /> }#built in component of react nati
 ReactQuery useQuery function can get data from axios, fetch API, crud QL / it handles loading logic, error states, cache and optimization
 npm i graphql-request #he installs graph-ql request
 npm i graphql #also installs graphql
-import { gql } from graphql-request #allows him to use graphQL to create a query, copied query from stepz surrounded by `backticks`
+import { gql } from graphql-request #allows him to use graphQL to create a query, copied query from steppoop surrounded by `backticks`
 He's still struggling with steppoop, nice. Hope the sponsorship was worth it. 
+Headers are hard, 4 hour tut could of been reduced to 2 if he actually edited, at least he acknoledged you shouldn't put your API key in the actual code, regret wasting time on this guy, not worth it. 
+Going to try to finish this today, so I can build my own (better) app, have I reached a level of coding where I can watch a tut and criticize the so called 'expert', all I've gotten from this is the exercise <Stack />
+
 
 
 
