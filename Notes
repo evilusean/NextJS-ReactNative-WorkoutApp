@@ -231,11 +231,11 @@ React Query Library:
 https://tanstack.com/query/latest/docs/framework/react/overview
 npm i @tanstack/react-query #will install react-query to our project, we installed even though we might not use, just remember to remove GraphQL/ReactQuery/steppoop from dependancies before uploading to Vercel
 First step is to create a 'const queryClient = new QueryClient' #check 2:20:00 if we need to use, not adding a bunch of superfluous code to follow along, if we are using a different API
-since we are using it in all screens, it should be used globally (Root layout), where we keep global providers, wrap stack navigator in a <QueryClient>
+since we are using it in all screens, it should be used globally (Root layout), where we keep global providers, wrap stack navigator in a <QueryClientProvider client={client}> #everything wrapped will now be able to run queries
 
 2:30:00================================================================================================================================================================================================================================
- 
-
+Next he adds query into 'index.jsx'
+if (isLoading) { return <ActivityIndicator /> }#built in component of react native, a simple spinner, that you can use to show when loading
 
 
 
