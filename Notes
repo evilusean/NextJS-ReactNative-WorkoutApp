@@ -259,8 +259,12 @@ queryKey: [] #used for cacheing results and invalidating results if something is
 Now we are doing searching and pagination(3:04:00) - finally something useful - unless it uses graphql/steppoop - he wants to keep tut below 4 hours and doesn't even think he can implement them - le sigh -
 He only has time to implement workout log for exercises - since I'm doing this in excell, not useful, The pictures he showed at start had all the features he didn't have time to build steppoop - is he even gonna show MongoDB? lol
 At least we can use this to add new sets from the [name].jsx, which will be our [id].tsx, kind of useful 
-He created a component, I kind of want a button, next to exercise that saves the reps and weight - 
-
+He created a component, I kind of want a button, next to exercise that saves the reps and weight - can we cache? Normally stays the same unless we get stronger(rare/slow)/weaker on bad days(rare)
+  might have to store as a value on MongoDB? - so it saves accross seshes and we can just press a button 15-curls-30lbs and add to spreadsheet - don't want to add like 6 more clicks per set to set the weight/reps/exercise
+can add a bottom bar for calisthenics stuff if we want to just bang out 30 situps / 25pushups / 10 pullups / etc and can just click one button, no menu change, most common exercises
+could do the same for a calorie counter / water intake as well - bottle = 250ml / cup of kohi / etc Vs do we really wanna get that autistic about food again? weighing grams of chicken was tedious AF
+  Just eat healthy(non slop/non western/no seed oils/low carbs >100g=ketosis food-theres a reason why 80% of you MF'ers are obese, your so called 'food' is literally poison-why are there no fat people in Japan? Escape.)
+You Vwill marry and date the 30 year post wall STD ridden strong independant dependopotamous who votes to take half your income, and then divorces you whenever she's unhappy for cash and prizes - No, I don't think I will. Escape. 
 
 
 
