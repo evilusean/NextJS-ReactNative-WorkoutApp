@@ -7,8 +7,7 @@ const NewSetInput = () => {
 
   const addset = () => {
     console.warn("Add Set: ", reps, weight);
-    setReps("");
-    setWeight("");
+    // ADD DATABASE CODE HERE
   };
 
   return (
@@ -18,12 +17,14 @@ const NewSetInput = () => {
         onChangeText={setReps}
         placeholder="Reps"
         styles={styles.input}
+        keyboardType="numeric"
       />
       <TextInput
         value={weight}
         onChangeText={setWeight}
         placeholder="Weight"
         styles={styles.input}
+        keyboardType="numeric"
       />
       <Button title="Add" onPress={addSet} />
     </View>
