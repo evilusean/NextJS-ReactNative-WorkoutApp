@@ -3,6 +3,7 @@ import { useLocalSearchParams } from "expo-router";
 import exercises from "../../assets/data/exercises.json";
 import { Stack } from "expo-router";
 import { useState } from "react";
+import NewSetInput from "../components/NewSetInput";
 
 export default function ExerciseDetailsScreen() {
   const params = useLocalSearchParams();
@@ -36,6 +37,7 @@ export default function ExerciseDetailsScreen() {
           {isInstructionExpanded ? "See Less" : "See More"}
         </Text>
       </View>
+      <NewSetInput />
     </ScrollView>
   );
 }
