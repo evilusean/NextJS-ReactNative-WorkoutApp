@@ -287,11 +287,17 @@ instead of saving the values(you only doing one set, brah?) he just resets them 
 You can specify what type of keyboard to use (letters vs numbers) by 'keyboardType="numeric"' to the text input field
 MongoDV Atlas: Create Account -> Create Project -> Create Deployment -> Create a Cluster(we are using M0, for free) - it will automatically add your IP on whitelist, creates a username and PW(save in env)
 Data explorer = shows you what query examples should look like, 
+Example Queries
+Run queries directly in the Data Explorer interface. For example, use a filter query to filter for documents:
+{ <field1>: <value1>, ... }
+Run this query on the sample_mflix database and movies collection to filter for Drama and Fantasy Movies:
+{genres : ["Drama", "Fantasy"]}
+
 Collections = DB Tables, without a structure(what ORM's are for), 
-Create a new DB -> Insert Document to specify key: value pair fields (workouts.sets = DB name, we might be using google sheets for this, we don't need to query to see our workouts, way easier.)
+Create a new DB -> Insert Document to specify key: value pair fields (Workouts.sets = DB name, we might be using google sheets for this, we don't need to query to see our workouts, way easier.)
   exercise: "name" / reps: int32 / weight/time: double(allows floats) 
-
-
+Maybe we can follow along and store reps on both sheets AND mongoDB, would that work? 2 posts instead of 1
+created a new project 'Workouts'-Cluster0 - we accidently added example data, we can delete this to gain more space, cap is 500mb logical size - already at >100mb with our other projects - how soon till we cap?
 
 
 
