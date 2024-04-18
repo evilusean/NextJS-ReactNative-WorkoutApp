@@ -6,7 +6,9 @@ const NewSetInput = () => {
   const [weight, setWeight] = useState("");
 
   const addset = () => {
-    console.warn("Add Set");
+    console.warn("Add Set: ", reps, weight);
+    setReps("");
+    setWeight("");
   };
 
   return (
