@@ -263,11 +263,16 @@ He created a component, I kind of want a button, next to exercise that saves the
   might have to store as a value on MongoDB? - so it saves accross seshes and we can just press a button 15-curls-30lbs and add to spreadsheet - don't want to add like 6 more clicks per set to set the weight/reps/exercise
 can add a bottom bar for calisthenics stuff if we want to just bang out 30 situps / 25pushups / 10 pullups / etc and can just click one button, no menu change, most common exercises
 could do the same for a calorie counter / water intake as well - bottle = 250ml / cup of kohi / etc Vs do we really wanna get that autistic about food again? weighing grams of chicken was tedious AF
-  Just eat healthy(non slop/non western/no seed oils/low carbs >100g=ketosis food-theres a reason why 80% of you MF'ers are obese, your so called 'food' is literally poison-why are there no fat people in Japan? Escape.)
+  Just eat healthy(non slop/non western/no seed oils/no sugar/low carbs >100g=ketosis food-theres a reason why 80% of you MF'ers are obese, your so called 'food' is literally poison-why are there no fat people in Japan? Escape.)
 You Vwill marry and date the 30 year post wall STD ridden strong independant dependopotamous who votes to take half your income, and then divorces you whenever she's unhappy for cash and prizes - No, I don't think I will. Escape. 
-
-
-
+RapJeet can have them, western woman are your problem now, enjoy your 80IQ dalits, you 2 truly do deserve eachother. Affirmative AxSean and all that, unironically not my problem. Escape. - Who is going to clean up '"OUR"' mess? lollmao 
+First we need 2 TextInputs, <TextInput placeholder="Reps" styles={styles.input} /> 
+input: {
+    borderWidth: StyleSheet.hairlineWidth,
+    flex: 1,
+  } #the smallest width you can have in StyleSheet, flex: 1 will make them share a line, 
+And a button <Button title="Add" onPress={addSet} /> #Built in React-Native button, will look different on iOS and android, we will need to build a function to handle and store values, 
+Maybe add variables that save and place values into text inputs? what if we superset? will the values stay? Just using tut for boilolerplate, can add features after we finish
 
 
 
