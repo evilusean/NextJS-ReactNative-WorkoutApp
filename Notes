@@ -276,10 +276,20 @@ Maybe add variables that save and place values into text inputs? what if we supe
 import { useState } from 'react'; #to create a controlled input, we need State variables, for that we need useState
   const [reps, setReps] = useState('');
   const [weight, setWeight] = useState(''); #actually useful, we needed to do this to save our values, the State is going to be a string, when we submit it we are going to transform it to a number
-Now we need to bind the state variables with our inputs, to bind it you need to provide to values: 1: value={reps} should match, onChangeText={setReps} #when the user changes the text, we want to update the new value
+Now we need to bind the state variables with our inputs, to bind it you need to provide two values: 1: value={reps} should match, onChangeText={setReps} #when the user changes the text, we want to update the new value
 <TextInput value={reps} onChangeText={setReps} placeholder="Reps" styles={styles.input} /> #read above
-
-
+instead of saving the values(you only doing one set, brah?) he just resets them with below, we don't want this, because we don't want to be small, but good to know:
+  const addset = () => {
+    console.warn("Add Set: ", reps, weight);
+    setReps("");
+    setWeight("");
+  };
+You can specify what type of keyboard to use (letters vs numbers) by 'keyboardType="numeric"' to the text input field
+MongoDV Atlas: Create Account -> Create Project -> Create Deployment -> Create a Cluster(we are using M0, for free) - it will automatically add your IP on whitelist, creates a username and PW(save in env)
+Data explorer = shows you what query examples should look like, 
+Collections = DB Tables, without a structure(what ORM's are for), 
+Create a new DB -> Insert Document to specify key: value pair fields (workouts.sets = DB name, we might be using google sheets for this, we don't need to query to see our workouts, way easier.)
+  exercise: "name" / reps: int32 / weight/time: double(allows floats) 
 
 
 
