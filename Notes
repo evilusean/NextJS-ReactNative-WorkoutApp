@@ -256,7 +256,9 @@ instead of GraphQL, just use props and take what we want, destructure and use - 
 queryKey: [] #used for cacheing results and invalidating results if something is wrong
 
 3:00:00===============================================================================================================================================================================================================================
-
+Now we are doing searching and pagination(3:04:00) - finally something useful - unless it uses graphql/steppoop - he wants to keep tut below 4 hours and doesn't even think he can implement them - le sigh -
+He only has time to implement workout log for exercises - since I'm doing this in excell, not useful, The pictures he showed at start had all the features he didn't have time to build steppoop - is he even gonna show MongoDB? lol
+At least we can use this to add new sets from the [name].jsx, which will be our [id].tsx, kind of useful 
 
 
 
