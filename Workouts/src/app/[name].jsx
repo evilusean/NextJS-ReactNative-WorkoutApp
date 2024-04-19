@@ -4,6 +4,7 @@ import exercises from "../../assets/data/exercises.json";
 import { Stack } from "expo-router";
 import { useState } from "react";
 import NewSetInput from "../components/NewSetInput";
+import SetsList from "../components/SetsList";
 
 export default function ExerciseDetailsScreen() {
   const params = useLocalSearchParams();
@@ -38,6 +39,7 @@ export default function ExerciseDetailsScreen() {
         </Text>
       </View>
       <NewSetInput />
+      <SetsList />
     </ScrollView>
   );
 }

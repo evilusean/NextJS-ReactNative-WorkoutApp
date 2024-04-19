@@ -1,5 +1,8 @@
 import { View, Text } from "react-native";
-import React from "react";
+import { useQuery } from "@tanstack/react-query";
+
+//CREATE A QUERY
+//REMOVE IF NOT NEEDED FROM [name].jsx
 
 const SetsList = () => {
   return (
