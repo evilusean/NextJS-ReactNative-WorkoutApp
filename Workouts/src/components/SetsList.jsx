@@ -14,8 +14,9 @@ import { useQuery } from "@tanstack/react-query";
 
 const SetsList = () => {
   const exercises = useQuery(["exercises"], async () => {
+    const today = new Date().toISOString().slice(0, 10); // Get today's date in YYYY-MM-DD format
     const response = await fetch(
-      "mongodb://localhost:27017/myDatabase/exercises"
+      `mongodb://localhost:27017/myDatabase/exercises?date=${today}`
     );
     return response.json();
   });
@@ -24,7 +25,8 @@ const SetsList = () => {
     <View>
       {exercises.data.map((exercise) => (
         <Text key={exercise._id}>
-          {exercise.name} - {exercise.reps} reps - {exercise.weight} lbs
+          {exercise.name} - {exercise.reps} reps - {exercise.weight} Weight -{" "}
+          {exercise.date}
         </Text>
       ))}
     </View>
