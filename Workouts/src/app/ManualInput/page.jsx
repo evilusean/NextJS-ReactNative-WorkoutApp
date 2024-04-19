@@ -1,20 +1,23 @@
 import React, { useState } from "react";
 import { View, TextInput, Button, Picker } from "react-native";
 import { Formik } from "formik";
-import axios from "axios";
+import Realm from "realm";
 
 {
   /* TODO: 
     CHANGED TO TYPESCRIPT - FIX ALL THE RED - HOW IS IT SAYING THE MODULES DON'T EXIST IF WE ARE USING THEM?
       MAYBE WE NEED TO USE .jsx, WHEN SWITCHING TO .tsx GOT 10 RED ERROR MESSAGES
       HOW CAN <TEXT> NOT BE USED AS A .jsx COMPONENT? LIKE WHAT? IS IT THE LINTER? DO WE NEED TO ADD TO OUR CONFIG?
-    REMOVE DIFFICULTY - EVERYTHING IS BEGINNER TO ME
     ADD .env VARIABLES TO POST METHOD, CLUSTER 0 'workouts.exercises' COLLLECTION
     FIGURE OUT SCHEMA = REMOVE DIFFICULTY / uID / NAME / TYPE / MUSCLE / EQUIPMENT / INSTRUCTIONS / COUNT = 0
       MAYBE ADD A INT COUNT THAT COUNTS THE AMOUNT OF TIMES WE DID AN EXERCISE SO MOST FREQUENT WILL BE AT TOP OF OUR QUERY
       FUTURE SEAN PROBLEM, BUT WOULD BE NICE TO HAVE IF WE STILL USE OUR APP IN A YEAR DO PULLUPS EVERY WORKOUT/BENCH ETC
       CAN THEN SORT BY TYPE AND USE OUR BEST STRETCHES / MOST USED CARDIO / MOST USED ETC WILL BE AT TOP - DON'T NEED TO SCROLL
-    ADD MONGODB - BEST WAY TO POST - NEED TO READ DOCS AND SEE WHATS AVAILABLE - Axios vs ReactQuery vs etc etc
+
+  ADD uID, Count to Realm Schema, add MongoDB to realm
+  Make sure to replace 'myrealm' with the actual name of your Realm database.
+  You may need to adjust the schema property in the Realm constructor to match the schema of your MongoDB collection.
+  You may also need to adjust the properties object in the Exercise schema to match the fields in your MongoDB collection.
 
     Add more TextInput fields for type, muscle, equipment, difficulty, and instructions 
     FIX USE STATE AT TOP, SOME MISSING, ("")
@@ -31,14 +34,32 @@ import axios from "axios";
       FUTURE SEAN PROBLEMS, HALF WAY THERE
       AFTER IT WORKS, ADD EXERCISES
       FIX selectedValue={selectedType} for TYPE / DIFFICULTY / MUSCLE USING SAME VARIABLE NAME
+
+    
             */
 }
 
 const ExerciseForm = () => {
   const [selectedMuscle, setSelectedMuscle] = useState("");
   const [selectedType, setSelectedType] = useState("");
-  const [selectedDifficulty, setSelectedDifficulty] = useState(""); // Add state for selected exercise type
   const [selectedEquipment, setSelectedEquipment] = useState("");
+
+  const realm = new Realm({
+    path: "myrealm",
+    schema: [
+      {
+        name: "Exercise",
+        properties: {
+          name: "string",
+          type: "string",
+          muscle: "string",
+          equipment: "string",
+          instructions: "string",
+        },
+      },
+    ],
+  });
+
   return (
     <Formik
       initialValues={{
@@ -46,18 +67,12 @@ const ExerciseForm = () => {
         type: "",
         muscle: "",
         equipment: "",
-        difficulty: "",
         instructions: "",
       }}
       onSubmit={(values) => {
-        axios
-          .post("Your_API_Endpoint", values)
-          .then((response) => {
-            console.log("Form data sent successfully:", response.data);
-          })
-          .catch((error) => {
-            console.error("Error sending form data:", error);
-          });
+        realm.write(() => {
+          realm.create("Exercise", values);
+        });
       }}
     >
       {({ handleChange, handleBlur, handleSubmit, values }) => (
@@ -104,19 +119,6 @@ const ExerciseForm = () => {
               <Picker.Item label="Traps" value="traps" />
               <Picker.Item label="Lats" value="lats" />
               <Picker.Item label="Full-Body" value="full-body" />
-            </Picker>
-          </View>
-          <View>
-            <Text>Select difficulty:</Text>
-            <Picker
-              selectedValue={selectedDifficulty}
-              onValueChange={(itemValue, itemIndex) =>
-                setSelectedDifficulty(itemValue)
-              }
-            >
-              <Picker.Item label="Beginner" value="beginner" />
-              <Picker.Item label="Intermediate" value="intermediate" />
-              <Picker.Item label="Expert" value="expert" />
             </Picker>
           </View>
           <TextInput
