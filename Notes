@@ -310,7 +310,8 @@ Step poop 1) first on MongoDB atlas side, Enable the Data API (from left side me
 step poop 1.5) configure IP access, google error code, X10+ minutes * Y views = you wasted Z minutes, because you are too lazy to edit, tut could of been reduced to 2 hours, 2 hours * Y views = :( (>100k subs)
 step poop 2) Test your API -> Generate API Key (name it) -> Copy key -> paste to .env -> copy snippet (select cluster/DB(workouts)/collection(sets)) -> copy curl command -> test in terminal 
   change findOne -> find, ->  delete "projection": {"_id": 1}, #don't forget to delete ',' final comma, or else it will fail
-
+Step poop 3) make sure to change no access -> read and write for database cluster
+after that, 'cd api' and run curl command, it will create another folder 'curl' and it will create an 'index.graphql'
 
 
 
