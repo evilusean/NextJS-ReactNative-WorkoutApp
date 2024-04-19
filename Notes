@@ -318,6 +318,8 @@ He isn't even showing how to add an exercise into the DB for the tut, half of it
 
 3:59:00===============================================================================================================================================================================================================================
 Finished garbage tut, garbage steppoop, wasted days, going to read docs on my own and build my own, didn't even get close to building even remotely what I wanted - going to be building all day tommorrow to make up for wasted time. 
-
-
+Added a query, still need to test, it should populate all exercises done that day, need to add a <Link> to RootLayout Navbar, some dummy data, now with one click on any page, we can see todays progressSean
+Still need to setup env variables, with API keys, collections are created on MongoDB, need to fix 3 pages with new query, Still have a tonne of work to do before we can even test - still using exercises.json for dummy data,
+need to add actual exercises, figure out right schema for that so we can reference correctly, fix / ManualInput / 'page.tsx' 
+Start with env variables, get hooked up to MongoDB correctly, add some exercises, test our code - busy day - phone sim makes PC run super slow, might focus on web for now
 
