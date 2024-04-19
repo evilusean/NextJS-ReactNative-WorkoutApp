@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, TextInput, Button, Picker } from "react-native";
 import { Formik } from "formik";
 import Realm from "realm";
-
+import { MongoDB } from "mongodb-realm-sync";
 {
   /* TODO: 
     CHANGED TO TYPESCRIPT - FIX ALL THE RED - HOW IS IT SAYING THE MODULES DON'T EXIST IF WE ARE USING THEM?
@@ -18,6 +18,19 @@ import Realm from "realm";
   Make sure to replace 'myrealm' with the actual name of your Realm database.
   You may need to adjust the schema property in the Realm constructor to match the schema of your MongoDB collection.
   You may also need to adjust the properties object in the Exercise schema to match the fields in your MongoDB collection.
+
+  Write data to the database:
+  exercisesCollection.insertOne({
+  name: "New Exercise",
+  type: "Strength",
+  muscle: "Biceps",
+  equipment: "Dumbbells",
+  instructions: "Do 10 reps of bicep curls."
+});
+
+Read data from the database:
+const exercises = await exercisesCollection.find({});
+
 
     Add more TextInput fields for type, muscle, equipment, difficulty, and instructions 
     FIX USE STATE AT TOP, SOME MISSING, ("")
@@ -44,21 +57,30 @@ const ExerciseForm = () => {
   const [selectedType, setSelectedType] = useState("");
   const [selectedEquipment, setSelectedEquipment] = useState("");
 
+  const app = new Realm.App({ id: "YOUR_APP_ID" });
+  const mongo = app.currentUser.mongoClient("mongodb-atlas");
+  const exercisesCollection = mongo.db("workouts").collection("exercises");
+
   const realm = new Realm({
     path: "myrealm",
     schema: [
       {
         name: "Exercise",
         properties: {
+          _id: "objectId", // Add a unique ID field
           name: "string",
           type: "string",
           muscle: "string",
           equipment: "string",
           instructions: "string",
+          count: "int",
         },
       },
     ],
   });
+
+  realm.schema.get("Exercise").primaryKey = "_id";
+  realm.schema.get("Exercise").properties.count.defaultValue = 0;
 
   return (
     <Formik
@@ -71,7 +93,14 @@ const ExerciseForm = () => {
       }}
       onSubmit={(values) => {
         realm.write(() => {
-          realm.create("Exercise", values);
+          const newExercise = realm.create("Exercise", {
+            name: values.name,
+            type: values.type,
+            muscle: values.muscle,
+            equipment: values.equipment,
+            instructions: values.instructions,
+            count: realm.objects("Exercise").max("count") + 1, // Increment the count field
+          });
         });
       }}
     >
