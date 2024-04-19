@@ -298,9 +298,18 @@ Create a new DB -> Insert Document to specify key: value pair fields (Workouts.s
   exercise: "name" / reps: int32 / weight/time: double(allows floats) 
 Maybe we can follow along and store reps on both sheets AND mongoDB, would that work? 2 posts instead of 1
 created a new project 'Workouts'-Cluster0 - we accidently added example data, we can delete this to gain more space, cap is 500mb logical size - already at >100mb with our other projects - how soon till we cap?
+created a new collection/DB 'workouts.sets' - adding in some dummy data and making another DB 'collections.exercises' - now have 2 DB's we need to get started -
+creating some dummy data for workouts.sets, will delete later, going to implement our own exercises, schema might change
+Now that we have some dummy data, can integrate it into our deployment - actually useful, unless he uses steppoop
 
-
-
+3:30:00==============================================================================================================================================================================================================================
+crap, he is using steppoop:
+https://developer.ibm.com/tutorials/awb-accessing-mongodb-using-graphql-interface/
+Not useful - at least we will be finished tut tonight and can actually work on the project features
+Step poop 1) first on MongoDB atlas side, Enable the Data API (from left side menu) Rest-Like endpoint, will allow you to send rest like requests - tut restricted ui ip access(10 minutes of debugging - learn2edit)
+step poop 1.5) configure IP access, google error code, X10+ minutes * Y views = you wasted Z minutes, because you are too lazy to edit, tut could of been reduced to 2 hours, 2 hours * Y views = :( (>100k subs)
+step poop 2) Test your API -> Generate API Key (name it) -> Copy key -> paste to .env -> copy snippet (select cluster/DB(workouts)/collection(sets)) -> copy curl command -> test in terminal 
+  change findOne -> find, ->  delete "projection": {"_id": 1}, #don't forget to delete ',' final comma, or else it will fail
 
 
 
