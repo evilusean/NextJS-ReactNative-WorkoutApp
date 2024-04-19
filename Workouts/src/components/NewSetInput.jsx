@@ -7,7 +7,10 @@ const NewSetInput = () => {
 
   const addset = () => {
     console.warn("Add Set: ", reps, weight);
-    // ADD DATABASE CODE HERE
+    // TODO:
+    // ADD ENV VARIABLES
+    // ADD DATABASE CODE HERE - NEED TO POST TO OUR MONGO DB = CLUSTER 0 / 'workouts.sets'
+    // NEED TO MAKE DATE AND ID VARIABLES FOR DATABASE ENTRY WITH EXERCISE NAME/SETS/WEIGHT+TIME(cardio)
   };
 
   return (
@@ -22,7 +25,7 @@ const NewSetInput = () => {
       <TextInput
         value={weight}
         onChangeText={setWeight}
-        placeholder="Weight"
+        placeholder="Weight/Time"
         styles={styles.input}
         keyboardType="numeric"
       />
