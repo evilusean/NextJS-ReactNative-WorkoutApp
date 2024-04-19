@@ -334,10 +334,18 @@ https://www.freecodecamp.org/news/react-and-googlesheets/
 https://www.reddit.com/r/reactnative/comments/qld6bu/using_google_sheets_as_a_db_on_react_native/
 
 Realm React-Native SDK:
+https://medium.com/code-well/choosing-the-right-database-for-your-react-native-app-137f4893b182
 https://www.mongodb.com/docs/atlas/device-sdks/sdk/react-native/
+Verify Hermes:
+https://reactnative.dev/docs/hermes
+Formik(for our input exercise page):
+https://formik.org/docs/overview
 
 We are going to use realm for our database posting, need to read docs. Start working on implementASean, gonna be a loooooonnnngggg day. The sooner we finish, the sooner we escape canada and eat good food, escape abusers. 
-
+ERROR:
+Web Bundling failed 5254ms (node_modules/expo-router/entry.js)
+Unable to resolve "axios" from "src/app/ManualInput/page.jsx"
+We had an error with formik, installed it, now works, now we have an error with axios, causing our web bundler to fail with expo/metro, need to fix our dependancies before we can even load our app
 
 
 
