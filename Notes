@@ -285,7 +285,7 @@ instead of saving the values(you only doing one set, brah?) he just resets them 
     setWeight("");
   };
 You can specify what type of keyboard to use (letters vs numbers) by 'keyboardType="numeric"' to the text input field
-MongoDV Atlas: Create Account -> Create Project -> Create Deployment -> Create a Cluster(we are using M0, for free) - it will automatically add your IP on whitelist, creates a username and PW(save in env)
+MongoDB Atlas: Create Account -> Create Project -> Create Deployment -> Create a Cluster(we are using M0, for free) - it will automatically add your IP on whitelist, creates a username and PW(save in env)
 Data explorer = shows you what query examples should look like, 
 Example Queries
 Run queries directly in the Data Explorer interface. For example, use a filter query to filter for documents:
@@ -312,7 +312,12 @@ step poop 2) Test your API -> Generate API Key (name it) -> Copy key -> paste to
   change findOne -> find, ->  delete "projection": {"_id": 1}, #don't forget to delete ',' final comma, or else it will fail
 Step poop 3) make sure to change no access -> read and write for database cluster
 after that, 'cd api' and run curl command, it will create another folder 'curl' and it will create an 'index.graphql'
+Next we are going to create a component that renders a list of sets: 'SetsList.jsx' added and imported component to '[name].jsx' ~3:45:00
+We are going to be using a different setup, with our 'SetsList.tsx' being at the top, with a list of all sets completed for that day, he does literally every single set completed per exercise, on the exercise page, no thanks.
+He isn't even showing how to add an exercise into the DB for the tut, half of it was him debugging and reading documents, garbage tut and he has over 100k subs? lol, lmao
 
+3:59:00===============================================================================================================================================================================================================================
+Finished garbage tut, garbage steppoop, wasted days, going to read docs on my own and build my own, didn't even get close to building even remotely what I wanted - going to be building all day tommorrow to make up for wasted time. 
 
 
 
