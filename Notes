@@ -276,16 +276,42 @@ Maybe add variables that save and place values into text inputs? what if we supe
 import { useState } from 'react'; #to create a controlled input, we need State variables, for that we need useState
   const [reps, setReps] = useState('');
   const [weight, setWeight] = useState(''); #actually useful, we needed to do this to save our values, the State is going to be a string, when we submit it we are going to transform it to a number
-Now we need to bind the state variables with our inputs, to bind it you need to provide to values: 1: value={reps} should match, onChangeText={setReps} #when the user changes the text, we want to update the new value
+Now we need to bind the state variables with our inputs, to bind it you need to provide two values: 1: value={reps} should match, onChangeText={setReps} #when the user changes the text, we want to update the new value
 <TextInput value={reps} onChangeText={setReps} placeholder="Reps" styles={styles.input} /> #read above
+instead of saving the values(you only doing one set, brah?) he just resets them with below, we don't want this, because we don't want to be small, but good to know:
+  const addset = () => {
+    console.warn("Add Set: ", reps, weight);
+    setReps("");
+    setWeight("");
+  };
+You can specify what type of keyboard to use (letters vs numbers) by 'keyboardType="numeric"' to the text input field
+MongoDV Atlas: Create Account -> Create Project -> Create Deployment -> Create a Cluster(we are using M0, for free) - it will automatically add your IP on whitelist, creates a username and PW(save in env)
+Data explorer = shows you what query examples should look like, 
+Example Queries
+Run queries directly in the Data Explorer interface. For example, use a filter query to filter for documents:
+{ <field1>: <value1>, ... }
+Run this query on the sample_mflix database and movies collection to filter for Drama and Fantasy Movies:
+{genres : ["Drama", "Fantasy"]}
 
+Collections = DB Tables, without a structure(what ORM's are for), 
+Create a new DB -> Insert Document to specify key: value pair fields (Workouts.sets = DB name, we might be using google sheets for this, we don't need to query to see our workouts, way easier.)
+  exercise: "name" / reps: int32 / weight/time: double(allows floats) 
+Maybe we can follow along and store reps on both sheets AND mongoDB, would that work? 2 posts instead of 1
+created a new project 'Workouts'-Cluster0 - we accidently added example data, we can delete this to gain more space, cap is 500mb logical size - already at >100mb with our other projects - how soon till we cap?
+created a new collection/DB 'workouts.sets' - adding in some dummy data and making another DB 'collections.exercises' - now have 2 DB's we need to get started -
+creating some dummy data for workouts.sets, will delete later, going to implement our own exercises, schema might change
+Now that we have some dummy data, can integrate it into our deployment - actually useful, unless he uses steppoop
 
-
-
-
-
-
-
+3:30:00==============================================================================================================================================================================================================================
+crap, he is using steppoop:
+https://developer.ibm.com/tutorials/awb-accessing-mongodb-using-graphql-interface/
+Not useful - at least we will be finished tut tonight and can actually work on the project features
+Step poop 1) first on MongoDB atlas side, Enable the Data API (from left side menu) Rest-Like endpoint, will allow you to send rest like requests - tut restricted ui ip access(10 minutes of debugging - learn2edit)
+step poop 1.5) configure IP access, google error code, X10+ minutes * Y views = you wasted Z minutes, because you are too lazy to edit, tut could of been reduced to 2 hours, 2 hours * Y views = :( (>100k subs)
+step poop 2) Test your API -> Generate API Key (name it) -> Copy key -> paste to .env -> copy snippet (select cluster/DB(workouts)/collection(sets)) -> copy curl command -> test in terminal 
+  change findOne -> find, ->  delete "projection": {"_id": 1}, #don't forget to delete ',' final comma, or else it will fail
+Step poop 3) make sure to change no access -> read and write for database cluster
+after that, 'cd api' and run curl command, it will create another folder 'curl' and it will create an 'index.graphql'
 
 
 
