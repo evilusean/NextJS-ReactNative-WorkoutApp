@@ -3,6 +3,35 @@ import { View, TextInput, Button, Picker } from "react-native";
 import { Formik } from "formik";
 import axios from "axios";
 
+{
+  /* TODO: 
+    CHANGED TO TYPESCRIPT - FIX ALL THE RED - HOW IS IT SAYING THE MODULES DON'T EXIST IF WE ARE USING THEM?
+      MAYBE WE NEED TO USE .jsx, WHEN SWITCHING TO .tsx GOT 10 RED ERROR MESSAGES
+      HOW CAN <TEXT> NOT BE USED AS A .jsx COMPONENT? LIKE WHAT? IS IT THE LINTER? DO WE NEED TO ADD TO OUR CONFIG?
+    REMOVE DIFFICULTY - EVERYTHING IS BEGINNER TO ME
+    ADD .env VARIABLES TO POST METHOD, CLUSTER 0 'workouts.exercises' COLLLECTION
+    FIGURE OUT SCHEMA = REMOVE DIFFICULTY / uID / NAME / TYPE / MUSCLE / EQUIPMENT / INSTRUCTIONS
+    ADD MONGODB - BEST WAY TO POST - NEED TO READ DOCS AND SEE WHATS AVAILABLE - Axios vs ReactQuery vs etc etc
+
+
+    Add more TextInput fields for type, muscle, equipment, difficulty, and instructions 
+    FIX USE STATE AT TOP, SOME MISSING, ("")
+    ADD CSS / styles={}
+    CHECK INITIAL VALUES, HOW DOES "" WORK WITH DROPDOWNS, MAYBE CHANGE DEFAULT
+    CHECK FORMIK - FIRST TIME ENCOUNTERED - READ DOCS
+    READ DOCS ON USESTATE - WE AREN'T USED TO USING IT YET
+    CHECK onValueChange={(itemValue, itemIndex) =>
+      setSelectedMuscle(itemValue) FOR EACH, REPEATED VARIABLE USE MIGHT CLASH
+      CONNECT API TO MONGODB, 
+      IMPORT TO LAYOUT, CREATE A WAY TO ADD IN NEW EXERCISES AND GET TO THIS SCREEN/URL
+      EDIT / DELETE FUNCTIONALITY
+      TEST DB, FIGURE OUT HOW TO RAISE AN ERROR IF VALUES ARE NULL
+      FUTURE SEAN PROBLEMS, HALF WAY THERE
+      AFTER IT WORKS, ADD EXERCISES
+      FIX selectedValue={selectedType} for TYPE / DIFFICULTY / MUSCLE USING SAME VARIABLE NAME
+            */
+}
+
 const ExerciseForm = () => {
   const [selectedMuscle, setSelectedMuscle] = useState("");
   const [selectedType, setSelectedType] = useState("");
@@ -104,22 +133,3 @@ const ExerciseForm = () => {
 };
 
 export default ExerciseForm;
-
-{
-  /* Add more TextInput fields for type, muscle, equipment, difficulty, and instructions 
-            FIX selectedValue={selectedType} for TYPE / DIFFICULTY / MUSCLE USING SAME VARIABLE NAME
-            FIX USE STATE AT TOP, SOME MISSING, ("")
-            ADD CSS / styles={}
-            CHECK INITIAL VALUES, HOW DOES "" WORK WITH DROPDOWNS, MAYBE CHANGE DEFAULT
-            CHECK FORMIK - FIRST TIME ENCOUNTERED - READ DOCS
-            READ DOCS ON USESTATE - WE AREN'T USED TO USING IT YET
-            CHECK onValueChange={(itemValue, itemIndex) =>
-                  setSelectedMuscle(itemValue) FOR EACH, REPEATED VARIABLE USE MIGHT CLASH
-            CONNECT API TO MONGODB, 
-            IMPORT TO LAYOUT, CREATE A WAY TO ADD IN NEW EXERCISES AND GET TO THIS SCREEN/URL
-            EDIT / DELETE FUNCTIONALITY
-            TEST DB, FIGURE OUT HOW TO RAISE AN ERROR IF VALUES ARE NULL
-            FUTURE SEAN PROBLEMS, HALF WAY THERE
-            AFTER IT WORKS, ADD EXERCISES
-            */
-}
