@@ -346,7 +346,7 @@ ERROR:
 Web Bundling failed 5254ms (node_modules/expo-router/entry.js)
 Unable to resolve "axios" from "src/app/ManualInput/page.jsx"
 We had an error with formik, installed it, now works, now we have an error with axios, causing our web bundler to fail with expo/metro, need to fix our dependancies before we can even load our app
-
+won't even be using axios, need to rewrite for realm, - got it rewritten, now need to figure out how to connect realm to our mongoDB, looking good so far, step 1 is to add exercises, then we can work on rest
 
 
 
