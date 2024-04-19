@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, TextInput, Button, Picker } from "react-native";
 import { Formik } from "formik";
 import Realm from "realm";
-import { MongoDB } from "mongodb-realm-sync";
+import { MongoDB } from "mongodb-realm-sync"; //Not being used? I thought this was a dependancy
 {
   /* TODO: 
     CHANGED TO TYPESCRIPT - FIX ALL THE RED - HOW IS IT SAYING THE MODULES DON'T EXIST IF WE ARE USING THEM?
@@ -31,8 +31,6 @@ import { MongoDB } from "mongodb-realm-sync";
 Read data from the database:
 const exercises = await exercisesCollection.find({});
 
-
-    Add more TextInput fields for type, muscle, equipment, difficulty, and instructions 
     FIX USE STATE AT TOP, SOME MISSING, ("")
     ADD CSS / styles={}
     CHECK INITIAL VALUES, HOW DOES "" WORK WITH DROPDOWNS, MAYBE CHANGE DEFAULT
@@ -46,9 +44,6 @@ const exercises = await exercisesCollection.find({});
       TEST DB, FIGURE OUT HOW TO RAISE AN ERROR IF VALUES ARE NULL
       FUTURE SEAN PROBLEMS, HALF WAY THERE
       AFTER IT WORKS, ADD EXERCISES
-      FIX selectedValue={selectedType} for TYPE / DIFFICULTY / MUSCLE USING SAME VARIABLE NAME
-
-    
             */
 }
 
@@ -57,9 +52,11 @@ const ExerciseForm = () => {
   const [selectedType, setSelectedType] = useState("");
   const [selectedEquipment, setSelectedEquipment] = useState("");
 
-  const app = new Realm.App({ id: "YOUR_APP_ID" });
+  const apiKey = process.env.local["MONGO_DB_URI"];
+
+  const app = new Realm.App({ id: apiKey }); // Check Me
   const mongo = app.currentUser.mongoClient("mongodb-atlas");
-  const exercisesCollection = mongo.db("workouts").collection("exercises");
+  const exercisesCollection = mongo.db("workouts").collection("exercises"); //check me
 
   const realm = new Realm({
     path: "myrealm",
@@ -99,7 +96,7 @@ const ExerciseForm = () => {
             muscle: values.muscle,
             equipment: values.equipment,
             instructions: values.instructions,
-            count: realm.objects("Exercise").max("count") + 1, // Increment the count field
+            count: realm.objects("Exercise").max("count") + 1, // Increment the count field, move to [name].jsx
           });
         });
       }}
