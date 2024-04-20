@@ -367,13 +367,29 @@ https://www.mongodb.com/docs/atlas/device-sdks/web/quickstart/
 npm install realm-web #installs realm-web to our app
 import * as Realm from "realm-web"; #will allow us to use realm on web, I want mobile, need to do some more testing 
 Finally got my app to load only took... ~12 hours? Now we can test our database, can't navigate to 'ManualInput.jsx' through browser, and my navbar isn't showing link, at least it loaded.. positives. 
- 
+added a tiny text button at bottom of 'index.jsx' for 
+When I clicked the 'ManualInput' button it would bring me to the 'exercise not found' page, which is an error message I left for exercises, so the routing isn't working?
+Ok, so I think what is happening is that [name].jsx is messing up our routing, maybe we got the naming convenSeans wrong? Created a new folder [name] and 'page.jsx', and moved file into there, it should work, but it doesn't.
+Need to fix this, then test our manualinput, but can't even get to that page even in the browser with a URL, need to do more reading and maybe change file/folder setup, THEN we can FINALLY test our code.
+Maybe rename 'page.jsx' to 'index.jsx'? might need to do more reading on naming conventions for React Native / NextJS / Expo Routing <- It's this, after reading it's 'index.jsx'
+Expo Routing:
+https://docs.expo.dev/router/create-pages/
+Andddddd... We got our exercise pages to load, but the next hurdle appeared. Did we declare the variable in .env.local correctly?
+Uncaught Error: Cannot read properties of undefined (reading 'MONGO_DB_URI')
+https://stackoverflow.com/questions/48699820/how-do-i-hide-an-api-key-in-create-react-app
+Ok, seems to have fixed it by adding 'const apiKey = process.env.REACT_APP_MONGO_DB_URI;', Next Hurdle:
+Uncaught Error: Missing an Atlas App Services app-id
+this.baseUrl = configuration.baseUrl || DEFAULT_BASE_URL;
+Problem Area seems to be here:
+const apiKey = process.env.REACT_APP_MONGO_DB_URI;
+const app = new Realm.App({ id: apiKey });
+The error Uncaught Error: Missing an Atlas App Services app-id indicates that you have not provided an app ID when creating a Realm.App object.. except.. I did, :( need to do more reading.. 14 hour day. Escape.
+https://www.mongodb.com/developer/products/mongodb/real-time-data-javascript/
+I think this is the fix, taking a break. ExhaustSean:
+https://www.mongodb.com/docs/atlas/app-services/authentication/api-key/
 
-
-
-
-
-
-
-
-
+20 April 2024
+Back to work, read through docs, going to try some things and google how to get an 'Atlas App Services app-id' docs I landed on last night(morning?) at end were talking mostly about authentication, that's a future sean problem
+More Reading, notes for future reference, 50 tabs open:
+https://www.mongodb.com/docs/atlas/device-sdks/sdk/react-native/manage-users/manage-user-api-keys/#std-label-react-native-manage-user-api-keys
+https://www.mongodb.com/docs/atlas/device-sdks/sdk/react-native/app-services/#:~:text=The%60%60App%60%60%20object,in%20the%20App%20Services%20UI.
