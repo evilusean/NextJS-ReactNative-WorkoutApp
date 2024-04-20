@@ -360,8 +360,14 @@ npm run # ran into a problem, need to remove my old page2 / page3.jsx, sucks but
 NEW ERROR: Web Bundling failed 4244ms (node_modules/expo-router/entry.js)
 Unable to resolve "#realm.node" from "node_modules/realm/binding/generated/native.node.cjs" 
 https://github.com/realm/realm-js/issues/1060#issuecomment-465934019
+https://github.com/realm/realm-js/issues/3927
 Removed a bunch of dependancies, and webpack still can't compile, going to try above fix and see what happens - I've been working since I woke up and havn't even gotten to the testing phase - 
-
+Realm Web SDK:
+https://www.mongodb.com/docs/atlas/device-sdks/web/quickstart/
+npm install realm-web #installs realm-web to our app
+import * as Realm from "realm-web"; #will allow us to use realm on web, I want mobile, need to do some more testing 
+Finally got my app to load only took... ~12 hours? Now we can test our database, can't navigate to 'ManualInput.jsx' through browser, and my navbar isn't showing link, at least it loaded.. positives. 
+ 
 
 
 
