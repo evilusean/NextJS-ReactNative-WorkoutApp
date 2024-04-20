@@ -1,8 +1,6 @@
 import React from "react";
 import { View, Text, Button, StyleSheet } from "react-native";
 
-const Stack = createStackNavigator();
-
 const Navbar = () => {
   return (
     <View style={styles.navbar}>

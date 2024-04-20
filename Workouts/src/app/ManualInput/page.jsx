@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { View, TextInput, Button, Picker } from "react-native";
 import { Formik } from "formik";
-import Realm from "realm";
+import * as Realm from "realm-web";
+//import Realm from "realm";
 
 {
   /* TODO: '+' = CompleSean
