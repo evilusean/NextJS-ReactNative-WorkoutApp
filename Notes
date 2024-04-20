@@ -387,3 +387,9 @@ The error Uncaught Error: Missing an Atlas App Services app-id indicates that yo
 https://www.mongodb.com/developer/products/mongodb/real-time-data-javascript/
 I think this is the fix, taking a break. ExhaustSean:
 https://www.mongodb.com/docs/atlas/app-services/authentication/api-key/
+
+20 April 2024
+Back to work, read through docs, going to try some things and google how to get an 'Atlas App Services app-id' docs I landed on last night(morning?) at end were talking mostly about authentication, that's a future sean problem
+More Reading, notes for future reference, 50 tabs open:
+https://www.mongodb.com/docs/atlas/device-sdks/sdk/react-native/manage-users/manage-user-api-keys/#std-label-react-native-manage-user-api-keys
+https://www.mongodb.com/docs/atlas/device-sdks/sdk/react-native/app-services/#:~:text=The%60%60App%60%60%20object,in%20the%20App%20Services%20UI.
