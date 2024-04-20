@@ -56,7 +56,7 @@ const ExerciseForm = () => {
 
   const apiKey = process.env.REACT_APP_API_KEY;
 
-  const app = new Realm.App({ id: apiKey }); // Check Me, might need to create a realm account, maybe not use mongodb uri?
+  const app = new Realm.App({ id: "application-0-xldztvy" }); // Check Me, might need to create a realm account, maybe not use mongodb uri?
   // if it is a realm account, how does it get our mongodb data, Cluster 0 'workouts.exercises'?
   //Googling realm account login, brings us to MongoDB atlas, maybe realm is mongoDB? - this should work then
   const mongo = app.currentUser.mongoClient("mongodb-atlas");
@@ -86,11 +86,13 @@ const ExerciseForm = () => {
   return (
     <Formik
       initialValues={{
+        _id: "",
         name: "",
         type: "",
         muscle: "",
         equipment: "",
         instructions: "",
+        count: 0,
       }}
       onSubmit={(values) => {
         realm.write(() => {
