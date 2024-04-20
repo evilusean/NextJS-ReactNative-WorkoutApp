@@ -1,0 +1,9 @@
+{
+    "appId": "application-0-xldztvy",
+    "appUrl": "https://services.cloud.mongodb.com/groups/6621975584c7a044fb57cb38/apps/662422695bbcc934d49fe200",
+    "baseUrl": "https://services.cloud.mongodb.com",
+    "clientApiBaseUrl": "https://ap-southeast-1.aws.services.cloud.mongodb.com",
+    "dataApiBaseUrl": "https://ap-southeast-1.aws.data.mongodb-api.com",
+    "dataExplorerLink": "https://cloud.mongodb.com/links/6621975584c7a044fb57cb38/explorer/Cluster0/database/collection/find",
+    "dataSourceName": "mongodb-atlas"
+}
