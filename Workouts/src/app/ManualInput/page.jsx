@@ -54,12 +54,14 @@ const ExerciseForm = () => {
 
   const apiKey = process.env.local["MONGO_DB_URI"];
 
-  const app = new Realm.App({ id: apiKey }); // Check Me
+  const app = new Realm.App({ id: apiKey }); // Check Me, might need to create a realm account, maybe not use mongodb uri?
+  // if it is a realm account, how does it get our mongodb data, Cluster 0 'workouts.exercises'?
+  //Googling realm account login, brings us to MongoDB atlas, maybe realm is mongoDB? - this should work then
   const mongo = app.currentUser.mongoClient("mongodb-atlas");
-  const exercisesCollection = mongo.db("workouts").collection("exercises"); //check me
+  const exercisesCollection = mongo.db("workouts").collection("exercises"); //check me, looks correct
 
   const realm = new Realm({
-    path: "myrealm",
+    path: "myrealm", //What is this? Cluster 0? Project Name 'Workouts'? DB name? - do we even need this?
     schema: [
       {
         name: "Exercise",
