@@ -439,7 +439,11 @@ npm start #Just got greeted with above error, do we need to use TS? Last time I 
 Still need to fix routing, created new folder 'exercises' moved [name] folder and 'index.jsx', and something broke, 'npm start' now giving me a blank screen :<, need to read docs.. again.. oof
 Web Bundling failed 3769ms (node_modules/expo-router/entry.js)
 Unable to resolve "../../../assets/data/exercises.json" from "src/app/exercises/[name]/index.jsx"
-
+Fixed the routing issue forgot a '/' in file name for a dynamic page, works now - trying to fix our input page
+Not even typing in the url manually is working, tried making all lowercase, added 'push' to our link tag, renamed folder, 
+  Ok, got it to load, now we are back to the same issue.. 'Missing an Atlas App Services app-id' - I thought I fixed this? Maybe need to use the public key/maybe those config files were'nt trash 
+More Expo Router Navigation Docs:
+https://docs.expo.dev/router/navigating-pages/
 
 
 
