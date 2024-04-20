@@ -393,3 +393,52 @@ Back to work, read through docs, going to try some things and google how to get 
 More Reading, notes for future reference, 50 tabs open:
 https://www.mongodb.com/docs/atlas/device-sdks/sdk/react-native/manage-users/manage-user-api-keys/#std-label-react-native-manage-user-api-keys
 https://www.mongodb.com/docs/atlas/device-sdks/sdk/react-native/app-services/#:~:text=The%60%60App%60%60%20object,in%20the%20App%20Services%20UI.
+Future Sean, don't forget to fix routing after this, potential fix is new file structure with '/ exercise / [id]' instead of [name], because how many variations of bench/pushups/earth downs can you do? - avoid duplicates / wrong page
+  with new dedicated page for exercises, we should, technically, in theory, be able to use '/ManualInput' URL.. finally, and actually test our code and move on, in theory
+  How do we get the page to connect the right 'id' to exercises / [id]? referennce what we used for [name] in the past, and make some ch-ch-changes, also read docs on expo routing
+Steps: Log in to MongoDB Atlas -> Overview -> App Services -> 
+1Download the CLI Client
+npm install -g atlas-app-services-cli
+2Create a Programmatic API key
+Use this API key associated with your MongoDB Cloud account to authenticate your appservices cli session. To create or use an existing API key, 
+view and manage your API keys here.
+3Authenticate to the appservices cli
+appservices login --api-key <my-api-key> --private-api-key <my-private-api-key>
+4Download via appservices cli
+Choose a language for the front-end code for your template and then download the files into your current directory via cli command. 
+Set up your CLI.
+appservices pull --remote application-0-xldztvy --template react-native.todo.flex
+5Follow the Guided Tutorial
+View our React Native Tutorial -  for a step by step guide on how to set up your example app.
+More Docs..:
+https://www.mongodb.com/docs/atlas/app-services/manage-apps/configure/export/export-with-cli/
+https://www.mongodb.com/docs/atlas/app-services/cli/
+https://cloud.mongodb.com/v2/6621975584c7a044fb57cb38#access/apiKeys
+https://www.mongodb.com/docs/atlas/app-services/cli/
+https://www.mongodb.com/docs/atlas/app-services/tutorial/react-native/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
