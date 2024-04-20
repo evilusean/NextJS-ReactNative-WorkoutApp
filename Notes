@@ -411,15 +411,30 @@ appservices pull --remote application-0-xldztvy --template react-native.todo.fle
 5Follow the Guided Tutorial
 View our React Native Tutorial -  for a step by step guide on how to set up your example app.
 More Docs..:
+https://www.mongodb.com/docs/atlas/app-services/
 https://www.mongodb.com/docs/atlas/app-services/manage-apps/configure/export/export-with-cli/
 https://www.mongodb.com/docs/atlas/app-services/cli/
 https://cloud.mongodb.com/v2/6621975584c7a044fb57cb38#access/apiKeys
 https://www.mongodb.com/docs/atlas/app-services/cli/
 https://www.mongodb.com/docs/atlas/app-services/tutorial/react-native/
-
-
-
-
+==Success?==
+Saved app to disk
+Successfully pulled app down: Application-0
+Successfully saved template(s) to disk
+  react-native.todo.flex: Application-0/frontend/react-native.todo.flex/README.md
+Navigate to the saved directory to view directions on how to run the template app(s)
+We just added like 100 files and 20 configs to our project, for one API_Key, did we mess up? haven't tested yet to see if the key works, seems a bit excessive, this is worse than a 'create-react-app' might need to delete
+  Starting project at /media/sean/SeanDrive/Code/Eviliusean.github.io/ReactNative-WorkoutApp/Workouts
+  env: load .env
+  env: export REACT_APP_MONGO_DB_URI REACT_APP_API_KEY
+  Starting Metro Bundler
+  ✔ It looks like you're trying to use TypeScript but don't have the required dependencies installed. Would you like to install typescript@^5.3.0? … no
+  CommandError: Please install typescript@^5.3.0 by running:
+  npx expo install typescript
+  If you're not using TypeScript, please remove the TypeScript files from your project
+npm start #Just got greeted with above error, do we need to use TS? Last time I tried I got a wall of errors, which would take hours(?) to fix, maybe we need to delete Application-0 file, I just want to test my API_KEY :<
+  We could move our files in there and start working with the new configs and just replace the files or.. delete - I think we made a mistake and accidently installed another project in our project, projectSean
+  Hopefully nothing breaks, and API_KEY works, then we can finally test our database, day 2 of trying to get one page to open, If I need it, I know where to find it, in the trash. "Know your place - Trash!" -Joji(Filthy Frank)
 
 
 
