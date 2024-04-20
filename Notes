@@ -357,9 +357,10 @@ Still working on setting up realm having trouble with certain variables, need to
 Created Navbar for add exercise, might move it from 'Root Layout' to 'index.jsx' or simply add a line at top with <Text>'Add Exercise'</Text> with an onClick that goes to 'ManualInput.jsx'
   the top is prime real estate, can add our 'current workout sets' link there instead and just have the 'add new exercise' in a less conspicuous place, once we are set up, won't be used frequently
 npm run # ran into a problem, need to remove my old page2 / page3.jsx, sucks but we need to test, they are causing problems and need to be gone, going to take a break and think about what to do next then test
-
-
-
+NEW ERROR: Web Bundling failed 4244ms (node_modules/expo-router/entry.js)
+Unable to resolve "#realm.node" from "node_modules/realm/binding/generated/native.node.cjs" 
+https://github.com/realm/realm-js/issues/1060#issuecomment-465934019
+Removed a bunch of dependancies, and webpack still can't compile, going to try above fix and see what happens - I've been working since I woke up and havn't even gotten to the testing phase - 
 
 
 
