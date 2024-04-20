@@ -344,6 +344,11 @@ https://www.mongodb.com/docs/atlas/device-sdks/sdk/node/realm-files/open-and-clo
 Formik(for our input exercise page):
 https://formik.org/docs/overview
 
+Expo Routing:
+https://docs.expo.dev/router/create-pages/
+More Expo Router Navigation Docs:
+https://docs.expo.dev/router/navigating-pages/
+
 We are going to use realm for our database posting, need to read docs. Start working on implementASean, gonna be a loooooonnnngggg day. The sooner we finish, the sooner we escape canada and eat good food, escape abusers. 
 ERROR:
 Web Bundling failed 5254ms (node_modules/expo-router/entry.js)
@@ -372,8 +377,6 @@ When I clicked the 'ManualInput' button it would bring me to the 'exercise not f
 Ok, so I think what is happening is that [name].jsx is messing up our routing, maybe we got the naming convenSeans wrong? Created a new folder [name] and 'page.jsx', and moved file into there, it should work, but it doesn't.
 Need to fix this, then test our manualinput, but can't even get to that page even in the browser with a URL, need to do more reading and maybe change file/folder setup, THEN we can FINALLY test our code.
 Maybe rename 'page.jsx' to 'index.jsx'? might need to do more reading on naming conventions for React Native / NextJS / Expo Routing <- It's this, after reading it's 'index.jsx'
-Expo Routing:
-https://docs.expo.dev/router/create-pages/
 Andddddd... We got our exercise pages to load, but the next hurdle appeared. Did we declare the variable in .env.local correctly?
 Uncaught Error: Cannot read properties of undefined (reading 'MONGO_DB_URI')
 https://stackoverflow.com/questions/48699820/how-do-i-hide-an-api-key-in-create-react-app
@@ -441,11 +444,12 @@ Web Bundling failed 3769ms (node_modules/expo-router/entry.js)
 Unable to resolve "../../../assets/data/exercises.json" from "src/app/exercises/[name]/index.jsx"
 Fixed the routing issue forgot a '/' in file name for a dynamic page, works now - trying to fix our input page
 Not even typing in the url manually is working, tried making all lowercase, added 'push' to our link tag, renamed folder, 
-  Ok, got it to load, now we are back to the same issue.. 'Missing an Atlas App Services app-id' - I thought I fixed this? Maybe need to use the public key/maybe those config files were'nt trash 
-More Expo Router Navigation Docs:
-https://docs.expo.dev/router/navigating-pages/
-
-
+  Ok, got it to load, now we are back to the same issue.. 'Missing an Atlas App Services app-id' - I thought I fixed this? Maybe need to use the public key/maybe those config files were'nt trash
+Fixed it, forgot "" to wrap string with quotes - next hurdle - Maybe forgot to declare all variables and give an initial value? I didn't declare '_id' or 'count'
+Uncaught Error: Cannot read properties of null (reading 'mongoClient')
+https://www.mongodb.com/community/forums/t/typeerror-cannot-read-properties-of-null-reading-mongoclient/145744
+I think I found it - When I created a new project it automatically created a new MongoDB - App - Project - so I went through all the steps on the wrong App, the DB didn't exist, going through guide now setting up correct API
+Setting permissions, future Sean - just follow the guide on App Services page - still having problems - getting closer - a few more hours, and we can just copy this code for every other page that needs a DB 
 
 
 
