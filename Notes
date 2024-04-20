@@ -435,9 +435,10 @@ We just added like 100 files and 20 configs to our project, for one API_Key, did
 npm start #Just got greeted with above error, do we need to use TS? Last time I tried I got a wall of errors, which would take hours(?) to fix, maybe we need to delete Application-0 file, I just want to test my API_KEY :<
   We could move our files in there and start working with the new configs and just replace the files or.. delete - I think we made a mistake and accidently installed another project in our project, projectSean
   Hopefully nothing breaks, and API_KEY works, then we can finally test our database, day 2 of trying to get one page to open, If I need it, I know where to find it, in the trash. "Know your place - Trash!" -Joji(Filthy Frank)
-
-
-
+  https://www.youtube.com/watch?v=_QkKOTsW8jk&ab_channel=AFaceHiddenInTime
+Still need to fix routing, created new folder 'exercises' moved [name] folder and 'index.jsx', and something broke, 'npm start' now giving me a blank screen :<, need to read docs.. again.. oof
+Web Bundling failed 3769ms (node_modules/expo-router/entry.js)
+Unable to resolve "../../../assets/data/exercises.json" from "src/app/exercises/[name]/index.jsx"
 
 
 
