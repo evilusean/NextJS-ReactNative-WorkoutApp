@@ -380,7 +380,9 @@ https://stackoverflow.com/questions/48699820/how-do-i-hide-an-api-key-in-create-
 Ok, seems to have fixed it by adding 'const apiKey = process.env.REACT_APP_MONGO_DB_URI;', Next Hurdle:
 Uncaught Error: Missing an Atlas App Services app-id
 this.baseUrl = configuration.baseUrl || DEFAULT_BASE_URL;
-
-
-
+Problem Area seems to be here:
+const apiKey = process.env.REACT_APP_MONGO_DB_URI;
+const app = new Realm.App({ id: apiKey });
+The error Uncaught Error: Missing an Atlas App Services app-id indicates that you have not provided an app ID when creating a Realm.App object.. except.. I did, :( need to do more reading.. 14 hour day. Escape.
+https://www.mongodb.com/developer/products/mongodb/real-time-data-javascript/
 
