@@ -14,7 +14,7 @@ export default function App() {
         renderItem={({ item }) => <ExerciseListItem item={item} />}
       />
       <View>
-        <Link href={"/ManualInput"}>
+        <Link href={`/ManualInput/`}>
           <Text>Manual Input</Text>
         </Link>
       </View>

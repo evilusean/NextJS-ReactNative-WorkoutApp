@@ -1,9 +1,9 @@
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { useLocalSearchParams } from "expo-router";
-import exercises from "../../../assets/data/exercises.json";
+import exercises from "../../../../assets/data/exercises.json";
 import { Stack } from "expo-router";
 import { useState } from "react";
-import NewSetInput from "../../components/NewSetInput";
+import NewSetInput from "../../../components/NewSetInput";
 
 export default function ExerciseDetailsScreen() {
   const params = useLocalSearchParams();
