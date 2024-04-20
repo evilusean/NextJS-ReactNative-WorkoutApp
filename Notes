@@ -385,4 +385,5 @@ const apiKey = process.env.REACT_APP_MONGO_DB_URI;
 const app = new Realm.App({ id: apiKey });
 The error Uncaught Error: Missing an Atlas App Services app-id indicates that you have not provided an app ID when creating a Realm.App object.. except.. I did, :( need to do more reading.. 14 hour day. Escape.
 https://www.mongodb.com/developer/products/mongodb/real-time-data-javascript/
-
+I think this is the fix, taking a break. ExhaustSean:
+https://www.mongodb.com/docs/atlas/app-services/authentication/api-key/
