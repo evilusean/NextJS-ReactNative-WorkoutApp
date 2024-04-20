@@ -2,24 +2,39 @@ import React, { useState } from "react";
 import { View, TextInput, Button, Picker } from "react-native";
 import { Formik } from "formik";
 import Realm from "realm";
-import { MongoDB } from "mongodb-realm-sync"; //Not being used? I thought this was a dependancy
+
 {
-  /* TODO: 
+  /* TODO: '+' = CompleSean
     CHANGED TO TYPESCRIPT - FIX ALL THE RED - HOW IS IT SAYING THE MODULES DON'T EXIST IF WE ARE USING THEM?
       MAYBE WE NEED TO USE .jsx, WHEN SWITCHING TO .tsx GOT 10 RED ERROR MESSAGES
       HOW CAN <TEXT> NOT BE USED AS A .jsx COMPONENT? LIKE WHAT? IS IT THE LINTER? DO WE NEED TO ADD TO OUR CONFIG?
-    ADD .env VARIABLES TO POST METHOD, CLUSTER 0 'workouts.exercises' COLLLECTION
-    FIGURE OUT SCHEMA = REMOVE DIFFICULTY / uID / NAME / TYPE / MUSCLE / EQUIPMENT / INSTRUCTIONS / COUNT = 0
+    +ADD .env VARIABLES TO POST METHOD, CLUSTER 0 'workouts.exercises' COLLLECTION
+    +FIGURE OUT SCHEMA = REMOVE DIFFICULTY / uID / NAME / TYPE / MUSCLE / EQUIPMENT / INSTRUCTIONS / COUNT = 0
       MAYBE ADD A INT COUNT THAT COUNTS THE AMOUNT OF TIMES WE DID AN EXERCISE SO MOST FREQUENT WILL BE AT TOP OF OUR QUERY
       FUTURE SEAN PROBLEM, BUT WOULD BE NICE TO HAVE IF WE STILL USE OUR APP IN A YEAR DO PULLUPS EVERY WORKOUT/BENCH ETC
       CAN THEN SORT BY TYPE AND USE OUR BEST STRETCHES / MOST USED CARDIO / MOST USED ETC WILL BE AT TOP - DON'T NEED TO SCROLL
 
-  ADD uID, Count to Realm Schema, add MongoDB to realm
-  Make sure to replace 'myrealm' with the actual name of your Realm database.
-  You may need to adjust the schema property in the Realm constructor to match the schema of your MongoDB collection.
-  You may also need to adjust the properties object in the Exercise schema to match the fields in your MongoDB collection.
+  +ADD uID, Count to Realm Schema, add MongoDB to realm
+  +Make sure to replace 'myrealm' with the actual name of your Realm database.
+  +You may need to adjust the schema property in the Realm constructor to match the schema of your MongoDB collection.
+  +You may also need to adjust the properties object in the Exercise schema to match the fields in your MongoDB collection.
 
-  Write data to the database:
+    ADD TO NAVBAR 
+    FIX USE STATE AT TOP, SOME MISSING, ("")
+    ADD CSS / styles={}
+    +CHECK INITIAL VALUES, HOW DOES "" WORK WITH DROPDOWNS, MAYBE CHANGE DEFAULT
+    +CHECK FORMIK - FIRST TIME ENCOUNTERED - READ DOCS
+    +READ DOCS ON USESTATE - WE AREN'T USED TO USING IT YET
+    +CHECK onValueChange={(itemValue, itemIndex) =>
+      setSelectedMuscle(itemValue) FOR EACH, REPEATED VARIABLE USE MIGHT CLASH
+      +CONNECT API TO MONGODB, 
+      IMPORT TO LAYOUT, CREATE A WAY TO ADD IN NEW EXERCISES AND GET TO THIS SCREEN/URL
+      EDIT / DELETE FUNCTIONALITY
+      TEST DB, FIGURE OUT HOW TO RAISE AN ERROR IF VALUES ARE NULL
+      FUTURE SEAN PROBLEMS, HALF WAY THERE
+      AFTER IT WORKS, ADD EXERCISES
+
+    Write data to the database:
   exercisesCollection.insertOne({
   name: "New Exercise",
   type: "Strength",
@@ -30,20 +45,6 @@ import { MongoDB } from "mongodb-realm-sync"; //Not being used? I thought this w
 
 Read data from the database:
 const exercises = await exercisesCollection.find({});
-
-    FIX USE STATE AT TOP, SOME MISSING, ("")
-    ADD CSS / styles={}
-    CHECK INITIAL VALUES, HOW DOES "" WORK WITH DROPDOWNS, MAYBE CHANGE DEFAULT
-    CHECK FORMIK - FIRST TIME ENCOUNTERED - READ DOCS
-    READ DOCS ON USESTATE - WE AREN'T USED TO USING IT YET
-    CHECK onValueChange={(itemValue, itemIndex) =>
-      setSelectedMuscle(itemValue) FOR EACH, REPEATED VARIABLE USE MIGHT CLASH
-      CONNECT API TO MONGODB, 
-      IMPORT TO LAYOUT, CREATE A WAY TO ADD IN NEW EXERCISES AND GET TO THIS SCREEN/URL
-      EDIT / DELETE FUNCTIONALITY
-      TEST DB, FIGURE OUT HOW TO RAISE AN ERROR IF VALUES ARE NULL
-      FUTURE SEAN PROBLEMS, HALF WAY THERE
-      AFTER IT WORKS, ADD EXERCISES
             */
 }
 
@@ -61,7 +62,7 @@ const ExerciseForm = () => {
   const exercisesCollection = mongo.db("workouts").collection("exercises"); //check me, looks correct
 
   const realm = new Realm({
-    path: "myrealm", //What is this? Cluster 0? Project Name 'Workouts'? DB name? - do we even need this?
+    path: "myrealm",
     schema: [
       {
         name: "Exercise",
