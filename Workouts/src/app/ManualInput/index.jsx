@@ -54,9 +54,9 @@ const ExerciseForm = () => {
   const [selectedType, setSelectedType] = useState("");
   const [selectedEquipment, setSelectedEquipment] = useState("");
 
-  const apiKey = process.env.local["MONGO_DB_URI"];
+  //const apiKey = process.env.REACT_APP_MONGO_DB_URI;
 
-  const app = new Realm.App({ id: apiKey }); // Check Me, might need to create a realm account, maybe not use mongodb uri?
+  const app = new Realm.App({ id: process.env.REACT_APP_MONGO_DB_URI }); // Check Me, might need to create a realm account, maybe not use mongodb uri?
   // if it is a realm account, how does it get our mongodb data, Cluster 0 'workouts.exercises'?
   //Googling realm account login, brings us to MongoDB atlas, maybe realm is mongoDB? - this should work then
   const mongo = app.currentUser.mongoClient("mongodb-atlas");
