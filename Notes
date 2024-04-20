@@ -416,8 +416,13 @@ https://www.mongodb.com/docs/atlas/app-services/cli/
 https://cloud.mongodb.com/v2/6621975584c7a044fb57cb38#access/apiKeys
 https://www.mongodb.com/docs/atlas/app-services/cli/
 https://www.mongodb.com/docs/atlas/app-services/tutorial/react-native/
-
-
+==Success?==
+Saved app to disk
+Successfully pulled app down: Application-0
+Successfully saved template(s) to disk
+  react-native.todo.flex: Application-0/frontend/react-native.todo.flex/README.md
+Navigate to the saved directory to view directions on how to run the template app(s)
+We just added like 100 files and 20 configs to our project, for one API_Key, did we mess up? haven't tested yet to see if the key works, seems a bit excessive, this is worse than a 'create-react-app' might need to delete
 
 
 
