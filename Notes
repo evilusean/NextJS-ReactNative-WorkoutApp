@@ -338,6 +338,9 @@ https://medium.com/code-well/choosing-the-right-database-for-your-react-native-a
 https://www.mongodb.com/docs/atlas/device-sdks/sdk/react-native/
 Verify Hermes:
 https://reactnative.dev/docs/hermes
+Realm 'path:' variable:
+https://www.mongodb.com/docs/atlas/device-sdks/sdk/node/realm-files/open-and-close-a-realm/
+
 Formik(for our input exercise page):
 https://formik.org/docs/overview
 
@@ -347,7 +350,13 @@ Web Bundling failed 5254ms (node_modules/expo-router/entry.js)
 Unable to resolve "axios" from "src/app/ManualInput/page.jsx"
 We had an error with formik, installed it, now works, now we have an error with axios, causing our web bundler to fail with expo/metro, need to fix our dependancies before we can even load our app
 won't even be using axios, need to rewrite for realm, - got it rewritten, now need to figure out how to connect realm to our mongoDB, looking good so far, step 1 is to add exercises, then we can work on rest
-
+Still working on setting up realm having trouble with certain variables, need to make sure everything is good before attempting to upload an exercise, ah found out, it can be named literally anything. 
+  The 'path: ' property specifies the name of the Realm database file. In this case, the database file will be named myrealm.
+  Realm databases are stored on the device's local storage. This means that the data in the database is persistent and will not be lost if the app is closed or the device is restarted.
+  You can use the Realm instance to create, read, update, and delete objects in the database. You can also use Realm to query the database to find specific objects or groups of objects.
+Created Navbar for add exercise, might move it from 'Root Layout' to 'index.jsx' or simply add a line at top with <Text>'Add Exercise'</Text> with an onClick that goes to 'ManualInput.jsx'
+  the top is prime real estate, can add our 'current workout sets' link there instead and just have the 'add new exercise' in a less conspicuous place, once we are set up, won't be used frequently
+npm run # ran into a problem, need to remove my old page2 / page3.jsx, sucks but we need to test, they are causing problems and need to be gone, going to take a break and think about what to do next then test
 
 
 
