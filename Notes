@@ -481,14 +481,24 @@ I could also make a seperate googlesheets that can pull data from/upload exercis
 Official Docs:
 https://docs.sheet.best/#quickstart
 https://docs.sheet.best/#using-your-rest-api
+https://docs.sheet.best/#filtering-data
 
 sheet.best uses the first row for a schema, so we don't need to mess around with an ORM, or constructor.. 
-
-
-
-
-
-
+Guide is very good, easy to follow, even has gif videos, this is wayyyy easier to set up than realm/MongoDB, will see how it looks in React Native after we set up API and can actually test, looks promising so far
+https://docs.sheet.best/#generating-your-rest-api
+went through the quick start guide, created a new googlesheet for this month to test with, added to sheet.best connection, copied that URL and saved to .env, looks like we will want POST/PATCH/Filtered Update method to add a set
+Using your REST API : You can use your Connection URL via REST API through GET, POST, PATCH, PUT and DELETE methods. 
+  GET - Read Rows =  Parsed Format: Results can come in parsed and raw formats. They will always come as parsed by default. / Raw Format To get the result in raw format, add a _raw=1 query parameter at the end of the URL.
+  POST - Add Rows = To write data, your can send a POST request sending the JSON data to the same URL as your GET API. This will insert a new line on your sheet with the information you've sent.
+    You can also send an array of objects to post add multiple rows at once as a JSON object(s)
+  DELETE - Delete Rows - You can delete data from your Sheet by making a DELETE request to your API.
+  PUT and PATCH requests are two ways of updating existing data in your Sheet.
+    PUT - Overwriting row data
+    PATCH - Update only the data sent into the sheet
+  Filtered Update - If you want to update all rows that have "John" inside the "Name" column, you can make a PATCH or PUT request to
+The simplest way would be to just use the POST method for every exercise we do, add a new row with the date / reps / exercise / weightTime
+The way I want to do it DATE / reps-exercise1-weight or time / reps-exercise2-weight or time / ... would probably require either a batch POST or PATCH or Filtered Update method.
+We could just add a new sheet every month and add 24-30 rows x 5 days a week x 4 weeks = 600 Rows using the POST Method, per month, that's a very busy sheet(s)
 
 
 
