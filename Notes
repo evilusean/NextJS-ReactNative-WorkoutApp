@@ -460,9 +460,9 @@ https://github.com/realm/realm-js/issues/1226
 https://github.com/realm/realm-js/issues/5032
 https://github.com/realm/realm-js/issues/2563
 https://github.com/realm/realm-js/issues/2460
+https://www.mongodb.com/community/forums/t/missin-realm-constructor-error/166726/43
 Apparently need to enable hermes, thankfully I saved those docs.. It's not hermes
-
-
+Might need to actually use the template, move all my code over to a new layout.. gonna work on this a bit longer see if I can get an easier fix - going to comment some things out and google again before rebuilding
 
 
 
