@@ -53,6 +53,15 @@ const ExerciseForm = () => {
   const [selectedMuscle, setSelectedMuscle] = useState("");
   const [selectedType, setSelectedType] = useState("");
   const [selectedEquipment, setSelectedEquipment] = useState("");
+  {
+    /*
+  const [name, setName] = useState("");
+  const [type, setType] = useState("");
+  const [muscle, setMuscle] = useState("");
+  const [equipment, setEquipment] = useState("");
+  const [instructions, setInstructions] = useState("");
+*/
+  }
 
   const apiKey = process.env.REACT_APP_API_KEY;
 
@@ -63,6 +72,18 @@ const ExerciseForm = () => {
   const user = app.logIn(credentials);
   const mongodb = app.currentUser.mongoClient("mongodb-atlas");
   const exercisesCollection = mongodb.db("workouts").collection("exercises"); //check me, looks correct
+
+  class Exercise {
+    constructor(id, name, type, muscle, equipment, instructions, count) {
+      this._id = id;
+      this.name = name;
+      this.type = type;
+      this.muscle = muscle;
+      this.equipment = equipment;
+      this.instructions = instructions;
+      this.count = count;
+    }
+  }
 
   const realm = new Realm({
     path: "myrealm",
@@ -76,7 +97,7 @@ const ExerciseForm = () => {
           muscle: "string",
           equipment: "string",
           instructions: "string",
-          count: "int",
+          count: { type: "int", default: 0 },
         },
         primaryKey: "_id",
       },
@@ -84,7 +105,6 @@ const ExerciseForm = () => {
   });
 
   realm.schema.get("Exercise").primaryKey = "_id";
-  realm.schema.get("Exercise").properties.count.defaultValue = 0;
 
   return (
     <Formik
@@ -105,7 +125,7 @@ const ExerciseForm = () => {
             muscle: values.muscle,
             equipment: values.equipment,
             instructions: values.instructions,
-            //count: realm.objects("Exercise").max("count") + 1, // Increment the count field, move to [name].jsx
+            count: 0,
           });
         });
       }}
