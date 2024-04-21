@@ -471,6 +471,47 @@ https://stackoverflow.com/questions/72562299/react-native-realm-constructor-was-
 https://www.mongodb.com/docs/realm-sdks/js/latest/Realm.html
 Getting tired, gonna rest, maybe comment out all of the code and make it a future sean problem, I might still be able to use best.sheet to store my exercises, this constructor error has been ~4hours and 0 progress..
 
+21 April 2024 - Day 3 - Finished some boilerplate for a 'sets' input page using best.sheets before sleep last night, after thinking about it, MongoDB is for high volume DB, I could still get the same FuncSeanality out of gooogle sheets
+Realistically the volume is going to be inputting one set every few minutes - you would need to type out the exercise instead of selecting from a list, but that would be an extra few seconds tops per set, not a big deal
+It should save our sets in a setSets(lol) array, I'm wondering if this will cache data if we are hosting on vercel? - what happens if I switch out of app - would it create a new google sheet or use old one? how do we manage that?
+I think best move is to have it set a date on current sheet - and if that date exists, add the set there, or do a batch if we can cache and just hit a button at end of workout to upload to master google sheet with date
+Going to read docs.. at least we are making progress, if I can get this figured out, can always go back to set up Realm/MongoDB, I just have no idea why it's telling me 'Realm is not a constructor' when I built an actual constructor
+I could also make a seperate googlesheets that can pull data from/upload exercises in a new row with a set schema, or I could just have a long ass 'exercises.json' and update on github at home with exercises for a list
+  Vercel should automatically update app with new 'exercises.json' and give me the new list, when I reopen the app, have access to it again. It would allow me to get a MVP out, and worry about using a real DB later on, DeciSeans..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
