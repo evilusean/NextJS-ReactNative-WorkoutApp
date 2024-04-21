@@ -450,7 +450,10 @@ Uncaught Error: Cannot read properties of null (reading 'mongoClient')
 https://www.mongodb.com/community/forums/t/typeerror-cannot-read-properties-of-null-reading-mongoclient/145744
 I think I found it - When I created a new project it automatically created a new MongoDB - App - Project - so I went through all the steps on the wrong App, the DB didn't exist, going through guide now setting up correct API
 Setting permissions, future Sean - just follow the guide on App Services page - still having problems - getting closer - a few more hours, and we can just copy this code for every other page that needs a DB 
-
+Found the fix, needed credentials
+  const credentials = await Realm.credentials.anonymous();
+  const user = await app.LogIn(credentials);
+Uncaught Error: Objects are not valid as a React child (found: [object Promise]). If you meant to render a collection of children, use an array instead. Next hurdle. 
 
 
 
