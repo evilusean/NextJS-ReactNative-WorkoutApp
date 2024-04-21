@@ -499,6 +499,11 @@ Using your REST API : You can use your Connection URL via REST API through GET, 
 The simplest way would be to just use the POST method for every exercise we do, add a new row with the date / reps / exercise / weightTime
 The way I want to do it DATE / reps-exercise1-weight or time / reps-exercise2-weight or time / ... would probably require either a batch POST or PATCH or Filtered Update method.
 We could just add a new sheet every month and add 24-30 rows x 5 days a week x 4 weeks = 600 Rows using the POST Method, per month, that's a very busy sheet(s)
+Single row layout = 1 * 5 * 4 * 12 = 240 rows for a year, way better 
+Sheet.best free tier gives us 15,000 free API calls a month, so we don't really need to send it as a batch, we can also PATCH the same row over and over again without fear, 50 * 7 * 4 = 1400 Upper limit of what we would use per month
+We could add a 'Create Workout' button that we can use for that day, and just PATCH that same day, logic seems easy instead of having it check our so called DB - check date - if date is today - PATCH - if not - create
+Step Counter Feature? If I'm living in Japan, you know I'mma be walking e'rywhere, exploring, anime/samurai wonderland, easy 20k steps a day - would be nice to track 
+
 
 
 
