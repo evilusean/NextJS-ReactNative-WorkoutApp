@@ -460,13 +460,16 @@ https://github.com/realm/realm-js/issues/1226
 https://github.com/realm/realm-js/issues/5032
 https://github.com/realm/realm-js/issues/2563
 https://github.com/realm/realm-js/issues/2460
+https://github.com/realm/realm-js/issues/6041
 https://www.mongodb.com/community/forums/t/missin-realm-constructor-error/166726/43
 Apparently need to enable hermes, thankfully I saved those docs.. It's not hermes
 Might need to actually use the template, move all my code over to a new layout.. gonna work on this a bit longer see if I can get an easier fix - going to comment some things out and google again before rebuilding
-
-
-
-
+We literally built a constructor, updated '_id', renamed our 'path:', updated the schema, updated 'onSubmit', and we are still getting the error, DemoralizeASean is kicking in, about to be day 2 and still havn't tested a page
+Maybe we need to start console.logging and see exactly what is going on, because I'm seeing at least 3 different distinct spots this code could be broken.. more docs! I really don't want to add a template and replace everything
+https://www.mongodb.com/docs/atlas/device-sdks/sdk/node/model-data/define-a-realm-object-model/
+https://stackoverflow.com/questions/72562299/react-native-realm-constructor-was-not-registered-in-the-schema-for-this-realm
+https://www.mongodb.com/docs/realm-sdks/js/latest/Realm.html
+Getting tired, gonna rest, maybe comment out all of the code and make it a future sean problem, I might still be able to use best.sheet to store my exercises, this constructor error has been ~4hours and 0 progress..
 
 
 
