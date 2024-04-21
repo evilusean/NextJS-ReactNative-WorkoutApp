@@ -10,8 +10,8 @@ const App = () => {
   const [weightTime, setWeightTime] = useState("");
   const [sets, setSets] = useState([
     {
-      exerciseName: "",
       reps: "",
+      exerciseName: "",
       weightTime: "",
     },
   ]);
@@ -21,7 +21,7 @@ const App = () => {
   };
 
   const addSet = () => {
-    setSets([...sets, { exerciseName: "", reps: "", weightTime: "" }]);
+    setSets([...sets, { reps: "", exerciseName: "", weightTime: "" }]);
   };
 
   const submitForm = () => {
@@ -45,24 +45,24 @@ const App = () => {
         closeOnDragDown={true}
         closeOnPressMask={true}
       >
-        <View style={styles.input-container}>
+        <View>
           {sets.map((set, index) => (
-            <View key={index}>
-              <TextInput
-                placeholder="Exercise Name"
-                value={set.exerciseName}
-                onChangeText={(text) => {
-                  const newSets = [...sets];
-                  newSets[index].exerciseName = text;
-                  setSets(newSets);
-                }}
-              />
+            <View key={index} style={styles.inputContainer}>
               <TextInput
                 placeholder="Reps"
                 value={set.reps}
                 onChangeText={(text) => {
                   const newSets = [...sets];
                   newSets[index].reps = text;
+                  setSets(newSets);
+                }}
+              />
+              <TextInput
+                placeholder="Exercise Name"
+                value={set.exerciseName}
+                onChangeText={(text) => {
+                  const newSets = [...sets];
+                  newSets[index].exerciseName = text;
                   setSets(newSets);
                 }}
               />
@@ -88,12 +88,13 @@ const App = () => {
 export default App;
 
 const styles = StyleSheet.create({
-    inputContainer: {
-        flexDirection: row,
-        alignItems: center,
-        justifyContent: space-between,
-    },
-    button: {
-        width: 100%
-    },
+  inputContainer: {
+    flexDirection: row,
+    alignItems: center,
+    justifyContent: space - between,
+  },
+  button: {
+    width: 100,
+    marginTop: 10,
+  },
 });
