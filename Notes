@@ -468,8 +468,8 @@ We literally built a constructor, updated '_id', renamed our 'path:', updated th
 Maybe we need to start console.logging and see exactly what is going on, because I'm seeing at least 3 different distinct spots this code could be broken.. more docs! I really don't want to add a template and replace everything
 https://www.mongodb.com/docs/atlas/device-sdks/sdk/node/model-data/define-a-realm-object-model/
 https://stackoverflow.com/questions/72562299/react-native-realm-constructor-was-not-registered-in-the-schema-for-this-realm
-
-
+https://www.mongodb.com/docs/realm-sdks/js/latest/Realm.html
+Getting tired, gonna rest, maybe comment out all of the code and make it a future sean problem, I might still be able to use best.sheet to store my exercises, this constructor error has been ~4hours and 0 progress..
 
 
 
