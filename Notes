@@ -458,7 +458,9 @@ Uncaught Error: Cannot read properties of null (reading 'mongoClient') change co
 Uncaught Error: Realm is not a constructor
 https://github.com/realm/realm-js/issues/1226
 https://github.com/realm/realm-js/issues/5032
-Apparently need to enable hermes, thankfully I saved those docs..
+https://github.com/realm/realm-js/issues/2563
+https://github.com/realm/realm-js/issues/2460
+Apparently need to enable hermes, thankfully I saved those docs.. It's not hermes
 
 
 
