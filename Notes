@@ -482,6 +482,8 @@ Official Docs:
 https://docs.sheet.best/#quickstart
 https://docs.sheet.best/#using-your-rest-api
 https://docs.sheet.best/#filtering-data
+Using Google Sheets API:
+https://thenewstack.io/how-to-use-google-sheets-as-a-database-with-react-and-ssr/
 
 sheet.best uses the first row for a schema, so we don't need to mess around with an ORM, or constructor.. 
 Guide is very good, easy to follow, even has gif videos, this is wayyyy easier to set up than realm/MongoDB, will see how it looks in React Native after we set up API and can actually test, looks promising so far
@@ -503,7 +505,9 @@ Single row layout = 1 * 5 * 4 * 12 = 240 rows for a year, way better
 Sheet.best free tier gives us 15,000 free API calls a month, so we don't really need to send it as a batch, we can also PATCH the same row over and over again without fear, 50 * 7 * 4 = 1400 Upper limit of what we would use per month
 We could add a 'Create Workout' button that we can use for that day, and just PATCH that same day, logic seems easy instead of having it check our so called DB - check date - if date is today - PATCH - if not - create
 Step Counter Feature? If I'm living in Japan, you know I'mma be walking e'rywhere, exploring, anime/samurai wonderland, easy 20k steps a day - would be nice to track 
-
+After looking for more documentation and checking out the templates for sheet.best, I noticed a profound lack of any materials related to react-native, no documentation, no tutorials, nothing, might need to find another way
+Google offers an API method to connect to google sheets, could be another option, going to see if I can use sheet.best because the patch method looked perfect for what I wanted to do, still no resources for react-native
+It's all JS, might still work, except how can we use a <script> tag (required for sheet.best) when it doesn't actually exist for react-native?.. need to do more research
 
 
 
