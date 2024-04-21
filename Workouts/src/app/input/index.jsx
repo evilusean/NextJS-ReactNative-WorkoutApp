@@ -70,7 +70,7 @@ const ExerciseForm = () => {
       {
         name: "Exercise",
         properties: {
-          _id: "objectId", // Add a unique ID field
+          _id: { type: "objectId", default: () => new Realm.BSON.ObjectId() }, // Add a unique ID field
           name: "string",
           type: "string",
           muscle: "string",
@@ -78,6 +78,7 @@ const ExerciseForm = () => {
           instructions: "string",
           count: "int",
         },
+        primaryKey: "_id",
       },
     ],
   });
@@ -104,7 +105,7 @@ const ExerciseForm = () => {
             muscle: values.muscle,
             equipment: values.equipment,
             instructions: values.instructions,
-            count: realm.objects("Exercise").max("count") + 1, // Increment the count field, move to [name].jsx
+            //count: realm.objects("Exercise").max("count") + 1, // Increment the count field, move to [name].jsx
           });
         });
       }}
