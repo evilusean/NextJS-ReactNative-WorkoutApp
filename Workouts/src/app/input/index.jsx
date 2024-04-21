@@ -73,20 +73,8 @@ const ExerciseForm = () => {
   const mongodb = app.currentUser.mongoClient("mongodb-atlas");
   const exercisesCollection = mongodb.db("workouts").collection("exercises"); //check me, looks correct
 
-  class Exercise {
-    constructor(id, name, type, muscle, equipment, instructions, count) {
-      this._id = id;
-      this.name = name;
-      this.type = type;
-      this.muscle = muscle;
-      this.equipment = equipment;
-      this.instructions = instructions;
-      this.count = count;
-    }
-  }
-
   const realm = new Realm({
-    path: "myrealm",
+    path: "Cluster0",
     schema: [
       {
         name: "Exercise",
@@ -102,7 +90,19 @@ const ExerciseForm = () => {
         primaryKey: "_id",
       },
     ],
+    class Exercise {
+      constructor(id, name, type, muscle, equipment, instructions, count) {
+        this._id = id;
+        this.name = name;
+        this.type = type;
+        this.muscle = muscle;
+        this.equipment = equipment;
+        this.instructions = instructions;
+        this.count = count;
+      }
+    }
   });
+
 
   realm.schema.get("Exercise").primaryKey = "_id";
 
@@ -120,6 +120,7 @@ const ExerciseForm = () => {
       onSubmit={(values) => {
         realm.write(() => {
           const newExercise = realm.create("Exercise", {
+            _id: new Realm.BSON.ObjectId(),
             name: values.name,
             type: values.type,
             muscle: values.muscle,
