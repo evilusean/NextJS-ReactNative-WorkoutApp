@@ -478,10 +478,11 @@ I think best move is to have it set a date on current sheet - and if that date e
 Going to read docs.. at least we are making progress, if I can get this figured out, can always go back to set up Realm/MongoDB, I just have no idea why it's telling me 'Realm is not a constructor' when I built an actual constructor
 I could also make a seperate googlesheets that can pull data from/upload exercises in a new row with a set schema, or I could just have a long ass 'exercises.json' and update on github at home with exercises for a list
   Vercel should automatically update app with new 'exercises.json' and give me the new list, when I reopen the app, have access to it again. It would allow me to get a MVP out, and worry about using a real DB later on, DeciSeans..
+Official Docs:
+https://docs.sheet.best/#quickstart
+https://docs.sheet.best/#using-your-rest-api
 
-
-
-
+sheet.best uses the first row for a schema, so we don't need to mess around with an ORM, or constructor.. 
 
 
 
