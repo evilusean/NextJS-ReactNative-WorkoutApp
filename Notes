@@ -453,12 +453,12 @@ Setting permissions, future Sean - just follow the guide on App Services page - 
 Found the fix, needed credentials
   const credentials = await Realm.credentials.anonymous();
   const user = await app.LogIn(credentials);
-Uncaught Error: Objects are not valid as a React child (found: [object Promise]). If you meant to render a collection of children, use an array instead. Next hurdle. 
-
-
-
-
-
+Uncaught Error: Objects are not valid as a React child (found: [object Promise]). If you meant to render a collection of children, use an array instead. Next hurdle. Functional components can not be async
+Uncaught Error: Cannot read properties of null (reading 'mongoClient') change const mongo to 'const mongodb'
+Uncaught Error: Realm is not a constructor
+https://github.com/realm/realm-js/issues/1226
+https://github.com/realm/realm-js/issues/5032
+Apparently need to enable hermes, thankfully I saved those docs..
 
 
 
