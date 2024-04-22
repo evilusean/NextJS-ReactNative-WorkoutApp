@@ -641,7 +641,7 @@ https://stackoverflow.com/questions/61922174/react-native-on-android-cannot-run-
 Ok, fixed gradle - I think? 'Android Studio' -> go to project folder -> 'android' -> Open in Android studio, will automatically install latest version of gradle - still downloading / updating - upgraded to 8.?
 'Gradle sync finished in 15m 17s'
 Still downloading - that's alot of files - 'Start AGP upgrade assistant' -> 'Upgrade Project from 7.4.2 to 8.3.2' -> wait for loading spinner? no progress bar.. no files in our actual project changed yet
-
+Loading spinner still spinning.. for over an hour - gonna look at my opseans - can install v33(5+ gig download) - can start another project and do this one in background as I apply for jobs, only need a project for 6th spot on portfolio
 
 
 
