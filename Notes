@@ -524,6 +524,11 @@ https://reactnative.dev/docs/environment-setup?guide=quickstart
 'Get Started With App Services' -> View Guide -> Follow steps till CLI stage, then select React-Native CLI, copy and paste command, and voila, new project we can fiddle with working DB and configs - just need to build UI
 Going to take a break, we need to start over again, if the DB connections work it will take us less time to start from scratch and just build the UI than trying to fix the DB connect for the third(?) day.
 
+Ok, so what I've decided to do is do a CLI install from the guide, should give me boilerplate set up to the DB, so I only have to change some variables/names around to get it hooked in, no constructors.. -.-
+  I just need to figure out if I need to install React-Native on it's own with expo/realm first and THEN install the CLI template, or just CLI template will work and have all dependancies
+  It's going into a new folder where the notes/etc stuff are called 'Workout2' - that way all my old code/css should still be there for reference, will need to delete Workouts1 before uploading to vercel - freaks out if too many repos
+The DB is the hardest part, once that's done I just need to play with colors and text essentially and make it look pretty
+Won't be getting a GoogleSheets from what I could find, no good way to hook in without using JS/React, assUmeing you could use React code in React Native - rookie mistake :<.. positives 'learning experience'
 
 
 
