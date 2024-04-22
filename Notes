@@ -563,7 +563,8 @@ Installed it to our project repository, 'Workouts 2' gonna poke around and see w
 It's in typescript, wall of red text x.x, going to need to do alot of work on this, starting with the tut, it still logs me out when I access it, but I already have the files, so doesn't matter:
 https://www.mongodb.com/docs/atlas/app-services/tutorial/react-native/
 
-
+22 April 2024 - Day 4 - I just realized that steppoop tut stole a week from me - he never hooked up the DB, false advertising, MFer still has >100k subs + ad rev - the only thing I learned was StyleSheet.create, <FlatList>, <Stack> 
+  Going to finish mongodb tut, fix the Typescript errors, and start working on redesigning the UI to work for getting huge, it already has autheneticAsean + offline sync built in, which is very nice
 
 
 
