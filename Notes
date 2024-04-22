@@ -614,7 +614,7 @@ Android
  ✖ Android SDK
    Read more about how to download Android SDK at https://reactnative.dev/docs/environment-setup?os=linux&platform=android&guide=native#android-sdk
 It's telling me to install 'Android SDK Studio', which I already have...with all the JDK dependancies, which I already did.. I already set all this up last time.
-
+Version supported: 33.0.0  - They don't call it version, they call it 'API Level' - mine is 34 - is this it?
 
 
 
