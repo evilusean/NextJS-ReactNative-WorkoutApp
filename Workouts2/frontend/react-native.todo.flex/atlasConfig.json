@@ -1,0 +1,9 @@
+{
+    "appId": "workouts2-yftvggi",
+    "appUrl": "https://services.cloud.mongodb.com/groups/662600f594923b76a2a7c785/apps/66260b54453c985aab4de3c5",
+    "baseUrl": "https://services.cloud.mongodb.com",
+    "clientApiBaseUrl": "https://ap-southeast-1.aws.services.cloud.mongodb.com",
+    "dataApiBaseUrl": "https://ap-southeast-1.aws.data.mongodb-api.com",
+    "dataExplorerLink": "https://cloud.mongodb.com/links/662600f594923b76a2a7c785/explorer/Cluster0/database/collection/find",
+    "dataSourceName": "mongodb-atlas"
+}
