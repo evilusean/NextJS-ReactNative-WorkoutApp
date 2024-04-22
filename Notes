@@ -565,6 +565,12 @@ https://www.mongodb.com/docs/atlas/app-services/tutorial/react-native/
 
 22 April 2024 - Day 4 - I just realized that steppoop tut stole a week from me - he never hooked up the DB, false advertising, MFer still has >100k subs + ad rev - the only thing I learned was StyleSheet.create, <FlatList>, <Stack> 
   Going to finish mongodb tut, fix the Typescript errors, and start working on redesigning the UI to work for getting huge, it already has autheneticAsean + offline sync built in, which is very nice
+The app is a pre-built template that includes a working React Native application (frontend) and its corresponding App Services App configuration files (backend).
+Create email/password accounts and log in and out of the app. / Create, read, update, and delete their own tasks. / View all tasks, even if the user is not the owner.
+After you've got the template app running, you will add a new priority field to the existing Item model and update the Flexible Sync subscription to only show items within a range of priorities.
+cd Workouts2 #new root repository to install dependancies, get rid of some red TS errors
+
+
 
 
 
