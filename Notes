@@ -575,8 +575,8 @@ Installing Dependancies (for new project, not useful for the template):
 https://reactnative.dev/docs/environment-setup
 npm install #will install all dependancies, go to the root of your downloaded or cloned project. Then run following commands to navigate to install the app's dependencies:
 ERROR: npm ERR! path /media/sean/SeanDrive/Code/Eviliusean.github.io/ReactNative-WorkoutApp/Workouts2/package.json #while trying to install dependancies, first hurdle :<
-
-
+https://stackoverflow.com/questions/49415958/what-could-cause-an-error-related-to-npm-not-being-able-to-find-a-file-no-conte
+Figured it out, package.json isn't in the root directory, it's in 'root / frontend / react-native-todo.flex '
 
 
 
