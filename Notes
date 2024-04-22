@@ -541,7 +541,26 @@ Ah, found out how I got it, App Services -> When you create a new app -> It offe
 Get a template then remove everything you don't need, it will keep all the prebuilt features and DB connectivity + offline sync, etc - no constructor building - nice. 
 When you create a new ApplicaSean, it will offer you the option to build from the command line, make sure you don't name it 'Application 0' and something more meaningful, below is what we will build for 'Workouts 2';
 https://github.com/mongodb/template-app-react-native-todo 
-I'm still getting signed out when I go to the tutorial page, weird.
+I'm still getting signed out when I go to the tutorial page, weird. Below is how we created the app last time, this is how we can move forward. No expo, but it should work. Created in Singapore (closest to Japan-Escape)
+Steps to install from CLI:
+npm install -g atlas-app-services-cli #Download the CLI Client
+2
+Create a Programmatic API key
+Use this API key associated with your MongoDB Cloud account to authenticate your appservices cli session. To create or use an existing API key, 
+view and manage your API keys here.
+3
+Authenticate to the appservices cli
+appservices login --api-key <my-api-key> --private-api-key <my-private-api-key>
+4
+Download via appservices cli
+Choose a language for the front-end code for your template and then download the files into your current directory via cli command. 
+Set up your CLI.
+appservices pull --remote workouts-bcxlcun --template react-native.todo.flex
+5
+Follow the Guided Tutorial
+View our React Native Tutorial for a step by step guide on how to set up your example app.
+Installed it to our project repository, 'Workouts 2' gonna poke around and see what we got, maybe sean what we did wrong in our original app
+
 
 
 
