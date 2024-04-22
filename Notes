@@ -508,14 +508,16 @@ Step Counter Feature? If I'm living in Japan, you know I'mma be walking e'rywher
 After looking for more documentation and checking out the templates for sheet.best, I noticed a profound lack of any materials related to react-native, no documentation, no tutorials, nothing, might need to find another way
 Google offers an API method to connect to google sheets, could be another option, going to see if I can use sheet.best because the patch method looked perfect for what I wanted to do, still no resources for react-native
 It's all JS, might still work, except how can we use a <script> tag (required for sheet.best) when it doesn't actually exist for react-native?.. need to do more research
-
-
-
-
-
-
-
-
+Looks like we just wasted more hours reading through the documentation for best.sheet, strictly works on JS/React... not react Native, in order to connect to the API needs a <script> tag, which.. doesn't exist.
+So either we pour more time into trying to get mongoDB working, or we find an alternative library, or use google API (supposed to work) with .env, install the demo app - from Realm/MongoDB CLI, and move our files into there
+https://stackoverflow.com/questions/54872127/google-sheets-api-with-react-native
+https://stackoverflow.com/questions/72378926/react-native-and-google-sheets-api-what-should-package-name-and-bundle-identif/72384214
+'Google's AppSheet API - doesn't work.. tried the search feature for connect, won't even work with react? ' https://pipedream.com/apps/google-appsheet
+https://docs.sheetjs.com/docs/demos/mobile/reactnative/
+If we install the Realm/MongoDB from CLI and just build on the back of that (it should be functional, out of the box, with all the API connections working, no need to build constructors for 4 hours..)
+  Or we could just build it in React + best.sheet - that feels like cheating because I wanted to build a mobile app. - Also get to put React Native on my resume 
+If we install from CLI, should get something like this, then just need to plug and play with code to fix template for adding exercises/sets to DB:
+https://github.com/realm/realm-js/tree/main/examples/rn-todo-list
 
 
 
