@@ -560,8 +560,8 @@ appservices pull --remote workouts-bcxlcun --template react-native.todo.flex
 Follow the Guided Tutorial
 View our React Native Tutorial for a step by step guide on how to set up your example app.
 Installed it to our project repository, 'Workouts 2' gonna poke around and see what we got, maybe sean what we did wrong in our original app
-
-
+It's in typescript, wall of red text x.x, going to need to do alot of work on this, starting with the tut, it still logs me out when I access it, but I already have the files, so doesn't matter:
+https://www.mongodb.com/docs/atlas/app-services/tutorial/react-native/
 
 
 
