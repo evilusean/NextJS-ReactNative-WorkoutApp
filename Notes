@@ -615,8 +615,16 @@ Android
    Read more about how to download Android SDK at https://reactnative.dev/docs/environment-setup?os=linux&platform=android&guide=native#android-sdk
 It's telling me to install 'Android SDK Studio', which I already have...with all the JDK dependancies, which I already did.. I already set all this up last time.
 Version supported: 33.0.0  - They don't call it version, they call it 'API Level' - mine is 34 - is this it?
-
-
+https://stackoverflow.com/questions/62797240/reactnative-cant-locate-android-sdk
+changed bashrc 'sdk' to 'Sdk' - updated android studio - now have 4 errors instead of 3 - added below to bashrc - commented out ones I had before, no fix, might just install v33 to be able to run(multiple gigs download :<)
+export ANDROID_HOME=$HOME/Android/Sdk
+#export PATH=$PATH:$ANDROID_HOME/emulator
+#export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$ANDROID_HOME/emulator:$PATH
+export PATH=$ANDROID_HOME/platform-tools:$PATH
+export PATH=$ANDROID_HOME/platforms:$PATH
+export PATH=$ANDROID_HOME/tools/bin:$PATH
+export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
 
 
 
