@@ -482,6 +482,8 @@ Official Docs:
 https://docs.sheet.best/#quickstart
 https://docs.sheet.best/#using-your-rest-api
 https://docs.sheet.best/#filtering-data
+Using Google Sheets API:
+https://thenewstack.io/how-to-use-google-sheets-as-a-database-with-react-and-ssr/
 
 sheet.best uses the first row for a schema, so we don't need to mess around with an ORM, or constructor.. 
 Guide is very good, easy to follow, even has gif videos, this is wayyyy easier to set up than realm/MongoDB, will see how it looks in React Native after we set up API and can actually test, looks promising so far
@@ -503,25 +505,43 @@ Single row layout = 1 * 5 * 4 * 12 = 240 rows for a year, way better
 Sheet.best free tier gives us 15,000 free API calls a month, so we don't really need to send it as a batch, we can also PATCH the same row over and over again without fear, 50 * 7 * 4 = 1400 Upper limit of what we would use per month
 We could add a 'Create Workout' button that we can use for that day, and just PATCH that same day, logic seems easy instead of having it check our so called DB - check date - if date is today - PATCH - if not - create
 Step Counter Feature? If I'm living in Japan, you know I'mma be walking e'rywhere, exploring, anime/samurai wonderland, easy 20k steps a day - would be nice to track 
+After looking for more documentation and checking out the templates for sheet.best, I noticed a profound lack of any materials related to react-native, no documentation, no tutorials, nothing, might need to find another way
+Google offers an API method to connect to google sheets, could be another option, going to see if I can use sheet.best because the patch method looked perfect for what I wanted to do, still no resources for react-native
+It's all JS, might still work, except how can we use a <script> tag (required for sheet.best) when it doesn't actually exist for react-native?.. need to do more research
+Looks like we just wasted more hours reading through the documentation for best.sheet, strictly works on JS/React... not react Native, in order to connect to the API needs a <script> tag, which.. doesn't exist.
+So either we pour more time into trying to get mongoDB working, or we find an alternative library, or use google API with .env, install the demo app - from Realm/MongoDB CLI, and move our files into there
+https://stackoverflow.com/questions/54872127/google-sheets-api-with-react-native
+https://stackoverflow.com/questions/72378926/react-native-and-google-sheets-api-what-should-package-name-and-bundle-identif/72384214
+'Google's AppSheet API - doesn't work.. tried the search feature for connect, won't even work with react? ' https://pipedream.com/apps/google-appsheet
+https://docs.sheetjs.com/docs/demos/mobile/reactnative/
+If we install the Realm/MongoDB from CLI and just build on the back of that (it should be functional, out of the box, with all the API connections working, no need to build constructors for 4 hours..)
+  Or we could just build it in React + best.sheet - that feels like cheating because I wanted to build a mobile app. - Also get to put React Native on my resume 
+If we install from CLI, should get something like below todo list, then just need to plug and play with code to fix template for adding exercises/sets to DB and fix the UI:
+https://github.com/realm/realm-js/tree/main/examples/rn-todo-list
+https://www.mongodb.com/docs/atlas/device-sdks/sdk/react-native/
+https://www.mongodb.com/docs/atlas/device-sdks/sdk/react-native/install/
+https://reactnative.dev/docs/environment-setup?guide=quickstart
+'Get Started With App Services' -> View Guide -> Follow steps till CLI stage, then select React-Native CLI, copy and paste command, and voila, new project we can fiddle with working DB and configs - just need to build UI
+Going to take a break, we need to start over again, if the DB connections work it will take us less time to start from scratch and just build the UI than trying to fix the DB connect for the third(?) day.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Ok, so what I've decided to do is do a CLI install from the guide, should give me boilerplate set up to the DB, so I only have to change some variables/names around to get it hooked in, no constructors.. -.-
+  I just need to figure out if I need to install React-Native on it's own with expo/realm first and THEN install the CLI template, or just CLI template will work and have all dependancies
+  It's going into a new folder where the notes/etc stuff are called 'Workout2' - that way all my old code/css should still be there for reference, will need to delete Workouts1 before uploading to vercel - freaks out if too many repos
+The DB is the hardest part, once that's done I just need to play with colors and text essentially and make it look pretty
+Won't be getting a GoogleSheets from what I could find, no good way to hook in without using JS/React, assUmeing you could use React code in React Native - rookie mistake :<.. positives 'learning experience'
+https://www.mongodb.com/docs/atlas/device-sdks/sdk/react-native/bootstrap-with-expo/#std-label-react-native-client-bootstrap-with-expo
+I'm going to install through the CLI - only, Test the 'ToDo' app with both phone sim and web, make sure everything works, We've been using expo for running/testing/debugging our app up until this point - if it doesn't might need to
+  delete and start from scratch or think of another way to get our 'Workout App' - working - If I can't do this in a controlled enviroment - should I even be working? ++stress from new locaSean ++stress from foreign language
+Finally found it, use this to set up a template app for React-Native that works out of the box, no constructors:
+https://www.mongodb.com/docs/atlas/app-services/get-started/#tutorials
+To use a template, you can't use google sign in for some reason? - how did we get it before? It keeps logging me off every time I try, might just make an account with my proton mail instead of google, start fresh - 
+Set up a new MongoDB, with proton mail, doubled my storage 512 mb -> 1gig - should be able to use template now, 
+Ah, found out how I got it, App Services -> When you create a new app -> It offers you: Start with an app template: -> Real Time Sync Opsean
+  Using App Services reduces the code you need to write. Get started quicker with Templates. <- this is where I got the CLI command to install a project, originally, gonna follow the tutorial, but good to know for future Sean
+Get a template then remove everything you don't need, it will keep all the prebuilt features and DB connectivity + offline sync, etc - no constructor building - nice. 
+When you create a new ApplicaSean, it will offer you the option to build from the command line, make sure you don't name it 'Application 0' and something more meaningful, below is what we will build for 'Workouts 2';
+https://github.com/mongodb/template-app-react-native-todo 
+I'm still getting signed out when I go to the tutorial page, weird.
 
 
 
