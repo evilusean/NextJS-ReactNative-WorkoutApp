@@ -613,7 +613,7 @@ Android
    Read more about how to download Android Studio at https://reactnative.dev/docs/environment-setup?os=linux&platform=android&guide=native#android-studio
  ✖ Android SDK
    Read more about how to download Android SDK at https://reactnative.dev/docs/environment-setup?os=linux&platform=android&guide=native#android-sdk
-
+It's telling me to install 'Android SDK Studio', which I already have...with all the JDK dependancies, which I already did.. I already set all this up last time.
 
 
 
