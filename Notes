@@ -562,6 +562,8 @@ View our React Native Tutorial for a step by step guide on how to set up your ex
 Installed it to our project repository, 'Workouts 2' gonna poke around and see what we got, maybe sean what we did wrong in our original app
 It's in typescript, wall of red text x.x, going to need to do alot of work on this, starting with the tut, it still logs me out when I access it, but I already have the files, so doesn't matter:
 https://www.mongodb.com/docs/atlas/app-services/tutorial/react-native/
+React-Native Quick Start Guide, no tutorial:
+https://www.mongodb.com/docs/atlas/device-sdks/sdk/react-native/quick-start/#std-label-react-native-client-quick-start
 
 22 April 2024 - Day 4 - I just realized that steppoop tut stole a week from me - he never hooked up the DB, false advertising, MFer still has >100k subs + ad rev - the only thing I learned was StyleSheet.create, <FlatList>, <Stack> 
   Going to finish mongodb tut, fix the Typescript errors, and start working on redesigning the UI to work for getting huge, it already has autheneticAsean + offline sync built in, which is very nice
@@ -569,7 +571,10 @@ The app is a pre-built template that includes a working React Native application
 Create email/password accounts and log in and out of the app. / Create, read, update, and delete their own tasks. / View all tasks, even if the user is not the owner.
 After you've got the template app running, you will add a new priority field to the existing Item model and update the Flexible Sync subscription to only show items within a range of priorities.
 cd Workouts2 #new root repository to install dependancies, get rid of some red TS errors
-
+Installing Dependancies (for new project, not useful for the template):
+https://reactnative.dev/docs/environment-setup
+npm install #will install all dependancies, go to the root of your downloaded or cloned project. Then run following commands to navigate to install the app's dependencies:
+ERROR: npm ERR! path /media/sean/SeanDrive/Code/Eviliusean.github.io/ReactNative-WorkoutApp/Workouts2/package.json #while trying to install dependancies, first hurdle :<
 
 
 
