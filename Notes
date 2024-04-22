@@ -625,6 +625,65 @@ export PATH=$ANDROID_HOME/platform-tools:$PATH
 export PATH=$ANDROID_HOME/platforms:$PATH
 export PATH=$ANDROID_HOME/tools/bin:$PATH
 export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
+in 'android / build.gradle' - there is below code - going to try to change to 34, see if anything works - didn't work - reverted 'Sdk' back to 'sdk' 
+buildscript {
+    ext {
+        buildToolsVersion = "33.0.0"
+        minSdkVersion = 21
+        compileSdkVersion = 33
+        targetSdkVersion = 33
+
+        // We use NDK 23 which has both M1 support and is the side-by-side NDK version from AGP.
+        ndkVersion = "23.1.7779620"
+    }
+https://stackoverflow.com/questions/51479691/how-can-i-upgrade-react-native-gradle-version
+https://stackoverflow.com/questions/61922174/react-native-on-android-cannot-run-program-node-error-2-no-such-file-or-dir
+Ok, fixed gradle - I think? 'Android Studio' -> go to project folder -> 'android' -> Open in Android studio, will automatically install latest version of gradle - still downloading / updating - upgraded to 8.?
+'Gradle sync finished in 15m 17s'
+Still downloading - that's alot of files - 'Start AGP upgrade assistant' -> 'Upgrade Project from 7.4.2 to 8.3.2' -> wait for loading spinner? no progress bar.. no files in our actual project changed yet
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
