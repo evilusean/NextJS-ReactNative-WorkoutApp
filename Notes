@@ -577,6 +577,44 @@ npm install #will install all dependancies, go to the root of your downloaded or
 ERROR: npm ERR! path /media/sean/SeanDrive/Code/Eviliusean.github.io/ReactNative-WorkoutApp/Workouts2/package.json #while trying to install dependancies, first hurdle :<
 https://stackoverflow.com/questions/49415958/what-could-cause-an-error-related-to-npm-not-being-able-to-find-a-file-no-conte
 Figured it out, package.json isn't in the root directory, it's in 'root / frontend / react-native-todo.flex '
+deleted old package-lock.json that was created when unsuccesful attempt ran, 
+npm run android #will run on phoneSim, can test our mobile version, 
+error Failed to install the app. #not using expo this time, app failed to install, simphone is open, turned on, computer is slooowwwwwwww, 
+https://developer.android.com/studio/run/emulator
+Tip: Make sure that you have set up your development environment correctly, by running react-native doctor. 
+To read more about doctor command visit: https://github.com/react-native-community/cli/blob/main/packages/cli-doctor/README.md#doctor 
+react native doctor #react-native: command not found #new error trying to run
+https://stackoverflow.com/questions/37189081/react-native-command-not-found
+npm install -g react-native-cli #installs react native globally CLI
+
+react-native doctor #works now, more hurdles..
+⠋ Running diagnostics...(node:330793) Warning: Accessing non-existent property 'padLevels' of module exports inside circular dependency
+(Use `node --trace-warnings ...` to show where the warning was created)
+Common
+ ✓ Node.js - Required to execute JavaScript code
+ ✓ npm - Required to install NPM dependencies
+Android
+ ✓ Adb - Required to verify if the android device is attached correctly
+ ✖ JDK - Required to compile Java code
+   - Version found: N/A
+   - Version supported: >= 11
+ ✖ Android Studio - Required for building and installing your app on Android
+ ✖ Android SDK - Required for building and installing your app on Android
+   - Versions found: N/A
+   - Version supported: 33.0.0
+ ✓ ANDROID_HOME - Environment variable that points to your Android SDK installation
+Errors:   3
+Warnings: 0
+Attempting to fix 3 issues...
+Android
+ ✖ JDK
+   Read more about how to download JDK at https://reactnative.dev/docs/environment-setup?os=linux&platform=android&guide=native#jdk-studio
+ ✖ Android Studio
+   Read more about how to download Android Studio at https://reactnative.dev/docs/environment-setup?os=linux&platform=android&guide=native#android-studio
+ ✖ Android SDK
+   Read more about how to download Android SDK at https://reactnative.dev/docs/environment-setup?os=linux&platform=android&guide=native#android-sdk
+
+
 
 
 
