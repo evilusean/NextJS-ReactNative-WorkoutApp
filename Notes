@@ -529,11 +529,19 @@ Ok, so what I've decided to do is do a CLI install from the guide, should give m
   It's going into a new folder where the notes/etc stuff are called 'Workout2' - that way all my old code/css should still be there for reference, will need to delete Workouts1 before uploading to vercel - freaks out if too many repos
 The DB is the hardest part, once that's done I just need to play with colors and text essentially and make it look pretty
 Won't be getting a GoogleSheets from what I could find, no good way to hook in without using JS/React, assUmeing you could use React code in React Native - rookie mistake :<.. positives 'learning experience'
-
-
-
-
-
+https://www.mongodb.com/docs/atlas/device-sdks/sdk/react-native/bootstrap-with-expo/#std-label-react-native-client-bootstrap-with-expo
+I'm going to install through the CLI - only, Test the 'ToDo' app with both phone sim and web, make sure everything works, We've been using expo for running/testing/debugging our app up until this point - if it doesn't might need to
+  delete and start from scratch or think of another way to get our 'Workout App' - working - If I can't do this in a controlled enviroment - should I even be working? ++stress from new locaSean ++stress from foreign language
+Finally found it, use this to set up a template app for React-Native that works out of the box, no constructors:
+https://www.mongodb.com/docs/atlas/app-services/get-started/#tutorials
+To use a template, you can't use google sign in for some reason? - how did we get it before? It keeps logging me off every time I try, might just make an account with my proton mail instead of google, start fresh - 
+Set up a new MongoDB, with proton mail, doubled my storage 512 mb -> 1gig - should be able to use template now, 
+Ah, found out how I got it, App Services -> When you create a new app -> It offers you: Start with an app template: -> Real Time Sync Opsean
+  Using App Services reduces the code you need to write. Get started quicker with Templates. <- this is where I got the CLI command to install a project, originally, gonna follow the tutorial, but good to know for future Sean
+Get a template then remove everything you don't need, it will keep all the prebuilt features and DB connectivity + offline sync, etc - no constructor building - nice. 
+When you create a new ApplicaSean, it will offer you the option to build from the command line, make sure you don't name it 'Application 0' and something more meaningful, below is what we will build for 'Workouts 2';
+https://github.com/mongodb/template-app-react-native-todo 
+I'm still getting signed out when I go to the tutorial page, weird.
 
 
 
