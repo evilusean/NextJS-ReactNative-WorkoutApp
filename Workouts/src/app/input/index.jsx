@@ -77,7 +77,7 @@ const ExerciseForm = () => {
     path: "Cluster0",
     schema: [
       {
-        name: "Exercise",
+        name: "exercises",
         properties: {
           _id: { type: "objectId", default: () => new Realm.BSON.ObjectId() }, // Add a unique ID field
           name: "string",
@@ -90,19 +90,18 @@ const ExerciseForm = () => {
         primaryKey: "_id",
       },
     ],
-    class Exercise {
-      constructor(id, name, type, muscle, equipment, instructions, count) {
-        this._id = id;
-        this.name = name;
-        this.type = type;
-        this.muscle = muscle;
-        this.equipment = equipment;
-        this.instructions = instructions;
-        this.count = count;
-      }
-    }
   });
-
+  class Exercise {
+    constructor(id, name, type, muscle, equipment, instructions, count) {
+      this._id = id;
+      this.name = name;
+      this.type = type;
+      this.muscle = muscle;
+      this.equipment = equipment;
+      this.instructions = instructions;
+      this.count = count;
+    }
+  }
 
   realm.schema.get("Exercise").primaryKey = "_id";
 
