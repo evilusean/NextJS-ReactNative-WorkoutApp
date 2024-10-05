@@ -1,0 +1,158 @@
+Start : 2024October06
+End :
+Starting a new notes section for all my prompts and ideas, starting fresh, trying to use my daily API calls to build it brick by brick, page by page, hopefully it's easier to get this mongodb working on nextJS
+I still need to set up MongoDB, but got everything else installed - Will use 'Mongoose' 'MongoDB' and 'GraphQL' - still need to think about how I want the schema/page layout set up - starting tommorrow
+
+Folder Layout: =============================================================================================================================================================
+/src
+  /components
+  /pages
+    /api
+  /graphql
+    /resolvers
+    /schemas
+  /models
+  /utils
+/public
+/styles
+
+GraphQL Schema: =============================================================================================================================================================
+type Exercise {
+  id: ID!
+  name: String!
+  description: String
+  muscleGroup: String
+  equipment: String
+}
+
+type WorkoutExercise {
+  exercise: Exercise!
+  sets: Int
+  reps: Int
+  weight: Float
+}
+
+type Workout {
+  id: ID!
+  name: String!
+  date: String!
+  exercises: [WorkoutExercise!]!
+}
+
+type Query {
+  exercises: [Exercise!]!
+  workouts: [Workout!]!
+  currentWorkout: Workout
+}
+
+type Mutation {
+  createExercise(name: String!, description: String, muscleGroup: String, equipment: String): Exercise!
+  createWorkout(name: String!, exercises: [WorkoutExerciseInput!]!): Workout!
+  startWorkout(workoutId: ID!): Workout!
+  completeWorkout(workoutId: ID!): Workout!
+}
+
+input WorkoutExerciseInput {
+  exerciseId: ID!
+  sets: Int!
+  reps: Int!
+  weight: Float
+}
+
+MongoDB Setup: You'll need to set up MongoDB models corresponding to your GraphQL types. Here's an example for the Exercise model: ===============================================================
+import mongoose from 'mongoose';
+
+const ExerciseSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  description: String,
+  muscleGroup: String,
+  equipment: String,
+});
+
+export default mongoose.models.Exercise || mongoose.model('Exercise', ExerciseSchema);
+
+GraphQL Setup: For GraphQL with Apollo, you'll need to set up an Apollo Server. In Next.js, you can do this in an API route: =======================================================================
+import { ApolloServer } from 'apollo-server-micro';
+import { typeDefs } from '../../graphql/schemas';
+import { resolvers } from '../../graphql/resolvers';
+import { createContext } from '../../graphql/context';
+
+const apolloServer = new ApolloServer({ 
+  typeDefs, 
+  resolvers,
+  context: createContext,
+});
+
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+};
+
+export default apolloServer.createHandler({ path: '/api/graphql' });
+
+Best Practices for GraphQL Setup: Use DataLoader for efficient database querying. Implement proper error handling and validation. Use Apollo Client on the frontend for state management and caching.
+  Consider implementing authentication and authorization.
+import { Exercise, Workout } from '../../models';
+
+export const resolvers = {
+  Query: {
+    exercises: async () => await Exercise.find(),
+    workouts: async () => await Workout.find().sort('-date'),
+    currentWorkout: async () => await Workout.findOne({ status: 'in-progress' }),
+  },
+  Mutation: {
+    createExercise: async (_, args) => {
+      const exercise = new Exercise(args);
+      await exercise.save();
+      return exercise;
+    },
+    createWorkout: async (_, { name, exercises }) => {
+      const workout = new Workout({ name, exercises, date: new Date() });
+      await workout.save();
+      return workout;
+    },
+    // Implement other mutations...
+  },
+};
+
+Obsidian Integration:
+To automatically sync your workouts with Obsidian, you could:
+a. Set up a webhook in your app that triggers when a workout is completed.
+b. This webhook could generate a Markdown file with the workout details.
+c. Use a service like Dropbox or Google Drive to sync this file to your PC.
+d. Configure Obsidian to watch the synced folder.
+Alternatively, you could build a simple export feature that generates a Markdown file for manual import into Obsidian.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
