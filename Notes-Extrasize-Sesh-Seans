@@ -140,8 +140,18 @@ Page layout considerations:
 - Profile page (user information and settings)
 - Social features (if you want users to be able to share workouts or compete)
 
-
-
+The Plan : =========================================================================================================================================================================================
+I want to input the data on my phone - either automatically update my PC obsidian and save the workout to MongoDB - to accomplish this, I can either create a version that is copy and pastable in markdown
+  or email it to my PC - I don't neccesarily want to create a login screen, because I'm putting this app on my resume/cv and I need them to be able to see it, maybe just make the account sign up process super easy?
+  like just an email and a PW - I should be the only one using this app - so mongodb doesn't need to worry about scaling - I think for future seans sake - authenticASean is gonna be needed, might as well start
+  with it - 
+So I will need 8? screens - Login + Signup + Current Workout(Save to mongoDB+Email button on bottom) + Past Workouts View List + Past workout view 1 + Exercise(show details) + Add a new exercise 
+For Each Exercise I will need - Date - Reps - Sets(maybe just add a new exercise everytime) - Weight - Time - each time it is saved, remember the previous time I did it, for example :
+  Every time I do curls @ 30 lbs for 15 reps - the next time I select 'Bicep Curls' it should remember what I did last time, and I save myself like 10 clicks and just select 'Bicep Curls -> Add to workout'
+For Each Exercise Input (add an exercise for workouts) - ID - Description(how to perform) - Muscle Group - Equipment - Maybe add a stock image(future sean can add an animated gif showing how its done later)
+I will also need a search feature for exercises - either by exercise name or muscle group or equipment
+I will also need a component with routing for the email/mongoDB workout - in order to get it in obsidian - I don't want to do MongoDB queries for what was my bench at 4 months ago - easier on obsidian
+Exercises list will just be reverse chronological - when I click it the ID will be the date - what if I workout twice? will it clash? like run in the morning, weights at night - or just throw in 3 sets of abs for w/e
 
 
 
