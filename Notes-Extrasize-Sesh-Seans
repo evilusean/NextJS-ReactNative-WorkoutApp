@@ -124,7 +124,21 @@ c. Use a service like Dropbox or Google Drive to sync this file to your PC.
 d. Configure Obsidian to watch the synced folder.
 Alternatively, you could build a simple export feature that generates a Markdown file for manual import into Obsidian.
 
+CosiderASeans : Thinking about the page layout/schema tonight, before I start doing the heavy lifting - measure twice, cut once and all that =======================================================
+Schema considerations:
+- User profile (name, email, password, etc.)
+- Workout sessions (date, duration, type)
+- Exercises (name, sets, reps, weight)
+- Progress tracking (measurements, personal records)
+- Goals and achievements
 
+Page layout considerations:
+- Dashboard (overview of recent workouts, progress, upcoming goals)
+- Workout logger (interface for recording new workouts)
+- Exercise library (list of exercises with descriptions and proper form)
+- Progress tracker (graphs and stats showing improvement over time)
+- Profile page (user information and settings)
+- Social features (if you want users to be able to share workouts or compete)
 
 
 
