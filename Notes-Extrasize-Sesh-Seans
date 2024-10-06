@@ -260,13 +260,17 @@ Offline Mode: - Allow users to log workouts offline and sync when online
 Search Option - should allow the user to search by exercise name, tags(so dips would be both 'calisthenics' and 'triceps' - so this could be nullable or multiple) or equipment
 The exercises added to mongoDB shouldn't be user specific - if I add one on my account it should be visible by everyone once it is in mongodb - I should be the only one using this app - 
 I will be primarily using this on my phone, so make sure it is responsive, and I might not always have internet, or if I accidently close the app, have a way to cache data/workouts locally - sync with internet
-
-
-
-
-
-
-
+Authentication:- Consider adding a "Forgot Password" feature for user convenience.- Even without email confirmation, implement basic security measures like password hashing.
+Workout Templates: - Allow users to save their custom workouts as templates for future use.
+User Preferences:- Allow users to set their preferred units (metric/imperial) for weight and distance.- Implement a dark/light mode toggle for the UI.
+Performance Optimization:- Implement pagination or infinite scrolling for long lists (like past workouts or exercises) to improve performance.
+Error Handling:- Implement robust error handling, especially for offline scenarios and sync conflicts.
+Data Validation:- Implement client-side and server-side validation for all input fields to ensure data integrity.
+Workout Notes:- Allow users to add notes to each workout or exercise session for tracking how they felt, any issues, etc. - Also add a 'Daily Steps Counter' at the end of a workout
+  Both the 'Workout Notes' and 'Daily Steps Counter' should be at the bottom of the app before the 'Save/Send' button - they should also be added to their own row in the sent email at the bottom
+In the dashboard add an icon for 'water drop/bottle' and each time that is pressed add a set amount of water (like 500ml) to the workout tally, and when it is sent, it will add the tally together 
+  so 7 presses would be '3,500mL' or '3.5L' at the bottom of the CSV or markdown below the 'Notes' and 'Step Count' followed by 'Water Intake' - I should press the button when I workout at the end of the day
+Make sure that the data gets cached somewhere, it should also work on a phone, because I will be using it periodically throught the day and pressing the 'save/send workout' button at the end of the day
 
 
 
