@@ -154,7 +154,7 @@ I will also need a component with routing for the email/mongoDB workout - in ord
 Exercises list will just be reverse chronological - when I click it the ID will be the date - what if I workout twice? will it clash? like run in the morning, weights at night - or just throw in 3 sets of abs for w/e
 
 AI RecomendASeans : ===================================================================================================================================================================================
-Ran the above plan through AI to see if there was anything I forgot, here is the response, will need to craft a good prompt initially, easier to start off well than make minor changes(it forgets) :
+Ran the above plan through AI to see if there was anything I forgot, here is the response, will need to craft a good prompt initially, easier to start off well than make minor changes(it forgets/loses context) :
 Your ideas for the workout app are well-thought-out and cover most of the essential features. Let's review your plan and consider if anything is missing or could be improved:
 1. Screens:
 Your proposed screens cover the main functionalities. Here's a slight reorganization and some additions to consider:
@@ -219,9 +219,45 @@ Additional Considerations:
 Your ideas form a solid foundation for a comprehensive workout app. The additions suggested here can enhance user experience and functionality. 
 Remember to prioritize features based on your core user needs and development resources. Start with the essential features and iterate as you gather user feedback.
 
-
-
-
+Prompt: ====================================================================================================================================================================================================
+I am building a workout app using NextJS, ShadCN, Tailwind, Typescript, Mongoose, MongoDB, GraphQL, I will be uploading it to vercel, so make sure it loads as a static website and does everything on mongodb :
+I will need These Screens(please add links for navigation between them as well) :
+Screens
+- Login
+- Signup
+- Home Page (this is where user created workout templates will live, should also have navigation to view exercises/workouts/profile/timer/create workout/create exercise/etc)
+- Dashboard (show current workout total sets, most used exercises, also add a timer that can be started/stopped/reset without changing pages - it will be used for rest/exercise time - doesnt need to save)
+  dashboard should also be visible on any page and contain a dropdown for navigation (like profile/settings - workout list - exercise list - back button - home button)
+- Current Workout (with save to MongoDB + Email button)
+- Past Workouts List
+- Past Workout Detail View
+- Exercise List (with search and filter)
+- Exercise Detail View
+- Add/Edit Exercise
+- User Profile/Settings (for changing email, password, preferences)
+Since I am using GraphQL and MongoDB, I will also need Schemas and endpoints set up for Exercises and Workouts and User Signup/Login:
+Each Exercise should have the following for it's schema  - Date - Reps - Sets - Weight/Time (following only for cardio exercises - distance/calories burned) when added to the workout 
+  make sure as it is entered it remembers the values for the next time it is input, those will be the new default values.
+Each Exercise should have a unique ID (how many variations of situps are there? I don't want exercises clashing when they have the same name - each needs an uid for it's own page that can be edited or viewed)
+  Each exercise page being input for later use in workouts should have - Exercise Name - Equipment needed - tags(muscle groups/workout type) - Variations(incline/decline-etc) - Description - Weight - Reps - Sets 
+  I want to add stretches and cardio as well to the exercises, so try not to make the schema too strict and allow alot of parts to be nullable - I'm using typescript and graphql with mongoose/mongodb
+Each workout should have an option to 'add an exercise' with a search feature for exercises or 'other' which will allow manual input, if the user doesn't want to add it to the exercise DB at that moment
+  -try to make all of this done locally so the user does not need to be connected to the internet, when they load the app, it should load all their settings, exercises, and workouts - then sync when they get internet
+I also want a simple account creation process, no confirmation emails, 2FA, or anything, just trust them, bro. When they create an account, save it to the DB and allow them to log in with username/password
+- Implement a feature to follow pre-made or user-created workout programs
+- I want you to save the last reps/weights the user did so they don't have to fill it in manually each time for every exercise,
+  they can just select 'Bicep Curls -> add to todays workout' and they can edit the numbers after it is added, if they change - but the last inputs will become the new defaults
+Workout Plans: - Allow users to create and save workout plans/routines - Implement a feature to follow pre-made or user-created workout programs - users could search up each exercise and add it
+- The precreated workouts should not be strict, if the user wants to do an extra exercise, they should be able to add it in anywhere, the user created workouts should be a guideline/template
+  if the user does not select a workout, it should create a new workout for that date/time to save as the id - it should then allow the user to save each individual exercise as it is done to the workout
+  at the end of the workout/bottom of the page, there should be a button to 'save/send' workout - this will allow the user to save the workout to MongoDB and email it to the account they signed up with
+  the - Offering different email formats (JSON, Markdown, CSV) for flexibility and - 
+  Providing an export feature for bulk data transfer(sorted by month with dates in a column followed by exercise-reps-weight-etc) so you can send each month of old workouts via email in whatever format you want
+  If adding cardio instead of reps it should be time - distance and calories burned - these should also be nullable - also remember the last cardio session as well - if I do a 20-30 minute run at end of workout -
+    I should be able to just add 'run' and it will remember the last run and time and distance I had, allowing me to change it later if I do better or worse -
+  I want to be able to edit the workouts until I press a button for 'upload workout/send email' that will signify the end of the workout - add a confirmation when this is pressed and ask about which format to send
+Offline Mode: - Allow users to log workouts offline and sync when online
+Search Option - should allow the user to search by exercise name, tags(so dips would be both 'calisthenics' and 'triceps' - so this could be nullable or multiple) or equipment
 
 
 
