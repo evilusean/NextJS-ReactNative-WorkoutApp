@@ -287,9 +287,45 @@ Email Integration: For the Save/Send functionality, you'll need to implement a s
   Enclosed in the email would be the format that you can change in the settings (markdown/csv/JSON) - you can select in the settings what you want your default 'Save/Send' or 'Save/Copy' type to be
   So you don't need to ask everytime the button is pressed, I would still need a confirmation though, misspresses happen, all the time
 Clipboard API: For the Save/Copy functionality, use the Clipboard API to copy the formatted workout data to the user's clipboard.
+Please provide the code for this project in segments. Start with the core configuration files and basic setup. I will ask for the other parts of the code after, try not to forget all the files and context.
 
-
-
+Prompt 2 + File Counts : ========================================================================================================================================================================================
+I asked how many files I would get, and I was told this :
+Code Files Based on Your Prompt:
+If I were to break down your prompt into code files, there would be numerous files due to the complexity of your app. Here's a rough estimate of the main files you might need:
+- React Components (15-20 files): For screens like Login, Signup, Dashboard, Current Workout, Exercise List, etc.
+- API Routes (5-10 files): For handling authentication, workout CRUD operations, exercise management, etc.
+- GraphQL Schema (1-2 files): Defining your data models and queries.
+- MongoDB Models (3-5 files): For User, Exercise, and Workout schemas.
+- Utility Functions (2-4 files): For data formatting, email sending, etc.
+- Configuration Files (2-3 files): For Next.js, Tailwind, etc.
+- Type Definitions (1-2 files): If using TypeScript.
+In total, you might be looking at around 30-45 separate files to fully implement all the features you've described.
+Providing Code in One Response:
+While it's technically possible to provide all the code in one response, it would be an extremely long and potentially overwhelming message. 
+Given the complexity of your app, it would be more practical and manageable to break it down into smaller, focused segments. This approach would allow for better explanation and discussion of each component.
+Here is the response :
+To effectively break down your project into manageable segments and ensure nothing is forgotten, I suggest the following approach:
+1. End your initial prompt with:
+"Please provide the code for this project in segments. Start with the core configuration files and basic setup."
+2. For subsequent requests, you can use phrases like:
+1. "Please provide the next batch of files, focusing on [specific area]."
+2. "Now, let's move on to the [specific component or feature] implementation."
+3. "Can you give me the code for the [specific type of files, e.g., API routes, React components] related to [specific feature]?"
+This approach allows you to control the flow and focus of the code provision while ensuring all parts of your app are covered. I will keep track of what has been provided and what's left to implement.
+Here's a suggested order for requesting code segments:
+1. Core configuration and setup files
+2. MongoDB models and GraphQL schema
+3. API routes for authentication
+4. React components for authentication (Login, Signup)
+5. Dashboard and navigation components
+6. Exercise-related components and API routes
+7. Workout-related components and API routes
+8. Utility functions and helpers
+9. Remaining features (water tracking, step counter, etc.)
+10. Final configurations and optimizations
+By following this order and using specific requests, you can ensure that all parts of your app are covered without overwhelming yourself with too much code at once.
+I will remember the context of your project and what has been provided, ensuring that no crucial components are forgotten.
 
 
 
