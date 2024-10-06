@@ -140,28 +140,192 @@ Page layout considerations:
 - Profile page (user information and settings)
 - Social features (if you want users to be able to share workouts or compete)
 
+The Plan : =========================================================================================================================================================================================
+I want to input the data on my phone - either automatically update my PC obsidian and save the workout to MongoDB - to accomplish this, I can either create a version that is copy and pastable in markdown
+  or email it to my PC - I don't neccesarily want to create a login screen, because I'm putting this app on my resume/cv and I need them to be able to see it, maybe just make the account sign up process super easy?
+  like just an email and a PW - I should be the only one using this app - so mongodb doesn't need to worry about scaling - I think for future seans sake - authenticASean is gonna be needed, might as well start
+  with it - 
+So I will need 8? screens - Login + Signup + Current Workout(Save to mongoDB+Email button on bottom) + Past Workouts View List + Past workout view 1 + Exercise(show details) + Add a new exercise 
+For Each Exercise I will need - Date - Reps - Sets(maybe just add a new exercise everytime) - Weight - Time - each time it is saved, remember the previous time I did it, for example :
+  Every time I do curls @ 30 lbs for 15 reps - the next time I select 'Bicep Curls' it should remember what I did last time, and I save myself like 10 clicks and just select 'Bicep Curls -> Add to workout'
+For Each Exercise Input (add an exercise for workouts) - ID - Description(how to perform) - Muscle Group - Equipment - Maybe add a stock image(future sean can add an animated gif showing how its done later)
+I will also need a search feature for exercises - either by exercise name or muscle group or equipment
+I will also need a component with routing for the email/mongoDB workout - in order to get it in obsidian - I don't want to do MongoDB queries for what was my bench at 4 months ago - easier on obsidian
+Exercises list will just be reverse chronological - when I click it the ID will be the date - what if I workout twice? will it clash? like run in the morning, weights at night - or just throw in 3 sets of abs for w/e
 
+AI RecomendASeans : ===================================================================================================================================================================================
+Ran the above plan through AI to see if there was anything I forgot, here is the response, will need to craft a good prompt initially, easier to start off well than make minor changes(it forgets/loses context) :
+Your ideas for the workout app are well-thought-out and cover most of the essential features. Let's review your plan and consider if anything is missing or could be improved:
+1. Screens:
+Your proposed screens cover the main functionalities. Here's a slight reorganization and some additions to consider:
+- Login
+- Signup
+- Dashboard (could show current streak, upcoming workouts, quick start options)
+- Current Workout (with save to MongoDB + Email button)
+- Past Workouts List
+- Past Workout Detail View
+- Exercise List (with search and filter)
+- Exercise Detail View
+- Add/Edit Exercise
+- User Profile/Settings (for changing email, password, preferences)
+2. Exercise Data:
+Your exercise data structure is good. Consider adding:
+- Exercise Name (separate from description)
+- Difficulty Level
+- Variations (e.g., incline bench press as a variation of bench press)
+- Tags (for easier searching and categorization)
+3. Workout Data:
+For each workout, consider including:
+- Workout Name/Type
+- Total Duration
+- Calories Burned (if you want to track this)
+- Notes (for users to add any comments about the workout)
+4. Smart Exercise Selection:
+Your idea to remember previous settings for exercises is excellent for user experience. Consider also:
+- Showing a trend of the last few times the exercise was performed
+- Allowing users to set target weights/reps for progressive overload
+5. Search and Filter:
+Good idea. Also consider:
+- Filtering by difficulty level
+- Sorting options (alphabetical, most used, recently added)
+6. Obsidian Integration:
+Your approach of emailing workouts for Obsidian use is practical. Consider:
+- Offering different email formats (JSON, Markdown, CSV) for flexibility
+- Providing an export feature for bulk data transfer
+7. Multiple Workouts per Day:
+To handle multiple workouts per day:
+- Use timestamps along with dates for workout IDs
+- Allow users to name their workouts (e.g., "Morning Run", "Evening Weights")
+- Implement a workout splitting feature for users who want to log different parts of their day separately
+Additional Considerations:
+1. Progress Tracking:
+- Add a progress chart/graph for key exercises or body measurements
+- Implement personal record (PR) tracking and celebrations
+2. Workout Plans:
+- Allow users to create and save workout plans/routines
+- Implement a feature to follow pre-made or user-created workout programs
+3. Rest Timer:
+- Add a built-in rest timer between sets/exercises
+4. Social Features (if desired):
+- Friend system
+- Ability to share workouts or achievements
+5. Notifications:
+- Workout reminders
+- Streak maintenance notifications
+6. Offline Mode:
+- Allow users to log workouts offline and sync when online
+7. Data Privacy:- Implement data export and account deletion features for user data control
+8. Accessibility: - Ensure the app is accessible, with features like voice input for logging workouts
+Your ideas form a solid foundation for a comprehensive workout app. The additions suggested here can enhance user experience and functionality. 
+Remember to prioritize features based on your core user needs and development resources. Start with the essential features and iterate as you gather user feedback.
 
+Prompt: ====================================================================================================================================================================================================
+I am building a workout app using NextJS, ShadCN, Tailwind, Typescript, Mongoose, MongoDB, GraphQL, I will be uploading it to vercel, so make sure it loads as a static website and does everything on mongodb :
+I will need These Screens(please add links for navigation between them as well) :
+Screens
+- Login
+- Signup
+- Home Page (this is where user created workout templates will live, should also have navigation to view exercises/workouts/profile/timer/create workout/create exercise/etc)
+- Dashboard (show current workout total sets, most used exercises, also add a timer that can be started/stopped/reset without changing pages - it will be used for rest/exercise time - doesnt need to save)
+  dashboard should also be visible on any page and contain a dropdown for navigation (like profile/settings - workout list - exercise list - back button - home button)
+- Current Workout (with save to MongoDB + Email button)
+- Past Workouts List
+- Past Workout Detail View
+- Exercise List (with search and filter-the search feature should be able to filter by exercise type and tag(so 'weights' 'calisthenics' 'cardio' 'stretch' 'triceps' 'quads' will pull up all corresponding exercises)
+- Exercise Detail View(with an edit button - to change and save changes)
+- Add/Edit Exercise
+- User Profile/Settings (for changing email, password, preferences)
+Since I am using GraphQL and MongoDB, I will also need Schemas and endpoints set up for Exercises and Workouts and User Signup/Login:
+Each Exercise should have the following for it's schema  - Date - Reps - Sets - Weight/Time (following only for cardio exercises - distance/calories burned) when added to the workout 
+  make sure as it is entered it remembers the values for the next time it is input, those will be the new default values.
+Each Exercise should have a unique ID (how many variations of situps are there? I don't want exercises clashing when they have the same name - each needs an uid for it's own page that can be edited or viewed)
+  Each exercise page being input for later use in workouts should have - Exercise Name - Equipment needed - tags(muscle groups/workout type) - Variations(incline/decline-etc) - Description - Weight - Reps - Sets 
+  I want to add stretches and cardio as well to the exercises, so try not to make the schema too strict and allow alot of parts to be nullable - I'm using typescript and graphql with mongoose/mongodb
+Each workout should have an option to 'add an exercise' with a search feature for exercises or 'other' which will allow manual input, if the user doesn't want to add it to the exercise DB at that moment
+  -try to make all of this done locally so the user does not need to be connected to the internet, when they load the app, it should load all their settings, exercises, and workouts - then sync when they get internet
+I also want a simple account creation process, no confirmation emails, 2FA, or anything, just trust them, bro. When they create an account, save it to the DB and allow them to log in with username/password
+- Implement a feature to follow pre-made or user-created workout programs
+- I want you to save the last reps/weights the user did so they don't have to fill it in manually each time for every exercise,
+  they can just select 'Bicep Curls -> add to todays workout' and they can edit the numbers after it is added, if they change - but the last inputs will become the new defaults
+Workout Plans: - Allow users to create and save workout plans/routines - Implement a feature to follow pre-made or user-created workout programs - users could search up each exercise and add it
+- The precreated workouts should not be strict, if the user wants to do an extra exercise, they should be able to add it in anywhere, the user created workouts should be a guideline/template
+  if the user does not select a workout, it should create a new workout for that date/time to save as the id - it should then allow the user to save each individual exercise as it is done to the workout
+  at the end of the workout/bottom of the page, there should be a button to 'save/send' workout - this will allow the user to save the workout to MongoDB and email it to the account they signed up with
+  the - Offering different email formats (JSON, Markdown, CSV) for flexibility and - 
+  Providing an export feature for bulk data transfer(sorted by month with dates in a column followed by exercise-reps-weight-etc) so you can send each month of old workouts via email in whatever format you want
+  If adding cardio instead of reps it should be time - distance and calories burned - these should also be nullable - also remember the last cardio session as well - if I do a 20-30 minute run at end of workout -
+    I should be able to just add 'run' and it will remember the last run and time and distance I had, allowing me to change it later if I do better or worse -
+  I want to be able to edit the workouts until I press a button for 'upload workout/send email' that will signify the end of the workout - add a confirmation when this is pressed and ask about which format to send
+Offline Mode: - Allow users to log workouts offline and sync when online
+Search Option - should allow the user to search by exercise name, tags(so dips would be both 'calisthenics' and 'triceps' - so this could be nullable or multiple) or equipment
+The exercises added to mongoDB shouldn't be user specific - if I add one on my account it should be visible by everyone once it is in mongodb - I should be the only one using this app - 
+I will be primarily using this on my phone, so make sure it is responsive, and I might not always have internet, or if I accidently close the app, have a way to cache data/workouts locally - sync with internet
+Authentication:- Consider adding a "Forgot Password" feature for user convenience.- Even without email confirmation, implement basic security measures like password hashing.
+Workout Templates: - Allow users to save their custom workouts as templates for future use.
+User Preferences:- Allow users to set their preferred units (metric/imperial) for weight and distance.- Implement a dark/light mode toggle for the UI.
+Performance Optimization:- Implement pagination or infinite scrolling for long lists (like past workouts or exercises) to improve performance.
+Error Handling:- Implement robust error handling, especially for offline scenarios and sync conflicts.
+Data Validation:- Implement client-side and server-side validation for all input fields to ensure data integrity.
+Workout Notes:- Allow users to add notes to each workout or exercise session for tracking how they felt, any issues, etc. - Also add a 'Daily Steps Counter' at the end of a workout
+  Both the 'Workout Notes' and 'Daily Steps Counter' should be at the bottom of the app before the 'Save/Send' button - they should also be added to their own row in the sent email at the bottom
+In the dashboard add an icon for 'water drop/bottle' and each time that is pressed add a set amount of water (like 500ml) to the workout tally, and when it is sent, it will add the tally together 
+  so 7 presses would be '3,500mL' or '3.5L' at the bottom of the CSV or markdown below the 'Notes' and 'Step Count' followed by 'Water Intake' - I should press the button when I workout at the end of the day
+Make sure that the data gets cached somewhere, it should also work on a phone, because I will be using it periodically throught the day and pressing the 'save/send workout' button at the end of the day
+-Create another button Next to the 'save/send' button called 'save/copy' which will save the current workout to mongoDB and display the workout as markdown/csv/json(ask) then copy that to clipboard 
+-One more button for 'Delete' which will Delete current workout, 
+At the top of the submit workout page should be 'date' followed by 'exercise title' 'exercises' that were added to the workout,'Water Intake', 'Steps Count', 'Notes' 'Buttons'
+so three buttons total 'Delete', 'Save/Send', and 'Save/Copy' all of the buttons should be below 'date' 'exercise title' 'exercises' that were added to the workout,'Water Intake', 'Steps Count', 'Notes' 
+For every day - just create a new workout page that user can add to every day, so every time they drink water, add it to the page, or do 100 reps of situps sporadically or 20 pullups, they can add it, 
+  then save the entire days workout at the end of the day - that would be the ideal scenario, make sure that if they tab out or use another app on their phone, they don't lose everything(cache locally)
+- Use browser's localStorage or IndexedDB to cache data locally.
+- Implement an auto-save feature that saves the current state of the workout every few minutes or after each significant change.
+- When the user reopens the app, check for any unsaved data and offer to restore it.
+The Step counter should be a manual input (user just inputs at the end of the workout, so '20,000' would be saved if that was what was input) - I know nextJS can't get that data, but other apps can
+Add a Visual Indicator(like a small icon)to show sync status(far left corner of dashboard next to the dropdown menu) to show sync status-whether data has been saved locally, synced to the server, or is pending sync.
+Email Integration: For the Save/Send functionality, you'll need to implement a serverless function (e.g., using Vercel's serverless functions) to handle email sending, 
+  as this can't be done directly from the client-side. I want the Email title to be 'YYYY-MM-DD-HH:MM-Workout' - so todays workout would be '2024-10-06-02:34-Workout' if I 'save/sent' it now(old datetime)
+  Enclosed in the email would be the format that you can change in the settings (markdown/csv/JSON) - you can select in the settings what you want your default 'Save/Send' or 'Save/Copy' type to be
+  So you don't need to ask everytime the button is pressed, I would still need a confirmation though, misspresses happen, all the time
+Clipboard API: For the Save/Copy functionality, use the Clipboard API to copy the formatted workout data to the user's clipboard.
+Please provide the code for this project in segments. Start with the core configuration files and basic setup. I will ask for the other parts of the code after, try not to forget all the files and context.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Prompt 2 + File Counts : ========================================================================================================================================================================================
+I asked how many files I would get, and I was told this :
+Code Files Based on Your Prompt:
+If I were to break down your prompt into code files, there would be numerous files due to the complexity of your app. Here's a rough estimate of the main files you might need:
+- React Components (15-20 files): For screens like Login, Signup, Dashboard, Current Workout, Exercise List, etc.
+- API Routes (5-10 files): For handling authentication, workout CRUD operations, exercise management, etc.
+- GraphQL Schema (1-2 files): Defining your data models and queries.
+- MongoDB Models (3-5 files): For User, Exercise, and Workout schemas.
+- Utility Functions (2-4 files): For data formatting, email sending, etc.
+- Configuration Files (2-3 files): For Next.js, Tailwind, etc.
+- Type Definitions (1-2 files): If using TypeScript.
+In total, you might be looking at around 30-45 separate files to fully implement all the features you've described.
+Providing Code in One Response:
+While it's technically possible to provide all the code in one response, it would be an extremely long and potentially overwhelming message. 
+Given the complexity of your app, it would be more practical and manageable to break it down into smaller, focused segments. This approach would allow for better explanation and discussion of each component.
+Here is the response :
+To effectively break down your project into manageable segments and ensure nothing is forgotten, I suggest the following approach:
+1. End your initial prompt with:
+"Please provide the code for this project in segments. Start with the core configuration files and basic setup."
+2. For subsequent requests, you can use phrases like:
+1. "Please provide the next batch of files, focusing on [specific area]."
+2. "Now, let's move on to the [specific component or feature] implementation."
+3. "Can you give me the code for the [specific type of files, e.g., API routes, React components] related to [specific feature]?"
+This approach allows you to control the flow and focus of the code provision while ensuring all parts of your app are covered. I will keep track of what has been provided and what's left to implement.
+Here's a suggested order for requesting code segments:
+1. Core configuration and setup files
+2. MongoDB models and GraphQL schema
+3. API routes for authentication
+4. React components for authentication (Login, Signup)
+5. Dashboard and navigation components
+6. Exercise-related components and API routes
+7. Workout-related components and API routes
+8. Utility functions and helpers
+9. Remaining features (water tracking, step counter, etc.)
+10. Final configurations and optimizations
+By following this order and using specific requests, you can ensure that all parts of your app are covered without overwhelming yourself with too much code at once.
+I will remember the context of your project and what has been provided, ensuring that no crucial components are forgotten.
 
 
 
