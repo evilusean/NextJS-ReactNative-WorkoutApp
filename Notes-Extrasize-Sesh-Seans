@@ -231,8 +231,8 @@ Screens
 - Current Workout (with save to MongoDB + Email button)
 - Past Workouts List
 - Past Workout Detail View
-- Exercise List (with search and filter)
-- Exercise Detail View
+- Exercise List (with search and filter-the search feature should be able to filter by exercise type and tag(so 'weights' 'calisthenics' 'cardio' 'stretch' 'triceps' 'quads' will pull up all corresponding exercises)
+- Exercise Detail View(with an edit button - to change and save changes)
 - Add/Edit Exercise
 - User Profile/Settings (for changing email, password, preferences)
 Since I am using GraphQL and MongoDB, I will also need Schemas and endpoints set up for Exercises and Workouts and User Signup/Login:
@@ -258,7 +258,8 @@ Workout Plans: - Allow users to create and save workout plans/routines - Impleme
   I want to be able to edit the workouts until I press a button for 'upload workout/send email' that will signify the end of the workout - add a confirmation when this is pressed and ask about which format to send
 Offline Mode: - Allow users to log workouts offline and sync when online
 Search Option - should allow the user to search by exercise name, tags(so dips would be both 'calisthenics' and 'triceps' - so this could be nullable or multiple) or equipment
-
+The exercises added to mongoDB shouldn't be user specific - if I add one on my account it should be visible by everyone once it is in mongodb - I should be the only one using this app - 
+I will be primarily using this on my phone, so make sure it is responsive, and I might not always have internet, or if I accidently close the app, have a way to cache data/workouts locally - sync with internet
 
 
 
