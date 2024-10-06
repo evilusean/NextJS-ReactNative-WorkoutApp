@@ -285,6 +285,7 @@ Add a Visual Indicator(like a small icon)to show sync status(far left corner of 
 Email Integration: For the Save/Send functionality, you'll need to implement a serverless function (e.g., using Vercel's serverless functions) to handle email sending, 
   as this can't be done directly from the client-side. I want the Email title to be 'YYYY-MM-DD-HH:MM-Workout' - so todays workout would be '2024-10-06-02:34-Workout' if I 'save/sent' it now(old datetime)
   Enclosed in the email would be the format that you can change in the settings (markdown/csv/JSON) - you can select in the settings what you want your default 'Save/Send' or 'Save/Copy' type to be
+  So you don't need to ask everytime the button is pressed, I would still need a confirmation though, misspresses happen, all the time
 Clipboard API: For the Save/Copy functionality, use the Clipboard API to copy the formatted workout data to the user's clipboard.
 
 
