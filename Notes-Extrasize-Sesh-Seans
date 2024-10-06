@@ -153,7 +153,71 @@ I will also need a search feature for exercises - either by exercise name or mus
 I will also need a component with routing for the email/mongoDB workout - in order to get it in obsidian - I don't want to do MongoDB queries for what was my bench at 4 months ago - easier on obsidian
 Exercises list will just be reverse chronological - when I click it the ID will be the date - what if I workout twice? will it clash? like run in the morning, weights at night - or just throw in 3 sets of abs for w/e
 
-
+AI RecomendASeans : ===================================================================================================================================================================================
+Ran the above plan through AI to see if there was anything I forgot, here is the response, will need to craft a good prompt initially, easier to start off well than make minor changes(it forgets) :
+Your ideas for the workout app are well-thought-out and cover most of the essential features. Let's review your plan and consider if anything is missing or could be improved:
+1. Screens:
+Your proposed screens cover the main functionalities. Here's a slight reorganization and some additions to consider:
+- Login
+- Signup
+- Dashboard (could show current streak, upcoming workouts, quick start options)
+- Current Workout (with save to MongoDB + Email button)
+- Past Workouts List
+- Past Workout Detail View
+- Exercise List (with search and filter)
+- Exercise Detail View
+- Add/Edit Exercise
+- User Profile/Settings (for changing email, password, preferences)
+2. Exercise Data:
+Your exercise data structure is good. Consider adding:
+- Exercise Name (separate from description)
+- Difficulty Level
+- Variations (e.g., incline bench press as a variation of bench press)
+- Tags (for easier searching and categorization)
+3. Workout Data:
+For each workout, consider including:
+- Workout Name/Type
+- Total Duration
+- Calories Burned (if you want to track this)
+- Notes (for users to add any comments about the workout)
+4. Smart Exercise Selection:
+Your idea to remember previous settings for exercises is excellent for user experience. Consider also:
+- Showing a trend of the last few times the exercise was performed
+- Allowing users to set target weights/reps for progressive overload
+5. Search and Filter:
+Good idea. Also consider:
+- Filtering by difficulty level
+- Sorting options (alphabetical, most used, recently added)
+6. Obsidian Integration:
+Your approach of emailing workouts for Obsidian use is practical. Consider:
+- Offering different email formats (JSON, Markdown, CSV) for flexibility
+- Providing an export feature for bulk data transfer
+7. Multiple Workouts per Day:
+To handle multiple workouts per day:
+- Use timestamps along with dates for workout IDs
+- Allow users to name their workouts (e.g., "Morning Run", "Evening Weights")
+- Implement a workout splitting feature for users who want to log different parts of their day separately
+Additional Considerations:
+1. Progress Tracking:
+- Add a progress chart/graph for key exercises or body measurements
+- Implement personal record (PR) tracking and celebrations
+2. Workout Plans:
+- Allow users to create and save workout plans/routines
+- Implement a feature to follow pre-made or user-created workout programs
+3. Rest Timer:
+- Add a built-in rest timer between sets/exercises
+4. Social Features (if desired):
+- Friend system
+- Ability to share workouts or achievements
+5. Notifications:
+- Workout reminders
+- Streak maintenance notifications
+6. Offline Mode:
+- Allow users to log workouts offline and sync when online
+7. Data Privacy:- Implement data export and account deletion features for user data control
+8. Accessibility: - Ensure the app is accessible, with features like voice input for logging workouts
+Your ideas form a solid foundation for a comprehensive workout app. The additions suggested here can enhance user experience and functionality. 
+Remember to prioritize features based on your core user needs and development resources. Start with the essential features and iterate as you gather user feedback.
 
 
 
