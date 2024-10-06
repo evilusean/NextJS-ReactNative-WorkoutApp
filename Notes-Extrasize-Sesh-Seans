@@ -275,7 +275,7 @@ Make sure that the data gets cached somewhere, it should also work on a phone, b
 -One more button for 'Delete' which will Delete current workout, 
 At the top of the submit workout page should be 'date' followed by 'exercise title' 'exercises' that were added to the workout,'Water Intake', 'Steps Count', 'Notes' 'Buttons'
 so three buttons total 'Delete', 'Save/Send', and 'Save/Copy' all of the buttons should be below 'date' 'exercise title' 'exercises' that were added to the workout,'Water Intake', 'Steps Count', 'Notes' 
-For every day - just create a new workout page that user can add to every day, so every time they drink water, add it to the page, or do 100 sets of situps sporadically or 20 pullups, they can add it, 
+For every day - just create a new workout page that user can add to every day, so every time they drink water, add it to the page, or do 100 reps of situps sporadically or 20 pullups, they can add it, 
   then save the entire days workout at the end of the day - that would be the ideal scenario, make sure that if they tab out or use another app on their phone, they don't lose everything(cache locally)
 The Step counter should be a manual input (user just inputs at the end of the workout, so '20,000' would be saved if that was what was input) - I know nextJS can't get that data, but other apps can
 
