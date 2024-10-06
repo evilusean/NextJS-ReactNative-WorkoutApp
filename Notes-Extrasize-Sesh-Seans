@@ -277,9 +277,14 @@ At the top of the submit workout page should be 'date' followed by 'exercise tit
 so three buttons total 'Delete', 'Save/Send', and 'Save/Copy' all of the buttons should be below 'date' 'exercise title' 'exercises' that were added to the workout,'Water Intake', 'Steps Count', 'Notes' 
 For every day - just create a new workout page that user can add to every day, so every time they drink water, add it to the page, or do 100 reps of situps sporadically or 20 pullups, they can add it, 
   then save the entire days workout at the end of the day - that would be the ideal scenario, make sure that if they tab out or use another app on their phone, they don't lose everything(cache locally)
+- Use browser's localStorage or IndexedDB to cache data locally.
+- Implement an auto-save feature that saves the current state of the workout every few minutes or after each significant change.
+- When the user reopens the app, check for any unsaved data and offer to restore it.
 The Step counter should be a manual input (user just inputs at the end of the workout, so '20,000' would be saved if that was what was input) - I know nextJS can't get that data, but other apps can
-
-
+Add a Visual Indicator(like a small icon)to show sync status(far left corner of dashboard next to the dropdown menu) to show sync status-whether data has been saved locally, synced to the server, or is pending sync.
+Email Integration: For the Save/Send functionality, you'll need to implement a serverless function (e.g., using Vercel's serverless functions) to handle email sending, 
+  as this can't be done directly from the client-side.
+Clipboard API: For the Save/Copy functionality, use the Clipboard API to copy the formatted workout data to the user's clipboard.
 
 
 
