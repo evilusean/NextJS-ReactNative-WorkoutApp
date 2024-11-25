@@ -154,6 +154,8 @@ I will also need a component with routing for the email/mongoDB workout - in ord
 Exercises list will just be reverse chronological - when I click it the ID will be the date - what if I workout twice? will it clash? like run in the morning, weights at night - or just throw in 3 sets of abs for w/e
 After creating the App and testing the front end/back then wrap it in 'CapacitorJS'
 https://capacitorjs.com/
+'After I get it running on PC/Vercel, I will be wrapping it with 'Capacitor JS' and attempting to make it an app that works on iOS, so do any of the prerequisite work for the files and configs for that as well.'
+You can't upload a CapacitorJS app to vercel, and apple won't let you side load, so gonna put the app idea down for now, and just run it from the browser with NextJS routing and MongoDB backend
 I was thinking about making it in Java, but apparently you can't run Java on an iOS, because it won't run a JVM(Java Virtual Machine) - convert to objective C, this sounds like a pain though
 
 AI RecomendASeans : ===================================================================================================================================================================================
@@ -224,7 +226,6 @@ Remember to prioritize features based on your core user needs and development re
 
 Prompt: ====================================================================================================================================================================================================
 I am building a workout app using NextJS, ShadCN, Tailwind, Typescript, Mongoose, MongoDB, GraphQL, I will be uploading it to vercel, so make sure it loads as a static website and does everything on mongodb :
-After I get it running on PC/Vercel, I will be wrapping it with 'Capacitor JS' and attempting to make it an app that works on iOS, so do any of the prerequisite work for the files and configs for that as well.
 I will need These Screens(please add links for navigation between them as well) :
 Screens
 - Login
