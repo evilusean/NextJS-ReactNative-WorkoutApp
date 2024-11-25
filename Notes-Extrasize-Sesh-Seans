@@ -152,6 +152,9 @@ For Each Exercise Input (add an exercise for workouts) - ID - Description(how to
 I will also need a search feature for exercises - either by exercise name or muscle group or equipment
 I will also need a component with routing for the email/mongoDB workout - in order to get it in obsidian - I don't want to do MongoDB queries for what was my bench at 4 months ago - easier on obsidian
 Exercises list will just be reverse chronological - when I click it the ID will be the date - what if I workout twice? will it clash? like run in the morning, weights at night - or just throw in 3 sets of abs for w/e
+After creating the App and testing the front end/back then wrap it in 'CapacitorJS'
+https://capacitorjs.com/
+I was thinking about making it in Java, but apparently you can't run Java on an iOS, because it won't run a JVM(Java Virtual Machine) - convert to objective C, this sounds like a pain though
 
 AI RecomendASeans : ===================================================================================================================================================================================
 Ran the above plan through AI to see if there was anything I forgot, here is the response, will need to craft a good prompt initially, easier to start off well than make minor changes(it forgets/loses context) :
@@ -221,6 +224,7 @@ Remember to prioritize features based on your core user needs and development re
 
 Prompt: ====================================================================================================================================================================================================
 I am building a workout app using NextJS, ShadCN, Tailwind, Typescript, Mongoose, MongoDB, GraphQL, I will be uploading it to vercel, so make sure it loads as a static website and does everything on mongodb :
+After I get it running on PC/Vercel, I will be wrapping it with 'Capacitor JS' and attempting to make it an app that works on iOS, so do any of the prerequisite work for the files and configs for that as well.
 I will need These Screens(please add links for navigation between them as well) :
 Screens
 - Login
