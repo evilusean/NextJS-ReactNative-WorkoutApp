@@ -247,12 +247,12 @@ Screens
 - Exercise Detail View(with an edit button - to change and save changes)
 - Add/Edit Exercise
 - User Profile/Settings (for changing email, password, preferences)
-Since I am using GraphQL and MongoDB, I will also need Schemas and endpoints set up for Exercises and Workouts and User Signup/Login:
+Since I am using mongoose and MongoDB, I will also need Schemas and endpoints set up for Exercises and Workouts and User Signup/Login:
 Each Exercise should have the following for it's schema  - Date - Reps - Sets - Weight/Time (following only for cardio exercises - distance/calories burned) when added to the workout 
   make sure as it is entered it remembers the values for the next time it is input, those will be the new default values.
 Each Exercise should have a unique ID (how many variations of situps are there? I don't want exercises clashing when they have the same name - each needs an uid for it's own page that can be edited or viewed)
   Each exercise page being input for later use in workouts should have - Exercise Name - Equipment needed - tags(muscle groups/workout type) - Variations(incline/decline-etc) - Description - Weight - Reps - Sets 
-  I want to add stretches and cardio as well to the exercises, so try not to make the schema too strict and allow alot of parts to be nullable - I'm using typescript and graphql with mongoose/mongodb
+  I want to add stretches and cardio as well to the exercises, so try not to make the schema too strict and allow alot of parts to be nullable - I'm using typescript and mongoose/mongodb
 Each workout should have an option to 'add an exercise' with a search feature for exercises or 'other' which will allow manual input, if the user doesn't want to add it to the exercise DB at that moment
   -try to make all of this done locally so the user does not need to be connected to the internet, when they load the app, it should load all their settings, exercises, and workouts - then sync when they get internet
 I also want a simple account creation process, no confirmation emails, 2FA, or anything, just trust them, bro. When they create an account, save it to the DB and allow them to log in with username/password
