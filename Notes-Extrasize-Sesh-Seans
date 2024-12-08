@@ -226,9 +226,11 @@ Remember to prioritize features based on your core user needs and development re
 
 ---MAYBE USE SQLITE? Instead of mongoose, works better locally, just remembered I'm using vercel to host, doesn't work if vercel DB isn't static(can't be editied from the app)
   --SUPABASE IS A FIREBASE LIKE THAT LETS YOU USE A POSTGRE SQL DB FOR VERCEL, might work, maybe try this, future sean
+---MAYBE TAKE OUT GRAPHQL, I was thinking that it adds an extra layer of complexity, and since the data exercises/sets will be created one by one, it shouldn't need that level of functionality
+  --I more or less wanted to use GraphQL on a project, I learned it, but haven't built anything with it yet, mongoose should allow queries, gonna take it out of the stack for now
 
 Prompt: ====================================================================================================================================================================================================
-I am building a workout app using NextJS, ShadCN, Tailwind, Typescript, Mongoose, MongoDB, GraphQL, I will be uploading it to vercel, so make sure it loads as a static website and does everything on mongodb :
+I am building a workout app using NextJS, ShadCN, Tailwind, Typescript, Mongoose, MongoDB, I will be uploading it to vercel, so make sure it loads as a static website and does everything on mongodb :
 I will need These Screens(please add links for navigation between them as well) :
 Screens
 - Login
