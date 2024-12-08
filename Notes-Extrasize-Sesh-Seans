@@ -224,6 +224,8 @@ Additional Considerations:
 Your ideas form a solid foundation for a comprehensive workout app. The additions suggested here can enhance user experience and functionality. 
 Remember to prioritize features based on your core user needs and development resources. Start with the essential features and iterate as you gather user feedback.
 
+---MAYBE USE SQLITE? Instead of mongoose, works better locally, just remembered I'm using vercel to host, doesn't work if vercel DB isn't static(can't be editied from the app)
+
 Prompt: ====================================================================================================================================================================================================
 I am building a workout app using NextJS, ShadCN, Tailwind, Typescript, Mongoose, MongoDB, GraphQL, I will be uploading it to vercel, so make sure it loads as a static website and does everything on mongodb :
 I will need These Screens(please add links for navigation between them as well) :
