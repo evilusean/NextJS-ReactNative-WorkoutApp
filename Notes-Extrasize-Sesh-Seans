@@ -228,6 +228,8 @@ Remember to prioritize features based on your core user needs and development re
   --SUPABASE IS A FIREBASE LIKE THAT LETS YOU USE A POSTGRE SQL DB FOR VERCEL, might work, maybe try this, future sean
 ---MAYBE TAKE OUT GRAPHQL, I was thinking that it adds an extra layer of complexity, and since the data exercises/sets will be created one by one, it shouldn't need that level of functionality
   --I more or less wanted to use GraphQL on a project, I learned it, but haven't built anything with it yet, mongoose should allow queries, gonna take it out of the stack for now
+--MAYBE ADD GOOGLE AUTH, add this to the initial prompt, for future sean, I have one account I use for all this stuff, might as well keep it that way, I know, terrible OpSec, but I'm lazy
+  --future sean will probably appreciate a simple 'click to sign in with google' button instead of remembering yet another email/password combo
 
 Prompt: ====================================================================================================================================================================================================
 I am building a workout app using NextJS, ShadCN, Tailwind, Typescript, Mongoose, MongoDB, I will be uploading it to vercel, so make sure it loads as a static website and does everything on mongodb :
