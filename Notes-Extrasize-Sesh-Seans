@@ -232,6 +232,8 @@ Remember to prioritize features based on your core user needs and development re
   --future sean will probably appreciate a simple 'click to sign in with google' button instead of remembering yet another email/password combo
 
 Prompt: ====================================================================================================================================================================================================
+Future Sean : Review this, there's alot of ideas that have changed, and stuff you might want to add after getting the main functionality down, like the water intake/exercise buttons 
+
 I am building a workout app using NextJS, ShadCN, Tailwind, Typescript, Mongoose, MongoDB, I will be uploading it to vercel, so make sure it loads as a static website and does everything on mongodb :
 I will need These Screens(please add links for navigation between them as well) :
 Screens
@@ -283,6 +285,8 @@ Workout Notes:- Allow users to add notes to each workout or exercise session for
   Both the 'Workout Notes' and 'Daily Steps Counter' should be at the bottom of the app before the 'Save/Send' button - they should also be added to their own row in the sent email at the bottom
 In the dashboard add an icon for 'water drop/bottle' and each time that is pressed add a set amount of water (like 500ml) to the workout tally, and when it is sent, it will add the tally together 
   so 7 presses would be '3,500mL' or '3.5L' at the bottom of the CSV or markdown below the 'Notes' and 'Step Count' followed by 'Water Intake' - I should press the button when I workout at the end of the day
+I also want the user to be able to just click a button for one exercise, in a prominent place on the main screen, like for calisthenics, If I want to just do 10 pushups or situps or pullups throughout the day
+  I want the user to have a button for that, so they can just press it, and add that to their daily workout, they should also be able to change the exercise for this button
 Make sure that the data gets cached somewhere, it should also work on a phone, because I will be using it periodically throught the day and pressing the 'save/send workout' button at the end of the day
 -Create another button Next to the 'save/send' button called 'save/copy' which will save the current workout to mongoDB and display the workout as markdown/csv/json(ask) then copy that to clipboard 
 -One more button for 'Delete' which will Delete current workout, 
