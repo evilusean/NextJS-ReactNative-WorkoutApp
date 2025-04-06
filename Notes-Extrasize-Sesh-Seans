@@ -276,6 +276,7 @@ The exercises added to mongoDB shouldn't be user specific - if I add one on my a
 I will be primarily using this on my phone, so make sure it is responsive, and I might not always have internet, or if I accidently close the app, have a way to cache data/workouts locally - sync with internet
 Authentication:- Consider adding a "Forgot Password" feature for user convenience.- Even without email confirmation, implement basic security measures like password hashing.
 Google Login/Authentication - I want the user to login through their gmail account - Also set up google autentication so the user can sign in with their google account
+ -So I will want a method for the user to sign up and log in with either a google account, or through an email - all their workouts should be saved to that account and locally, and if requested can be emailed aswell
 Workout Templates: - Allow users to save their custom workouts as templates for future use.
 User Preferences:- Allow users to set their preferred units (metric/imperial) for weight and distance.- Implement a dark/light mode toggle for the UI.
 Performance Optimization:- Implement pagination or infinite scrolling for long lists (like past workouts or exercises) to improve performance.
