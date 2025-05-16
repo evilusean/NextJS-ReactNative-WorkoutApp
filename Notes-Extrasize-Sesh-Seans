@@ -238,6 +238,8 @@ Future Sean : Review this, there's alot of ideas that have changed, and stuff yo
   I primarily want to use this app just for myself, need to make a way for others not to be able to add a bunch of useless garbage to the DB that future sean will then have to sift through and delete
   I thought about it, and mongoDB is a better choice, I can build AI projects with edge functions using Supabase, I can't in MongoDB - I only get 2 free projects using free tier of Supabase
 
+Future Sean : I want it to be responsive - as I will primarily be using it on my phone(after escaping canada), I want it to use google auth so I don't need to remember yet another account email/pw
+
 I am building a workout app using NextJS, ShadCN, Tailwind, Typescript, Mongoose, MongoDB, I will be uploading it to vercel, so make sure it loads as a static website and does everything on mongodb :
 I will need These Screens(please add links for navigation between them as well) :
 Screens
